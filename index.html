@@ -3,648 +3,1302 @@
 :root{--r:#AB0304;--rd:#640607;--rdd:#510000;--rb:#D10303;--rl:#FEF5F4;--rll:#FDDADA;--bg:#f7f5f2;--card:#fff;--txt:#2D2D2D;--sub:#777;--bdr:#e8e8e8}
 body,html{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--txt);line-height:1.5;-webkit-font-smoothing:antialiased}
 .wrap{max-width:720px;margin:0 auto;padding:1.5rem 1rem}
-.sh{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--r);margin:2.5rem 0 .8rem;padding-bottom:8px;border-bottom:2px solid var(--r)}
-.sh span{color:var(--sub);font-weight:400;letter-spacing:0;text-transform:none;font-size:12px;margin-left:8px}
-.pt{display:inline-block;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:3px;margin-bottom:10px;color:#fff}
+.sh{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--r);margin:1.8rem 0 .6rem;padding-bottom:6px;border-bottom:2px solid var(--r)}
+.sh span{color:var(--sub);font-weight:400;letter-spacing:0;text-transform:none;font-size:11px;margin-left:6px}
+.sh.steel{color:#1565C0;border-color:#1565C0}.sh.agg{color:#2E7D32;border-color:#2E7D32}.sh.all{color:var(--rd);border-color:var(--rd)}
+.pt{display:inline-block;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:2px 8px;border-radius:3px;margin-bottom:8px;color:#fff}
 .t-li{background:#0A66C2}.t-ig{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)}.t-fb{background:#1877F2}.t-gbp{background:#34A853}
-.mc{background:var(--card);border-radius:12px;border:1px solid var(--bdr);margin-bottom:16px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.06)}
-.lh{display:flex;align-items:center;gap:10px;padding:14px 16px 0}
-.la{width:42px;height:42px;border-radius:50%;background:var(--r);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:13px;flex-shrink:0}
+.lt{display:inline-block;font-size:9px;font-weight:700;padding:2px 8px;border-radius:3px;margin-left:6px}
+.lc{background:#FDDADA;color:var(--r)}.ls{background:#BBDEFB;color:#0D47A1}.lag{background:#C8E6C9;color:#1B5E20}.lall{background:#E0E0E0;color:#424242}
+.mc{background:var(--card);border-radius:10px;border:1px solid var(--bdr);margin-bottom:12px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.lh{display:flex;align-items:center;gap:8px;padding:12px 14px 0}
+.la{width:36px;height:36px;border-radius:50%;background:var(--r);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:11px;flex-shrink:0}
 .la.f{background:linear-gradient(135deg,var(--r),var(--rd))}
-.lm h4{font-size:13px;font-weight:600;margin:0}.lm p{font-size:11px;color:var(--sub);margin:0}
-.lb{padding:12px 16px;font-size:13px;line-height:1.65;white-space:pre-line}
+.lm h4{font-size:12px;font-weight:600;margin:0}.lm p{font-size:10px;color:var(--sub);margin:0}
+.lb{padding:10px 14px;font-size:12px;line-height:1.6;white-space:pre-line}
 .lb .h{font-weight:600}.lb .tg{color:#0A66C2;font-weight:500}
-.le{display:flex;gap:20px;padding:10px 16px;border-top:1px solid var(--bdr);font-size:12px;color:var(--sub)}
+.le{display:flex;gap:16px;padding:8px 14px;border-top:1px solid var(--bdr);font-size:11px;color:var(--sub)}
 .cs{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:0}.cs::-webkit-scrollbar{height:0}
-.sl{min-width:100%;scroll-snap-align:start;aspect-ratio:1/1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;text-align:center;position:relative}
-.sl h2{font-size:20px;font-weight:700;margin-bottom:6px}.sl h3{font-size:15px;font-weight:600;margin-bottom:4px}
-.sl p{font-size:12px;line-height:1.55;max-width:85%}.sl .sn{position:absolute;bottom:12px;right:16px;font-size:10px;opacity:.4}
-.dr{display:flex;gap:4px;justify-content:center;margin-bottom:10px}
-.dm{width:14px;height:14px;background:var(--r);transform:rotate(45deg)}.dm.w{background:#fff}.dm.g{background:rgba(255,255,255,.2)}
-.ih{display:flex;align-items:center;gap:8px;padding:10px 14px}
-.ia{width:30px;height:30px;border-radius:50%;background:var(--r);display:flex;align-items:center;justify-content:center;color:#fff;font-size:8px;font-weight:700}
-.iu{font-size:12px;font-weight:600}
-.id{display:flex;justify-content:center;gap:5px;padding:6px 0}
-.idt{width:6px;height:6px;border-radius:50%;background:#ddd}.idt.a{background:var(--r)}
-.iact{display:flex;gap:16px;padding:8px 14px;font-size:18px;color:var(--txt)}
-.ic{padding:4px 14px 12px;font-size:12px;line-height:1.55}.ic b{font-weight:600}
-.rm{aspect-ratio:9/16;max-height:400px;display:flex;flex-direction:column;justify-content:flex-end;padding:1.5rem;color:#fff;position:relative;overflow:hidden}
-.rm .ro{font-size:17px;font-weight:700;text-shadow:0 2px 8px rgba(0,0,0,.6);margin-bottom:4px}
-.rm .rs{font-size:11px;opacity:.85;text-shadow:0 1px 4px rgba(0,0,0,.5)}
-.rm .ri{position:absolute;right:14px;bottom:110px;display:flex;flex-direction:column;gap:16px;align-items:center;font-size:9px;color:#fff}
+.sl{min-width:100%;scroll-snap-align:start;aspect-ratio:1/1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1.5rem;text-align:center;position:relative}
+.sl h2{font-size:18px;font-weight:700;margin-bottom:4px}.sl h3{font-size:14px;font-weight:600;margin-bottom:3px}
+.sl p{font-size:11px;line-height:1.5;max-width:85%}.sl .sn{position:absolute;bottom:10px;right:14px;font-size:9px;opacity:.4}
+.dr{display:flex;gap:3px;justify-content:center;margin-bottom:8px}
+.dm{width:12px;height:12px;background:var(--r);transform:rotate(45deg)}.dm.w{background:#fff}
+.ih{display:flex;align-items:center;gap:6px;padding:8px 12px}
+.ia{width:26px;height:26px;border-radius:50%;background:var(--r);display:flex;align-items:center;justify-content:center;color:#fff;font-size:7px;font-weight:700}
+.iu{font-size:11px;font-weight:600}
+.id{display:flex;justify-content:center;gap:4px;padding:4px 0}
+.idt{width:5px;height:5px;border-radius:50%;background:#ddd}.idt.a{background:var(--r)}
+.iact{display:flex;gap:14px;padding:6px 12px;font-size:16px;color:var(--txt)}
+.ic{padding:3px 12px 10px;font-size:11px;line-height:1.5}.ic b{font-weight:600}
+.rm{aspect-ratio:9/16;max-height:360px;display:flex;flex-direction:column;justify-content:flex-end;padding:1.2rem;color:#fff;position:relative;overflow:hidden}
+.rm .ro{font-size:15px;font-weight:700;text-shadow:0 2px 6px rgba(0,0,0,.6);margin-bottom:3px}
+.rm .rs{font-size:10px;opacity:.85;text-shadow:0 1px 3px rgba(0,0,0,.5)}
+.rm .ri{position:absolute;right:12px;bottom:100px;display:flex;flex-direction:column;gap:14px;align-items:center;font-size:8px;color:#fff}
 .rm .ri div{display:flex;flex-direction:column;align-items:center;gap:2px}
-.rm .pb{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center}
-.rm .pb::after{content:'';border-left:20px solid #fff;border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:3px}
-.gc{padding:14px}
-.gb{display:flex;align-items:center;gap:10px;margin-bottom:10px}
-.gi{width:38px;height:38px;border-radius:8px;background:var(--r);display:flex;align-items:center;justify-content:center;color:#fff;font-size:9px;font-weight:800}
-.gb h4{font-size:13px;font-weight:600;margin:0}.gb p{font-size:11px;color:var(--sub);margin:0}
-.gt{font-size:13px;line-height:1.55;margin-bottom:10px}
-.gimg{width:100%;aspect-ratio:16/9;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600}
-.vn{background:var(--rl);border-left:3px solid var(--r);padding:8px 12px;margin:6px 0 14px;font-size:11px;color:var(--rd);border-radius:0 6px 6px 0}
-.gp{display:inline-block;padding:3px 12px;border-radius:18px;font-size:11px;font-weight:600;margin:3px}
-.sh2{font-size:10px;color:var(--sub);text-align:center;padding:2px 0}
-.step-num{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:10px;font-size:20px;font-weight:800}
-.map-dot{width:10px;height:10px;border-radius:50%;background:var(--r);display:inline-block;margin:0 2px}
-.lgo{font-size:10px;font-weight:800;letter-spacing:4px;margin-top:14px;opacity:.85}
+.rm .pb{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center}
+.rm .pb::after{content:'';border-left:16px solid #fff;border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:3px}
+.gc{padding:12px}
+.gb{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.gi{width:32px;height:32px;border-radius:6px;background:var(--r);display:flex;align-items:center;justify-content:center;color:#fff;font-size:8px;font-weight:800}
+.gb h4{font-size:12px;font-weight:600;margin:0}.gb p{font-size:10px;color:var(--sub);margin:0}
+.gt{font-size:12px;line-height:1.5;margin-bottom:8px}
+.gimg{width:100%;aspect-ratio:16/9;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600}
+.vn{background:var(--rl);border-left:3px solid var(--r);padding:6px 10px;margin:4px 0 10px;font-size:10px;color:var(--rd);border-radius:0 4px 4px 0}
+.lgo{font-size:9px;font-weight:800;letter-spacing:3px;opacity:.85}
+.sh2{font-size:9px;color:var(--sub);text-align:center;padding:2px 0}
+.week-bar{color:#fff;text-align:center;padding:8px;border-radius:6px;margin:1.5rem 0 .8rem;font-size:11px;font-weight:700;letter-spacing:2px}
 </style>
-
 <div class="wrap">
-
-<div style="text-align:center;padding:1.5rem 0 .5rem">
+<div style="text-align:center;padding:1.2rem 0 .5rem">
   <div class="dr"><div class="dm"></div><div class="dm"></div><div class="dm"></div><div class="dm"></div><div class="dm"></div><div class="dm"></div></div>
-  <h1 style="font-size:24px;font-weight:800;color:var(--rdd);letter-spacing:1px;margin:6px 0 2px">RIYARA TRADING</h1>
-  <p style="font-size:12px;color:var(--sub)">Complete visual mockups — All 21 posts — April 2026</p>
-  <div style="display:flex;height:3px;border-radius:2px;overflow:hidden;margin-top:10px"><div style="flex:4;background:var(--r)"></div><div style="flex:2;background:var(--rd)"></div><div style="flex:1;background:var(--rb)"></div></div>
+  <h1 style="font-size:22px;font-weight:800;color:var(--rdd);letter-spacing:1px;margin:6px 0 2px">RIYARA TRADING</h1>
+  <p style="font-size:12px;color:var(--sub)">Complete visual mockups — 63 posts — April–June 2026</p>
+  <p style="font-size:10px;color:var(--sub);margin-top:2px">Cement · Steel · Aggregates</p>
+  <div style="display:flex;height:3px;border-radius:2px;overflow:hidden;margin-top:8px"><div style="flex:4;background:var(--r)"></div><div style="flex:2;background:var(--rd)"></div><div style="flex:1;background:var(--rb)"></div></div>
 </div>
-
-<!-- ========== WEEK 1 ========== -->
-<div style="background:var(--rdd);color:#fff;text-align:center;padding:10px;border-radius:8px;margin:2rem 0 1rem;font-size:12px;font-weight:700;letter-spacing:2px">WEEK 1 — APRIL 1–5</div>
-
-<!-- POST 1 -->
-<div class="sh">Post 1 — LinkedIn Company <span>Apr 1 · Bulk Cement Explained #1</span></div>
+<div style="background:var(--rdd);color:#fff;text-align:center;padding:14px;border-radius:8px;margin:2rem 0 1rem">
+  <div class="dr"><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div></div>
+  <div style="font-size:14px;font-weight:700;letter-spacing:2px;margin-top:6px">APRIL 2026 — FOUNDATION</div>
+  <div style="font-size:10px;opacity:.6;margin-top:2px">21 posts</div>
+</div>
+<div class="week-bar" style="background:var(--rd)">WEEK 1</div>
+<div class="sh ">Post 1 — LinkedIn (Company) <span>Apr 1 · Industry Education</span><span class="lt lc">Cement</span></div>
 <span class="pt t-li">LinkedIn</span>
 <div class="mc">
-  <div class="lh"><div class="la">R</div><div class="lm"><h4>Riyara Trading</h4><p>820 followers · 1h</p></div></div>
-  <div class="lb"><span class="h">Most people know cement in bags.</span>
-But for large-scale construction — flyovers, commercial complexes, RMC plants — cement moves differently.
-
-It travels in bulk. Through specialised tanker trucks called bulkers. Directly from the manufacturing plant to the project site.
-
-No bags. No manual handling. No wastage.
-
-This is loose cement. And it powers the infrastructure you see around you every day.
-
-<span class="tg">#BulkCement #ConstructionLogistics #CementIndustry</span></div>
+  <div class="lh"><div class="la">R</div><div class="lm"><h4>Riyara Trading</h4><p>Building Materials · Chennai</p></div></div>
+  <div class="lb"><span class="h">Most people know cement in bags. But for large-scale construction — flyovers, commercial complexes, RMC plants — cement moves differently.</span></div>
   <div class="cs">
     <div class="sl" style="background:var(--rdd);color:#fff">
       <div class="dr"><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div></div>
-      <p style="font-size:9px;letter-spacing:2px;opacity:.6;margin-bottom:6px">BULK CEMENT EXPLAINED</p>
-      <h2>What is Loose Cement?</h2>
-      <p style="opacity:.8">And why does it matter for large projects?</p>
-      <div class="lgo" style="color:var(--rl)">R I Y A R A</div>
+      <p style="font-size:9px;letter-spacing:2px;opacity:.6;margin-bottom:6px">BULK CEMENT EXPLAINED #1</p>
+      <h2 style="font-size:18px">What is Loose Cement? And Why Does It Matter for Large Projects?</h2>
       <div class="sn" style="color:rgba(255,255,255,.3)">1/5</div>
     </div>
     <div class="sl" style="background:var(--rl)">
-      <div style="display:flex;gap:2rem;align-items:center;width:85%">
-        <div style="text-align:center;flex:1"><div style="font-size:36px;margin-bottom:6px">📦</div><h3 style="color:var(--rd)">Bagged</h3><p style="font-size:11px;color:var(--sub)">Manual handling<br>Wastage risk<br>Labour intensive</p></div>
-        <div style="font-size:22px;color:var(--r);font-weight:700">vs</div>
-        <div style="text-align:center;flex:1"><div style="font-size:36px;margin-bottom:6px">🚛</div><h3 style="color:var(--rd)">Bulk</h3><p style="font-size:11px;color:var(--sub)">Pneumatic transfer<br>Zero wastage<br>Direct to silo</p></div>
-      </div>
+      <div style="width:48px;height:48px;border-radius:50%;background:var(--r);display:flex;align-items:center;justify-content:center;margin-bottom:10px;color:#fff;font-size:16px;font-weight:800">2</div>
+      <h3 style="color:var(--rdd);font-size:14px">Key Point</h3>
+      <p style="color:var(--sub);font-size:11px;max-width:80%">Carousel (5 slides): Title card with diamond motif → bag vs bulk comparison icons → how bulkers work...</p>
       <div class="sn">2/5</div>
-    </div>
-    <div class="sl" style="background:var(--rll)">
-      <p style="font-size:9px;letter-spacing:1.5px;color:var(--r);margin-bottom:6px">ALL GRADES AVAILABLE</p>
-      <div><span class="gp" style="background:var(--r);color:#fff">OPC 43</span><span class="gp" style="background:var(--rd);color:#fff">OPC 53</span><span class="gp" style="background:var(--rdd);color:#fff">PPC</span><span class="gp" style="background:#333;color:#fff">SLAG</span></div>
-      <div class="lgo" style="color:var(--r)">R I Y A R A</div>
-      <div class="sn">5/5</div>
     </div>
   </div>
   <div class="sh2">← Swipe to preview slides →</div>
   <div class="le"><span>👍 Like</span><span>💬 Comment</span><span>🔄 Repost</span><span>📤 Send</span></div>
 </div>
-
-<!-- POST 2 -->
-<div class="sh">Post 2 — Instagram + Facebook Reel <span>Apr 2 · How It Works</span></div>
-<span class="pt t-ig">Instagram Reel</span> <span class="pt t-fb">Facebook</span>
+<div class="sh ">Post 2 — Instagram + Facebook <span>Apr 2 · Reel</span><span class="lt lc">Cement</span></div>
+<span class="pt t-ig">Instagram</span> <span class="pt t-fb">Facebook</span>
 <div class="mc">
   <div class="ih"><div class="ia">R</div><span class="iu">riyaratrading</span></div>
   <div class="rm" style="background:linear-gradient(180deg,var(--rdd) 0%,#1a1a1a 50%,var(--rdd) 100%)">
-    <div style="position:absolute;top:30%;left:50%;transform:translate(-50%,-50%);opacity:.1;font-size:70px">🚛</div>
     <div class="pb"></div>
-    <div class="ri"><div>❤️<span>2.4K</span></div><div>💬<span>86</span></div><div>📤</div><div>🔖</div></div>
-    <div class="ro">From Plant to Project</div>
-    <div class="rs">How bulk cement travels without a single bag 🚛</div>
-    <div style="margin-top:6px;font-size:9px;opacity:.5">#BulkCement #CementLogistics #Riyara</div>
-  </div>
-  <div class="ic"><b>riyaratrading</b> Ever wondered how cement reaches a construction site without a single bag? Watch the journey. <span style="color:#0A66C2">#BulkCement #CementLogistics</span></div>
-</div>
-<div class="vn"><b>Reel:</b> 15 sec. Shot 1: Cement loading at plant (close-up). Shot 2: Bulker on highway (wide). Shot 3: Pneumatic unloading (satisfying). Trending instrumental audio. Text overlay at each stage.</div>
+    <div class="ri"><div>❤️<span>2.8K</span></div><div>💬<span>94</span></div><div>📤</div><div>🔖</div></div>
+    <div class="ro">From Plant to Project — How Bulk Cement Travels</div>
+    <div class="rs">Ever wondered how cement reaches a construction site without a single bag?
 
-<!-- POST 3 -->
-<div class="sh">Post 3 — LinkedIn Personal <span>Apr 3 · Founder POV · Lessons from the Field</span></div>
+Watc...</div>
+  </div>
+  <div class="ic"><b>riyaratrading</b> Ever wondered how cement reaches a construction site without a single bag?
+
+Watch the journey. ⼗
+
+#BulkCement #CementLogistics #ConstructionIndia #Riy...</div>
+</div>
+<div class="vn"><b>Visual note:</b> 15-sec Reel: Shot 1 (0-5s) cement loading at plant close-up. Shot 2 (5-10s) bulker on highway wide shot. Shot 3 (10-15s) pneumatic unloading. Trending instrumental audio. Text overlay at each stage.</div>
+<div class="sh ">Post 3 — LinkedIn (Saravanan) <span>Apr 3 · Founder POV</span><span class="lt lc">Cement</span></div>
 <span class="pt t-li">LinkedIn · Saravanan Udayar</span>
 <div class="mc">
-  <div class="lh"><div class="la f">SU</div><div class="lm"><h4>Saravanan Udayar</h4><p>Founder, Riyara Trading · 2h</p></div></div>
-  <div class="lb"><span class="h">When we started Riyara in 2014, we had a simple belief:</span>
+  <div class="lh"><div class="la f">SU</div><div class="lm"><h4>Saravanan Udayar</h4><p>Founder, Riyara Trading</p></div></div>
+  <div class="lb"><span class="h">When we started Riyara in 2014, we had a simple belief: if you deliver what you promise, on time, every time — trust follows.</span>
 
-If you deliver what you promise, on time, every time — trust follows.
+11 years later, that belief hasn’t changed.
 
-11 years later, that belief hasn't changed.
+Whether it’s cement, steel, or aggregates — our clients don’t just buy material. They buy certainty.
 
-In this industry, relationships are built over tonnes delivered, not presentations made. Every delayed truck is a broken promise. Every consistent delivery is a deposit in the trust account.
+In this industry, relationships are built over tonnes delivered, not presentations made.
 
-The cement business looks simple from outside. But the logistics behind uninterrupted supply? That's where the real work happens.
-
-<span class="tg">#CementIndustry #Logistics #BusinessLessons #Entrepreneurship</span></div>
+<span class="tg">#BuildingMaterials #Logistics #BusinessLessons #Entrepreneurship</span></div>
   <div class="le"><span>👍 Like</span><span>💬 Comment</span><span>🔄 Repost</span><span>📤 Send</span></div>
 </div>
-<div class="vn"><b>Format:</b> Text-only post. No image needed — strong opening hook drives LinkedIn algorithm. Alternatively: candid photo of Saravanan at office or site.</div>
-
-<!-- POST 4 -->
-<div class="sh">Post 4 — Google Business Profile <span>Apr 4 · GBP Update</span></div>
+<div class="sh all">Post 4 — Google Business Profile <span>Apr 4 · GBP Update</span><span class="lt lall">All Lines</span></div>
 <span class="pt t-gbp">Google Business</span>
 <div class="mc">
   <div class="gc">
-    <div class="gb"><div class="gi">R</div><div><h4>Riyara Trading</h4><p>Cement Supplier · Chennai, TN</p></div></div>
-    <div class="gt">Riyara Trading is the authorised agent and distributor for all major cement manufacturers in Tamil Nadu. We supply OPC 43, OPC 53, PPC, and Slag Cement grades.</div>
-    <div class="gimg" style="background:linear-gradient(135deg,var(--rdd),var(--r));color:#fff">
+    <div class="gb"><div class="gi">R</div><div><h4>Riyara Trading</h4><p>Building Materials · Chennai, TN</p></div></div>
+    <div class="gt">Riyara Trading is one of Tamil Nadu’s leading building material procurement and distribution companies. We supply cement (all grades), TMT steel bars (TATA, VSP, SAIL), and aggregates (blue metal, M-sand, river sand). One partner for all your construction material needs.</div>
+    <div class="gimg" style="background:var(--rdd);color:#fff">
       <div style="text-align:center">
         <div class="dr"><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div></div>
-        <div style="font-size:9px;letter-spacing:2px;opacity:.6;margin-bottom:4px">ALL GRADES AVAILABLE</div>
-        <div><span class="gp" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3)">OPC 43</span><span class="gp" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3)">OPC 53</span><span class="gp" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3)">PPC</span><span class="gp" style="background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3)">SLAG</span></div>
-        <div class="lgo" style="color:rgba(255,255,255,.7)">R I Y A R A</div>
+        <div style="font-size:14px;font-weight:600;margin-top:6px">Riyara — Your Complete Building Materials Partner</div>
+        <div class="lgo" style="color:rgba(255,255,255,.5);margin-top:10px">R I Y A R A</div>
       </div>
     </div>
   </div>
 </div>
-<div class="vn"><b>GBP note:</b> Also respond to any pending reviews this week.</div>
-
-<!-- ========== WEEK 2 ========== -->
-<div style="background:var(--rdd);color:#fff;text-align:center;padding:10px;border-radius:8px;margin:2rem 0 1rem;font-size:12px;font-weight:700;letter-spacing:2px">WEEK 2 — APRIL 7–11</div>
-
-<!-- POST 5 -->
-<div class="sh">Post 5 — LinkedIn Company <span>Apr 7 · Inside Riyara Operations #1</span></div>
+<div class="week-bar" style="background:var(--rd)">WEEK 2</div>
+<div class="sh ">Post 5 — LinkedIn (Company) <span>Apr 7 · Operations Breakdown</span><span class="lt lc">Cement</span></div>
 <span class="pt t-li">LinkedIn</span>
 <div class="mc">
-  <div class="lh"><div class="la">R</div><div class="lm"><h4>Riyara Trading</h4><p>820 followers · 3h</p></div></div>
-  <div class="lb"><span class="h">A cement bulker doesn't just "get loaded."</span>
-
-Before every dispatch, there's a coordination process most people never see. Smooth delivery starts long before the truck hits the road. ⬇️
-
-<span class="tg">#CementLogistics #SupplyChain #Operations #Riyara</span></div>
+  <div class="lh"><div class="la">R</div><div class="lm"><h4>Riyara Trading</h4><p>Building Materials · Chennai</p></div></div>
+  <div class="lb"><span class="h">A cement bulker doesn’t just “get loaded.”</span></div>
   <div class="cs">
     <div class="sl" style="background:var(--rdd);color:#fff">
-      <p style="font-size:9px;letter-spacing:2px;opacity:.6;margin-bottom:10px">INSIDE RIYARA OPERATIONS</p>
-      <h2>Before the Bulker Leaves</h2>
-      <p style="opacity:.8">6 steps that happen before every dispatch</p>
-      <div class="sn" style="color:rgba(255,255,255,.3)">1/6</div>
-    </div>
-    <div class="sl" style="background:#fff">
-      <div class="step-num" style="background:var(--rl);color:var(--r)">01</div>
-      <h3 style="color:var(--rd)">Grade Confirmation</h3>
-      <p style="color:var(--sub)">Verify the exact cement grade the client's project requires</p>
-      <div class="sn">2/6</div>
+      <div class="dr"><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div></div>
+      <p style="font-size:9px;letter-spacing:2px;opacity:.6;margin-bottom:6px">INSIDE RIYARA OPERATIONS #1</p>
+      <h2 style="font-size:18px">What Happens Before a Bulker Leaves the Plant</h2>
+      <div class="sn" style="color:rgba(255,255,255,.3)">1/5</div>
     </div>
     <div class="sl" style="background:var(--rl)">
-      <div class="step-num" style="background:var(--r);color:#fff">02</div>
-      <h3 style="color:var(--rd)">Plant Slot Booking</h3>
-      <p style="color:var(--sub)">Secure loading time at the manufacturing plant</p>
-      <div class="sn">3/6</div>
+      <div style="width:48px;height:48px;border-radius:50%;background:var(--r);display:flex;align-items:center;justify-content:center;margin-bottom:10px;color:#fff;font-size:16px;font-weight:800">2</div>
+      <h3 style="color:var(--rdd);font-size:14px">Key Point</h3>
+      <p style="color:var(--sub);font-size:11px;max-width:80%">Carousel (6 slides): Each step as a numbered card with icon + one-line description. Crimson palette....</p>
+      <div class="sn">2/5</div>
     </div>
   </div>
-  <div class="sh2">← Swipe · Slides 4-6: Vehicle fitness check → Loading supervision → Weight verification → Dispatch docs →</div>
+  <div class="sh2">← Swipe to preview slides →</div>
   <div class="le"><span>👍 Like</span><span>💬 Comment</span><span>🔄 Repost</span><span>📤 Send</span></div>
 </div>
-
-<!-- POST 6 -->
-<div class="sh">Post 6 — Instagram + Facebook Carousel <span>Apr 8 · Cement 101</span></div>
+<div class="sh ">Post 6 — Instagram + Facebook <span>Apr 8 · Carousel</span><span class="lt lc">Cement</span></div>
 <span class="pt t-ig">Instagram</span> <span class="pt t-fb">Facebook</span>
 <div class="mc">
   <div class="ih"><div class="ia">R</div><span class="iu">riyaratrading</span></div>
   <div class="cs">
     <div class="sl" style="background:var(--rdd);color:#fff">
+      <div class="dr"><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div></div>
       <p style="font-size:9px;letter-spacing:2px;opacity:.6;margin-bottom:6px">CEMENT 101</p>
-      <h2>OPC 43 vs OPC 53 vs PPC</h2>
-      <p style="font-size:13px;opacity:.85">Which cement for which job?</p>
+      <h2 style="font-size:18px">OPC 43 vs OPC 53 vs PPC — Which Cement for Which Job?</h2>
       <div class="sn" style="color:rgba(255,255,255,.3)">1/5</div>
     </div>
-    <div class="sl" style="background:#fff">
-      <div style="width:70px;height:70px;border-radius:50%;background:var(--rl);border:3px solid var(--r);display:flex;align-items:center;justify-content:center;margin-bottom:10px"><span style="font-size:12px;font-weight:800;color:var(--r)">OPC 43</span></div>
-      <h3 style="color:var(--rd)">General Construction</h3>
-      <p style="color:var(--sub)">Residential buildings, plastering, tiling, non-structural work</p>
+    <div class="sl" style="background:var(--rl)">
+      <div style="width:48px;height:48px;border-radius:50%;background:var(--r);display:flex;align-items:center;justify-content:center;margin-bottom:10px;color:#fff;font-size:16px;font-weight:800">2</div>
+      <h3 style="color:var(--rdd);font-size:14px">Key Point</h3>
+      <p style="color:var(--sub);font-size:11px;max-width:80%">Carousel (5 slides): Title → OPC 43 (general construction) → OPC 53 (high-strength) → PPC (durabilit...</p>
       <div class="sn">2/5</div>
     </div>
-    <div class="sl" style="background:var(--rl)">
-      <div style="width:70px;height:70px;border-radius:50%;background:var(--r);display:flex;align-items:center;justify-content:center;margin-bottom:10px"><span style="font-size:12px;font-weight:800;color:#fff">OPC 53</span></div>
-      <h3 style="color:var(--rd)">High-Strength Structures</h3>
-      <p style="color:var(--sub)">Bridges, flyovers, RMC plants, heavy infrastructure</p>
-      <div class="sn">3/5</div>
-    </div>
   </div>
-  <div class="sh2">← Swipe · Slides 4-5: PPC (general purpose) → "Riyara supplies all grades" →</div>
+  <div class="sh2">← Swipe to preview slides →</div>
   <div class="id"><div class="idt a"></div><div class="idt"></div><div class="idt"></div><div class="idt"></div><div class="idt"></div></div>
   <div class="iact"><span>♡</span><span>💬</span><span>📤</span><span style="margin-left:auto">🔖</span></div>
-  <div class="ic"><b>riyaratrading</b> Not all cement is the same. Different projects need different grades. Save this for your next project discussion. <span style="color:#0A66C2">#CementGrades #OPC43 #OPC53 #PPC</span></div>
-</div>
+  <div class="ic"><b>riyaratrading</b> Not all cement is the same. Different projects need different grades.
 
-<!-- POST 7 -->
-<div class="sh">Post 7 — LinkedIn Personal <span>Apr 9 · Industry Insight · On-Ground Realities</span></div>
+Swipe for a simple breakdown. ⤵️ Save this for your next project.
+
+#CementGrades #OPC43 #OPC53 #PPC #ConstructionTips...</div>
+</div>
+<div class="sh ">Post 7 — LinkedIn (Saravanan) <span>Apr 9 · Industry Insight</span><span class="lt lc">Cement</span></div>
 <span class="pt t-li">LinkedIn · Saravanan Udayar</span>
 <div class="mc">
-  <div class="lh"><div class="la f">SU</div><div class="lm"><h4>Saravanan Udayar</h4><p>Founder, Riyara Trading · 4h</p></div></div>
-  <div class="lb"><span class="h">It's not labour shortage. It's not rain.</span>
+  <div class="lh"><div class="la f">SU</div><div class="lm"><h4>Saravanan Udayar</h4><p>Founder, Riyara Trading</p></div></div>
+  <div class="lb"><span class="h">It’s not labour shortage. It’s not rain.</span>
 
-It's cement supply disruption.
+It’s cement supply disruption.
 
 When a project runs out of cement mid-pour, everything stops. The RMC plant idles. Workers wait. Deadlines slip.
 
-This is why procurement planning matters more than procurement pricing.
+Procurement planning matters more than procurement pricing.
 
-In bulk cement, the real value isn't just the material — it's the certainty that it will arrive when needed.
-
-Something I've seen play out hundreds of times over the years.
-
-<span class="tg">#Construction #CementSupply #ProjectManagement #Infrastructure</span></div>
+<span class="tg">#Construction #CementSupply #ProjectManagement</span></div>
   <div class="le"><span>👍 Like</span><span>💬 Comment</span><span>🔄 Repost</span><span>📤 Send</span></div>
 </div>
-<div class="vn"><b>Strategy:</b> Text-only. No Riyara mention — positions Saravanan purely as an industry voice. Builds personal authority without triggering client sensitivity.</div>
-
-<!-- POST 8 -->
-<div class="sh">Post 8 — Google Business Profile <span>Apr 11 · GBP Update</span></div>
+<div class="sh ">Post 8 — Google Business Profile <span>Apr 11 · GBP Update</span><span class="lt lc">Cement</span></div>
 <span class="pt t-gbp">Google Business</span>
 <div class="mc">
   <div class="gc">
-    <div class="gb"><div class="gi">R</div><div><h4>Riyara Trading</h4><p>Cement Supplier · Chennai, TN</p></div></div>
-    <div class="gt">Riyara operates a fleet of 20+ owned cement bulkers and V-shaped tanker trucks for specialised bulk cement delivery. We serve industries, contractors, and concrete manufacturers across Tamil Nadu.</div>
-    <div class="gimg" style="background:var(--rl);color:var(--rd);border:1px solid var(--rll)">
+    <div class="gb"><div class="gi">R</div><div><h4>Riyara Trading</h4><p>Building Materials · Chennai, TN</p></div></div>
+    <div class="gt">Riyara operates a fleet of 20+ owned cement bulkers and V-shaped tanker trucks for specialised bulk cement delivery across Tamil Nadu.</div>
+    <div class="gimg" style="background:var(--rdd);color:#fff">
       <div style="text-align:center">
-        <div style="font-size:36px;margin-bottom:6px">🚛</div>
-        <div style="font-size:14px;font-weight:700">20+ Owned Bulkers</div>
-        <div style="font-size:11px;color:var(--sub);margin-top:2px">V-shaped tankers · Pan Tamil Nadu delivery</div>
+        <div class="dr"><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div></div>
+        <div style="font-size:14px;font-weight:600;margin-top:6px">Bulk Cement Delivery Across Tamil Nadu</div>
+        <div class="lgo" style="color:rgba(255,255,255,.5);margin-top:10px">R I Y A R A</div>
       </div>
     </div>
   </div>
 </div>
-<div class="vn"><b>Visual:</b> Use real fleet photo here — lined up trucks or single bulker on highway. Review management: check and respond to reviews this week.</div>
-
-<!-- ========== WEEK 3 ========== -->
-<div style="background:var(--rdd);color:#fff;text-align:center;padding:10px;border-radius:8px;margin:2rem 0 1rem;font-size:12px;font-weight:700;letter-spacing:2px">WEEK 3 — APRIL 14–18</div>
-
-<!-- POST 9 -->
-<div class="sh">Post 9 — LinkedIn Company <span>Apr 14 · Bulk Cement Explained #2</span></div>
+<div class="vn"><b>Visual note:</b> Real fleet photo — bulkers lined up or single truck on highway. Riyara branding.</div>
+<div class="week-bar" style="background:var(--rd)">WEEK 3</div>
+<div class="sh steel">Post 9 — LinkedIn (Company) <span>Apr 14 · Industry Education</span><span class="lt ls">Steel</span></div>
 <span class="pt t-li">LinkedIn</span>
 <div class="mc">
-  <div class="lh"><div class="la">R</div><div class="lm"><h4>Riyara Trading</h4><p>820 followers · 2h</p></div></div>
-  <div class="lb"><span class="h">If you've driven on Indian highways, you've seen them</span> — large cylindrical tanker trucks carrying cement in powder form.
+  <div class="lh"><div class="la">R</div><div class="lm"><h4>Riyara Trading</h4><p>Building Materials · Chennai</p></div></div>
+  <div class="lb"><span class="h">Most people know Riyara for cement. But there’s another side to the business:</span></div>
+  <div class="cs">
+    <div class="sl" style="background:#0D3B66;color:#fff">
+      <div class="dr"><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div></div>
+      <p style="font-size:9px;letter-spacing:2px;opacity:.6;margin-bottom:6px">BUILDING MATERIALS SPOTLIGHT</p>
+      <h2 style="font-size:18px">Beyond Cement: Riyara’s Steel Division</h2>
+      <div class="sn" style="color:rgba(255,255,255,.3)">1/5</div>
+    </div>
+    <div class="sl" style="background:#E3F2FD">
+      <div style="width:48px;height:48px;border-radius:50%;background:#1565C0;display:flex;align-items:center;justify-content:center;margin-bottom:10px;color:#fff;font-size:16px;font-weight:800">2</div>
+      <h3 style="color:#0D3B66;font-size:14px">Key Point</h3>
+      <p style="color:var(--sub);font-size:11px;max-width:80%">Carousel: Title card → TATA/VSP/SAIL logos → TMT bar sizes visual → applications by size → Riyara lo...</p>
+      <div class="sn">2/5</div>
+    </div>
+  </div>
+  <div class="sh2">← Swipe to preview slides →</div>
+  <div class="le"><span>👍 Like</span><span>💬 Comment</span><span>🔄 Repost</span><span>📤 Send</span></div>
+</div>
+<div class="sh ">Post 10 — Instagram + Facebook <span>Apr 15 · Reel</span><span class="lt lc">Cement</span></div>
+<span class="pt t-ig">Instagram</span> <span class="pt t-fb">Facebook</span>
+<div class="mc">
+  <div class="ih"><div class="ia">R</div><span class="iu">riyaratrading</span></div>
+  <div class="rm" style="background:linear-gradient(180deg,var(--rdd) 0%,#1a1a1a 50%,var(--rdd) 100%)">
+    <div class="pb"></div>
+    <div class="ri"><div>❤️<span>2.8K</span></div><div>💬<span>94</span></div><div>📤</div><div>🔖</div></div>
+    <div class="ro">Pneumatic Cement Unloading — Oddly Satisfying</div>
+    <div class="rs">No bags. No labour. Just air pressure doing its job. ⼗
 
-These are cement bulkers. And they're the backbone of bulk cement logistics.
+#CementUnloading #Pneuma...</div>
+  </div>
+  <div class="ic"><b>riyaratrading</b> No bags. No labour. Just air pressure doing its job. ⼗
 
-→ Cement is loaded pneumatically at the plant
-→ The bulker transports 25-30 tonnes per trip
-→ At the site, compressed air pushes cement into silos
-→ No manual handling, no spillage, no bags
+#CementUnloading #Pneumatic #SatisfyingProcess #BulkCement...</div>
+</div>
+<div class="vn"><b>Visual note:</b> 15-20 sec Reel: Close-up of pneumatic unloading into silo. Slow-mo. Calm trending audio. ⭐ Highest-potential Reel of April.</div>
+<div class="sh ">Post 11 — LinkedIn (Company) <span>Apr 16 · Operations Breakdown</span><span class="lt lc">Cement</span></div>
+<span class="pt t-li">LinkedIn</span>
+<div class="mc">
+  <div class="lh"><div class="la">R</div><div class="lm"><h4>Riyara Trading</h4><p>Building Materials · Chennai</p></div></div>
+  <div class="lb"><span class="h">Plant shutdowns happen — maintenance, monsoon, capacity constraints.</span></div>
+  <div style="aspect-ratio:16/9;background:var(--rdd);display:flex;align-items:center;justify-content:center;color:#fff;padding:1.5rem;text-align:center">
+    <div>
+      <div class="dr"><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div></div>
+      <div style="font-size:16px;font-weight:600;margin-top:8px">Multi-State Sourcing: How We Keep Supply Uninterrupted</div>
+      <div style="font-size:11px;opacity:.7;margin-top:4px">Map graphic: 4 South Indian states with supply routes marked in crimson. Clean, </div>
+      <div class="lgo" style="color:rgba(255,255,255,.6);margin-top:12px">R I Y A R A</div>
+    </div>
+  </div>
+  <div class="le"><span>👍 Like</span><span>💬 Comment</span><span>🔄 Repost</span><span>📤 Send</span></div>
+</div>
+<div class="sh steel">Post 12 — LinkedIn (Saravanan) <span>Apr 17 · Industry Insight</span><span class="lt ls">Steel</span></div>
+<span class="pt t-li">LinkedIn · Saravanan Udayar</span>
+<div class="mc">
+  <div class="lh"><div class="la f">SU</div><div class="lm"><h4>Saravanan Udayar</h4><p>Founder, Riyara Trading</p></div></div>
+  <div class="lb"><span class="h">“Just get me 12mm bars.”</span>
 
-Also: V-shaped tanker trucks for specific discharge requirements.
+No mention of grade. No mention of brand. No mention of the structure it’s going into.
 
-<span class="tg">#CementBulker #Logistics #Infrastructure #BulkCement</span></div>
+But TMT bars aren’t interchangeable. The grade determines yield strength. The brand determines consistency. The size determines load-bearing capacity.
+
+A good dealer asks the right questions before dispatching.
+
+<span class="tg">#Steel #TMTBars #Construction #StructuralEngineering</span></div>
+  <div class="le"><span>👍 Like</span><span>💬 Comment</span><span>🔄 Repost</span><span>📤 Send</span></div>
+</div>
+<div class="week-bar" style="background:var(--rd)">WEEK 4</div>
+<div class="sh steel">Post 13 — Google Business Profile <span>Apr 18 · GBP Update</span><span class="lt ls">Steel</span></div>
+<span class="pt t-gbp">Google Business</span>
+<div class="mc">
+  <div class="gc">
+    <div class="gb"><div class="gi">R</div><div><h4>Riyara Trading</h4><p>Building Materials · Chennai, TN</p></div></div>
+    <div class="gt">Riyara Trading is a leading TMT steel distributor in Tamil Nadu. We supply bars from TATA, Vizag Steel (VSP), and SAIL in sizes 8mm to 32mm.</div>
+    <div class="gimg" style="background:#0D3B66;color:#fff">
+      <div style="text-align:center">
+        <div class="dr"><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div></div>
+        <div style="font-size:14px;font-weight:600;margin-top:6px">TMT Steel Bars — TATA, VSP &amp; SAIL</div>
+        <div class="lgo" style="color:rgba(255,255,255,.5);margin-top:10px">R I Y A R A</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="sh ">Post 14 — LinkedIn (Company) <span>Apr 21 · Industry Education</span><span class="lt lc">Cement</span></div>
+<span class="pt t-li">LinkedIn</span>
+<div class="mc">
+  <div class="lh"><div class="la">R</div><div class="lm"><h4>Riyara Trading</h4><p>Building Materials · Chennai</p></div></div>
+  <div class="lb"><span class="h">For projects consuming 100+ tonnes/month, bulk is the only practical choice:</span></div>
   <div class="cs">
     <div class="sl" style="background:var(--rdd);color:#fff">
-      <p style="font-size:9px;letter-spacing:2px;opacity:.6;margin-bottom:8px">BULK CEMENT EXPLAINED #2</p>
-      <h2>The Cement Bulker</h2>
-      <p style="opacity:.8">The vehicle behind every large project</p>
+      <div class="dr"><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div></div>
+      <p style="font-size:9px;letter-spacing:2px;opacity:.6;margin-bottom:6px">BULK CEMENT EXPLAINED #2</p>
+      <h2 style="font-size:18px">Bulk Cement vs Bagged Cement: Why Large Projects Choose Bulk</h2>
       <div class="sn" style="color:rgba(255,255,255,.3)">1/5</div>
     </div>
     <div class="sl" style="background:var(--rl)">
-      <div style="font-size:50px;margin-bottom:10px">🚛</div>
-      <div style="text-align:left;width:75%;font-size:12px;color:var(--rd)">
-        <div style="padding:6px 0;border-bottom:1px solid var(--rll)"><b>Capacity:</b> 25-30 tonnes/trip</div>
-        <div style="padding:6px 0;border-bottom:1px solid var(--rll)"><b>Loading:</b> Pneumatic at plant</div>
-        <div style="padding:6px 0;border-bottom:1px solid var(--rll)"><b>Unloading:</b> Compressed air → silo</div>
-        <div style="padding:6px 0"><b>Handling:</b> Zero manual, zero spillage</div>
-      </div>
-      <div class="sn">3/5</div>
+      <div style="width:48px;height:48px;border-radius:50%;background:var(--r);display:flex;align-items:center;justify-content:center;margin-bottom:10px;color:#fff;font-size:16px;font-weight:800">2</div>
+      <h3 style="color:var(--rdd);font-size:14px">Key Point</h3>
+      <p style="color:var(--sub);font-size:11px;max-width:80%">Side-by-side comparison carousel: Bags vs Bulk across 5 parameters. Table format on one slide....</p>
+      <div class="sn">2/5</div>
     </div>
   </div>
-  <div class="sh2">← Swipe for full carousel →</div>
+  <div class="sh2">← Swipe to preview slides →</div>
   <div class="le"><span>👍 Like</span><span>💬 Comment</span><span>🔄 Repost</span><span>📤 Send</span></div>
 </div>
-
-<!-- POST 10 -->
-<div class="sh">Post 10 — Instagram + Facebook Reel <span>Apr 15 · Satisfying Operations</span></div>
-<span class="pt t-ig">Instagram Reel</span> <span class="pt t-fb">Facebook</span>
+<div class="sh steel">Post 15 — Instagram + Facebook <span>Apr 22 · Carousel</span><span class="lt ls">Steel</span></div>
+<span class="pt t-ig">Instagram</span> <span class="pt t-fb">Facebook</span>
 <div class="mc">
   <div class="ih"><div class="ia">R</div><span class="iu">riyaratrading</span></div>
-  <div class="rm" style="background:linear-gradient(180deg,#1a1a1a 0%,var(--rdd) 60%,#1a1a1a 100%)">
-    <div style="position:absolute;top:35%;left:50%;transform:translate(-50%,-50%);opacity:.1;font-size:56px">⚙️</div>
-    <div class="pb"></div>
-    <div class="ri"><div>❤️<span>5.1K</span></div><div>💬<span>142</span></div><div>📤</div><div>🔖</div></div>
-    <div class="ro">Pneumatic Unloading</div>
-    <div class="rs">Oddly satisfying. No bags. No labour. Just air pressure. 💨</div>
-  </div>
-  <div class="ic"><b>riyaratrading</b> No bags. No labour. Just air pressure doing its job. ⏵ <span style="color:#0A66C2">#Pneumatic #SatisfyingProcess #BulkCement</span></div>
-</div>
-<div class="vn"><b>⭐ Highest-potential Reel.</b> "Satisfying process" content gets massive saves/shares. Shoot in slow-mo close-up. Cement flowing through pneumatic pipe into silo. Calm trending audio. 15-20 seconds.</div>
-
-<!-- POST 11 -->
-<div class="sh">Post 11 — LinkedIn Company <span>Apr 16 · Inside Riyara Operations #2</span></div>
-<span class="pt t-li">LinkedIn</span>
-<div class="mc">
-  <div class="lh"><div class="la">R</div><div class="lm"><h4>Riyara Trading</h4><p>820 followers · 5h</p></div></div>
-  <div class="lb"><span class="h">One of the most common challenges in bulk cement: plant shutdowns.</span>
-
-Maintenance schedules, monsoon disruptions, capacity constraints — these can halt supply from any single source.
-
-The solution? Never depend on one.
-
-Procuring across Tamil Nadu, Andhra Pradesh, Telangana, and Karnataka means having alternatives ready before disruptions happen.
-
-It's not about having more suppliers. It's about having the right relationships across the right geographies.
-
-<span class="tg">#SupplyChain #CementProcurement #Logistics #SouthIndia</span></div>
-  <div style="aspect-ratio:16/9;background:var(--rl);display:flex;align-items:center;justify-content:center;padding:1.5rem">
-    <div style="text-align:center">
-      <p style="font-size:9px;letter-spacing:2px;color:var(--r);margin-bottom:10px">MULTI-STATE SOURCING</p>
-      <div style="display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap">
-        <div style="background:var(--r);color:#fff;padding:8px 16px;border-radius:6px;font-size:12px;font-weight:600">Tamil Nadu</div>
-        <div style="background:var(--rd);color:#fff;padding:8px 16px;border-radius:6px;font-size:12px;font-weight:600">Andhra Pradesh</div>
-        <div style="background:var(--rdd);color:#fff;padding:8px 16px;border-radius:6px;font-size:12px;font-weight:600">Telangana</div>
-        <div style="background:#333;color:#fff;padding:8px 16px;border-radius:6px;font-size:12px;font-weight:600">Karnataka</div>
-      </div>
-      <p style="font-size:11px;color:var(--sub);margin-top:10px">Uninterrupted supply through geographic diversification</p>
-    </div>
-  </div>
-  <div class="le"><span>👍 Like</span><span>💬 Comment</span><span>🔄 Repost</span><span>📤 Send</span></div>
-</div>
-
-<!-- POST 12 -->
-<div class="sh">Post 12 — LinkedIn Personal <span>Apr 17 · Founder POV · Lessons from the Field</span></div>
-<span class="pt t-li">LinkedIn · Saravanan Udayar</span>
-<div class="mc">
-  <div class="lh"><div class="la f">SU</div><div class="lm"><h4>Saravanan Udayar</h4><p>Founder, Riyara Trading · 3h</p></div></div>
-  <div class="lb"><span class="h">People ask me what Riyara does.</span>
-
-I could say "we sell cement." But that's like saying a hospital just gives medicines.
-
-What we actually do:
-→ Understand what grade a project needs
-→ Source from the right plant at the right time
-→ Coordinate logistics across state borders
-→ Ensure delivery matches project timelines
-→ Handle the complexity so our clients don't have to
-
-We're not a cement company. We're a procurement and logistics operation that happens to deal in cement.
-
-That distinction matters.
-
-<span class="tg">#Entrepreneurship #CementIndustry #BusinessThinking #Logistics</span></div>
-  <div class="le"><span>👍 Like</span><span>💬 Comment</span><span>🔄 Repost</span><span>📤 Send</span></div>
-</div>
-<div class="vn"><b>Strategy:</b> Text-only. Strong narrative hook reframes the business. Positions Riyara as sophisticated, not just a "trader."</div>
-
-<!-- POST 13 -->
-<div class="sh">Post 13 — Google Business Profile <span>Apr 18 · GBP Update</span></div>
-<span class="pt t-gbp">Google Business</span>
-<div class="mc">
-  <div class="gc">
-    <div class="gb"><div class="gi">R</div><div><h4>Riyara Trading</h4><p>Cement Supplier · Chennai, TN</p></div></div>
-    <div class="gt">Whether your project needs OPC 43, OPC 53, PPC, or Slag Cement — Riyara supplies all grades from authorised sources. Single-window solution for cement procurement in Tamil Nadu.</div>
-    <div class="gimg" style="background:var(--rdd);color:#fff">
-      <div style="text-align:center">
-        <div style="font-size:18px;font-weight:300;margin-bottom:8px">All grades. One supplier.</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;max-width:200px">
-          <div style="background:var(--r);padding:8px;border-radius:4px;font-size:11px;font-weight:700">OPC 43</div>
-          <div style="background:var(--r);padding:8px;border-radius:4px;font-size:11px;font-weight:700">OPC 53</div>
-          <div style="background:var(--r);padding:8px;border-radius:4px;font-size:11px;font-weight:700">PPC</div>
-          <div style="background:var(--r);padding:8px;border-radius:4px;font-size:11px;font-weight:700">SLAG</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ========== WEEK 4 ========== -->
-<div style="background:var(--rdd);color:#fff;text-align:center;padding:10px;border-radius:8px;margin:2rem 0 1rem;font-size:12px;font-weight:700;letter-spacing:2px">WEEK 4 — APRIL 21–25</div>
-
-<!-- POST 14 -->
-<div class="sh">Post 14 — LinkedIn Company <span>Apr 21 · Bulk Cement Explained #3</span></div>
-<span class="pt t-li">LinkedIn</span>
-<div class="mc">
-  <div class="lh"><div class="la">R</div><div class="lm"><h4>Riyara Trading</h4><p>820 followers · 1h</p></div></div>
-  <div class="lb"><span class="h">For small residential work, bagged cement makes sense.</span>
-
-But for projects consuming 100+ tonnes a month, bulk is the only practical choice.
-
-→ Zero packaging waste
-→ Faster loading and unloading (pneumatic, not manual)
-→ Reduced on-site storage space needed
-→ Lower handling losses
-→ Consistent quality (sealed from plant to silo)
-
-The shift from bags to bulk isn't just about cost. It's about efficiency, speed, and quality control.
-
-<span class="tg">#BulkCement #Construction #Efficiency #ConstructionIndia</span></div>
   <div class="cs">
-    <div class="sl" style="background:var(--rdd);color:#fff">
-      <p style="font-size:9px;letter-spacing:2px;opacity:.6;margin-bottom:8px">BULK CEMENT EXPLAINED #3</p>
-      <h2>Bulk vs Bagged</h2>
-      <p style="opacity:.8">Why large projects always choose bulk</p>
+    <div class="sl" style="background:#0D3B66;color:#fff">
+      <div class="dr"><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div></div>
+      <p style="font-size:9px;letter-spacing:2px;opacity:.6;margin-bottom:6px">STEEL 101</p>
+      <h2 style="font-size:18px">TMT Bar Sizes: 8mm to 32mm — Which One for Which Job?</h2>
       <div class="sn" style="color:rgba(255,255,255,.3)">1/5</div>
     </div>
-    <div class="sl" style="background:#fff">
-      <div style="width:90%;display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--bdr);border-radius:8px;overflow:hidden;font-size:12px">
-        <div style="background:var(--rll);padding:10px;font-weight:700;color:var(--rd);border-bottom:1px solid var(--bdr)">Bagged</div>
-        <div style="background:var(--rl);padding:10px;font-weight:700;color:var(--r);border-bottom:1px solid var(--bdr)">Bulk ✓</div>
-        <div style="padding:8px;border-bottom:1px solid var(--bdr);color:var(--sub)">Manual handling</div>
-        <div style="padding:8px;border-bottom:1px solid var(--bdr);background:var(--rl);color:var(--rd)">Pneumatic</div>
-        <div style="padding:8px;border-bottom:1px solid var(--bdr);color:var(--sub)">Wastage risk</div>
-        <div style="padding:8px;border-bottom:1px solid var(--bdr);background:var(--rl);color:var(--rd)">Zero wastage</div>
-        <div style="padding:8px;border-bottom:1px solid var(--bdr);color:var(--sub)">Storage needed</div>
-        <div style="padding:8px;border-bottom:1px solid var(--bdr);background:var(--rl);color:var(--rd)">Direct to silo</div>
-        <div style="padding:8px;color:var(--sub)">Quality varies</div>
-        <div style="padding:8px;background:var(--rl);color:var(--rd)">Sealed quality</div>
-      </div>
-      <div class="sn">3/5</div>
+    <div class="sl" style="background:#E3F2FD">
+      <div style="width:48px;height:48px;border-radius:50%;background:#1565C0;display:flex;align-items:center;justify-content:center;margin-bottom:10px;color:#fff;font-size:16px;font-weight:800">2</div>
+      <h3 style="color:#0D3B66;font-size:14px">Key Point</h3>
+      <p style="color:var(--sub);font-size:11px;max-width:80%">Carousel (5 slides): Title → 8-10mm (slabs, plastering) → 12-16mm (beams, columns) → 20-25mm (heavy ...</p>
+      <div class="sn">2/5</div>
     </div>
   </div>
-  <div class="sh2">← Swipe for full comparison →</div>
-  <div class="le"><span>👍 Like</span><span>💬 Comment</span><span>🔄 Repost</span><span>📤 Send</span></div>
-</div>
+  <div class="sh2">← Swipe to preview slides →</div>
+  <div class="id"><div class="idt a"></div><div class="idt"></div><div class="idt"></div><div class="idt"></div><div class="idt"></div></div>
+  <div class="iact"><span>♡</span><span>💬</span><span>📤</span><span style="margin-left:auto">🔖</span></div>
+  <div class="ic"><b>riyaratrading</b> TMT bars come in different sizes for different structural needs. Swipe to learn. ➡️
 
-<!-- POST 15 -->
-<div class="sh">Post 15 — Instagram + Facebook Reel <span>Apr 22 · Fleet in Motion</span></div>
-<span class="pt t-ig">Instagram Reel</span> <span class="pt t-fb">Facebook</span>
-<div class="mc">
-  <div class="ih"><div class="ia">R</div><span class="iu">riyaratrading</span></div>
-  <div class="rm" style="background:linear-gradient(180deg,#2a1a1a 0%,var(--rd) 40%,var(--rdd) 70%,#1a1a1a 100%)">
-    <div style="position:absolute;top:28%;left:50%;transform:translate(-50%,-50%);opacity:.08;font-size:90px;letter-spacing:8px">🚛🚛🚛</div>
-    <div class="pb"></div>
-    <div class="ri"><div>❤️<span>3.2K</span></div><div>💬<span>97</span></div><div>📤</div><div>🔖</div></div>
-    <div class="ro">When the Fleet Moves</div>
-    <div class="rs">20+ bulkers. Multiple plants. One mission. 💪</div>
-    <div style="margin-top:6px;font-size:9px;opacity:.5">#Riyara #FleetLife #CementLogistics</div>
-  </div>
-  <div class="ic"><b>riyaratrading</b> 20+ bulkers. Multiple plants. One mission: uninterrupted supply. ⏵ <span style="color:#0A66C2">#Riyara #FleetLife #TamilNadu #BulkCement</span></div>
-</div>
-<div class="vn"><b>Reel:</b> 15 sec. Drone/wide shot of trucks lined up at yard. Quick cuts of different trucks departing. Energetic instrumental audio. Subtle scale flex — no "biggest" or "best" claims.</div>
+Save this if you work in construction.
 
-<!-- POST 16 -->
-<div class="sh">Post 16 — LinkedIn Company <span>Apr 23 · Inside Riyara Operations #3</span></div>
+#TMTBars #Steel #ConstructionTips #BuildingMaterials...</div>
+</div>
+<div class="sh agg">Post 16 — LinkedIn (Company) <span>Apr 23 · Industry Education</span><span class="lt lag">Aggregates</span></div>
 <span class="pt t-li">LinkedIn</span>
 <div class="mc">
-  <div class="lh"><div class="la">R</div><div class="lm"><h4>Riyara Trading</h4><p>820 followers · 4h</p></div></div>
-  <div class="lb"><span class="h">A single bulk cement delivery involves:</span>
-
-→ The cement manufacturer (plant scheduling)
-→ The logistics team (vehicle allocation)
-→ The client's project team (site readiness)
-→ The driver (route and timing)
-
-Get any one of these wrong, and the delivery fails.
-
-Coordination isn't glamorous work. But it's the work that matters.
-
-<span class="tg">#SupplyChain #Logistics #ProjectManagement #CementDelivery</span></div>
-  <div style="aspect-ratio:16/9;background:#fff;display:flex;align-items:center;justify-content:center;padding:1.5rem;border-top:1px solid var(--bdr)">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:380px">
-      <div style="background:var(--r);color:#fff;padding:14px;border-radius:8px;text-align:center;font-size:12px"><div style="font-size:20px;margin-bottom:4px">🏭</div><b>Manufacturer</b><br><span style="opacity:.8;font-size:11px">Plant scheduling</span></div>
-      <div style="background:var(--rd);color:#fff;padding:14px;border-radius:8px;text-align:center;font-size:12px"><div style="font-size:20px;margin-bottom:4px">🚛</div><b>Logistics Team</b><br><span style="opacity:.8;font-size:11px">Vehicle allocation</span></div>
-      <div style="background:var(--rdd);color:#fff;padding:14px;border-radius:8px;text-align:center;font-size:12px"><div style="font-size:20px;margin-bottom:4px">🏗️</div><b>Client Team</b><br><span style="opacity:.8;font-size:11px">Site readiness</span></div>
-      <div style="background:#333;color:#fff;padding:14px;border-radius:8px;text-align:center;font-size:12px"><div style="font-size:20px;margin-bottom:4px">👤</div><b>Driver</b><br><span style="opacity:.8;font-size:11px">Route & timing</span></div>
+  <div class="lh"><div class="la">R</div><div class="lm"><h4>Riyara Trading</h4><p>Building Materials · Chennai</p></div></div>
+  <div class="lb"><span class="h">Cement gets the attention. Steel gets the respect. But aggregates? They’re the silent majority.</span></div>
+  <div class="cs">
+    <div class="sl" style="background:#1B4332;color:#fff">
+      <div class="dr"><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div></div>
+      <p style="font-size:9px;letter-spacing:2px;opacity:.6;margin-bottom:6px">BUILDING MATERIALS SPOTLIGHT</p>
+      <h2 style="font-size:18px">The Unsung Material: Why Aggregates Make or Break a Project</h2>
+      <div class="sn" style="color:rgba(255,255,255,.3)">1/5</div>
+    </div>
+    <div class="sl" style="background:#E8F5E9">
+      <div style="width:48px;height:48px;border-radius:50%;background:#2E7D32;display:flex;align-items:center;justify-content:center;margin-bottom:10px;color:#fff;font-size:16px;font-weight:800">2</div>
+      <h3 style="color:#1B4332;font-size:14px">Key Point</h3>
+      <p style="color:var(--sub);font-size:11px;max-width:80%">Carousel: Title → aggregate types with real photos → sizes chart → applications → Riyara network....</p>
+      <div class="sn">2/5</div>
     </div>
   </div>
+  <div class="sh2">← Swipe to preview slides →</div>
   <div class="le"><span>👍 Like</span><span>💬 Comment</span><span>🔄 Repost</span><span>📤 Send</span></div>
 </div>
-
-<!-- POST 17 -->
-<div class="sh">Post 17 — LinkedIn Personal <span>Apr 24 · Industry Insight · On-Ground Realities</span></div>
+<div class="vn"><b>Visual note:</b> Carousel: Title → aggregate types with real photos → sizes chart → applications → Riyara network.</div>
+<div class="week-bar" style="background:var(--rd)">WEEK 5 (PARTIAL)</div>
+<div class="sh ">Post 17 — LinkedIn (Saravanan) <span>Apr 24 · Founder POV</span><span class="lt lc">Cement</span></div>
 <span class="pt t-li">LinkedIn · Saravanan Udayar</span>
 <div class="mc">
-  <div class="lh"><div class="la f">SU</div><div class="lm"><h4>Saravanan Udayar</h4><p>Founder, Riyara Trading · 6h</p></div></div>
-  <div class="lb"><span class="h">A question I get asked often: "Why not just buy directly from the plant?"</span>
+  <div class="lh"><div class="la f">SU</div><div class="lm"><h4>Saravanan Udayar</h4><p>Founder, Riyara Trading</p></div></div>
+  <div class="lb"><span class="h">A fair question. Here’s what most don’t realise:</span>
 
-It's a fair question. If cement comes from a plant, why involve a distributor?
+1. Plants have min order + scheduling constraints
+2. Different grades = different plants
+3. Disruptions need multi-state backup
+4. Someone must own end-to-end logistics
 
-Here's what most people don't realise:
+A distributor absorbs complexity so the project team can build.
 
-1. Plants have minimum order requirements and scheduling constraints
-2. Different projects need different grades — often from different plants
-3. Supply disruptions require backup sources across multiple states
-4. Someone needs to own the logistics end-to-end
-
-A distributor doesn't just "pass along" cement. A distributor absorbs complexity so the project team can focus on building.
-
-That's the value. It's not always visible, but it's always there.
-
-<span class="tg">#CementIndustry #Distribution #SupplyChain #Construction</span></div>
+<span class="tg">#Distribution #SupplyChain #Construction</span></div>
   <div class="le"><span>👍 Like</span><span>💬 Comment</span><span>🔄 Repost</span><span>📤 Send</span></div>
 </div>
-<div class="vn"><b>Strategy:</b> Text-only. Educational — sells the distributor role to the industry, not Riyara specifically. Addresses a common misconception.</div>
-
-<!-- POST 18 -->
-<div class="sh">Post 18 — Google Business Profile <span>Apr 25 · GBP Update</span></div>
+<div class="sh agg">Post 18 — Google Business Profile <span>Apr 25 · GBP Update</span><span class="lt lag">Aggregates</span></div>
 <span class="pt t-gbp">Google Business</span>
 <div class="mc">
   <div class="gc">
-    <div class="gb"><div class="gi">R</div><div><h4>Riyara Trading</h4><p>Cement Supplier · Chennai, TN</p></div></div>
-    <div class="gt">Over 11 years of consistent service to industries, contractors, and concrete manufacturers across Tamil Nadu. Riyara Trading — your trusted partner for bulk cement procurement and distribution.</div>
-    <div class="gimg" style="background:var(--rdd);color:#fff">
+    <div class="gb"><div class="gi">R</div><div><h4>Riyara Trading</h4><p>Building Materials · Chennai, TN</p></div></div>
+    <div class="gt">Riyara supplies the complete range of construction aggregates: Blue Metal (6-40mm), M-Sand, River Sand, Boulders, GSB. Own crushing units + fleet in Chennai.</div>
+    <div class="gimg" style="background:#1B4332;color:#fff">
       <div style="text-align:center">
-        <div class="dr"><div class="dm g"></div><div class="dm g"></div><div class="dm" style="background:rgba(255,255,255,.35)"></div><div class="dm g"></div><div class="dm g"></div></div>
-        <div style="font-size:11px;letter-spacing:3px;opacity:.5;margin-top:8px">ESTABLISHED</div>
-        <div style="font-size:40px;font-weight:200;margin:4px 0">2014</div>
-        <div style="font-size:12px;opacity:.7">11+ years of uninterrupted service</div>
-        <div class="lgo" style="color:rgba(255,255,255,.6);margin-top:12px">R I Y A R A</div>
+        <div class="dr"><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div></div>
+        <div style="font-size:14px;font-weight:600;margin-top:6px">Blue Metal, M-Sand, River Sand — All Available</div>
+        <div class="lgo" style="color:rgba(255,255,255,.5);margin-top:10px">R I Y A R A</div>
       </div>
     </div>
   </div>
 </div>
-<div class="vn"><b>GBP note:</b> Respond to ALL pending reviews this week. End-of-month review sweep.</div>
-
-<!-- ========== WEEK 5 (PARTIAL) ========== -->
-<div style="background:var(--rdd);color:#fff;text-align:center;padding:10px;border-radius:8px;margin:2rem 0 1rem;font-size:12px;font-weight:700;letter-spacing:2px">WEEK 5 — APRIL 28–30</div>
-
-<!-- POST 19 -->
-<div class="sh">Post 19 — LinkedIn Company <span>Apr 28 · Brand Story · The Riyara Approach</span></div>
+<div class="sh all">Post 19 — LinkedIn (Company) <span>Apr 28 · Brand Story</span><span class="lt lall">All Lines</span></div>
 <span class="pt t-li">LinkedIn</span>
 <div class="mc">
-  <div class="lh"><div class="la">R</div><div class="lm"><h4>Riyara Trading</h4><p>820 followers · 5h</p></div></div>
-  <div class="lb"><span class="h">When Riyara was founded in 2014, we chose a simple guiding principle:</span>
-
-Earn Trust with Business.
-
-Not with advertising. Not with claims. With consistent action.
-
-Every delivery made on time. Every grade supplied as promised. Every relationship built on reliability.
-
-11 years and thousands of deliveries later, that principle hasn't changed.
-
-Because in this industry, your reputation is built one truckload at a time.
-
-<span class="tg">#Riyara #Trust #CementDistribution #TamilNadu</span></div>
-  <div style="aspect-ratio:16/9;background:var(--rdd);display:flex;align-items:center;justify-content:center;color:#fff">
-    <div style="text-align:center">
-      <div class="dr"><div class="dm g"></div><div class="dm g"></div><div class="dm" style="background:rgba(255,255,255,.3)"></div><div class="dm g"></div><div class="dm g"></div></div>
-      <div style="margin-top:14px;font-size:11px;letter-spacing:3px;opacity:.5">EST. 2014</div>
-      <div style="font-size:26px;font-weight:300;margin:10px 0;line-height:1.3;font-style:italic">"Earn Trust<br>with Business"</div>
-      <div style="margin-top:14px;font-size:10px;letter-spacing:5px;opacity:.6">R I Y A R A</div>
+  <div class="lh"><div class="la">R</div><div class="lm"><h4>Riyara Trading</h4><p>Building Materials · Chennai</p></div></div>
+  <div class="lb"><span class="h">Founded 2014. One principle: Earn Trust with Business.</span></div>
+  <div style="aspect-ratio:16/9;background:var(--rdd);display:flex;align-items:center;justify-content:center;color:#fff;padding:1.5rem;text-align:center">
+    <div>
+      <div class="dr"><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div></div>
+      <div style="font-size:16px;font-weight:600;margin-top:8px">Earn Trust with Business — Across Cement, Steel, and Aggregates</div>
+      <div style="font-size:11px;opacity:.7;margin-top:4px">Branded card: “Earn Trust with Business” tagline + three product icons. Diamond </div>
+      <div class="lgo" style="color:rgba(255,255,255,.6);margin-top:12px">R I Y A R A</div>
     </div>
   </div>
   <div class="le"><span>👍 Like</span><span>💬 Comment</span><span>🔄 Repost</span><span>📤 Send</span></div>
 </div>
+<div class="sh ">Post 20 — Instagram + Facebook <span>Apr 29 · Reel</span><span class="lt lc">Cement</span></div>
+<span class="pt t-ig">Instagram</span> <span class="pt t-fb">Facebook</span>
+<div class="mc">
+  <div class="ih"><div class="ia">R</div><span class="iu">riyaratrading</span></div>
+  <div class="rm" style="background:linear-gradient(180deg,var(--rdd) 0%,#1a1a1a 50%,var(--rdd) 100%)">
+    <div class="pb"></div>
+    <div class="ri"><div>❤️<span>2.8K</span></div><div>💬<span>94</span></div><div>📤</div><div>🔖</div></div>
+    <div class="ro">When the Fleet Moves — A Day at Riyara</div>
+    <div class="rs">20+ bulkers. Multiple plants. One mission: uninterrupted supply. ⼗
 
-<!-- POST 20 -->
-<div class="sh">Post 20 — Instagram + Facebook Carousel <span>Apr 29 · From Plant to Project</span></div>
+#Riyara #Cem...</div>
+  </div>
+  <div class="ic"><b>riyaratrading</b> 20+ bulkers. Multiple plants. One mission: uninterrupted supply. ⼗
+
+#Riyara #CementLogistics #FleetLife #TamilNadu...</div>
+</div>
+<div class="vn"><b>Visual note:</b> 15-sec Reel: Wide/drone shot of trucks lined up at yard. Quick cuts of different trucks departing. Energetic instrumental.</div>
+<div class="sh all">Post 21 — LinkedIn (Saravanan) <span>Apr 30 · Month-End Reflection</span><span class="lt lall">All Lines</span></div>
+<span class="pt t-li">LinkedIn · Saravanan Udayar</span>
+<div class="mc">
+  <div class="lh"><div class="la f">SU</div><div class="lm"><h4>Saravanan Udayar</h4><p>Founder, Riyara Trading</p></div></div>
+  <div class="lb"><span class="h">1. The building materials supply chain in South India is evolving. Clients want fewer vendors, more reliability.</span>
+
+2. Consistency beats everything. Clients remember the one missed delivery.
+
+3. There’s a huge gap in how our industry communicates.
+
+More in May — deeper dives into steel and aggregates.
+
+<span class="tg">#BuildingMaterials #CementIndustry #Entrepreneurship</span></div>
+  <div class="le"><span>👍 Like</span><span>💬 Comment</span><span>🔄 Repost</span><span>📤 Send</span></div>
+</div>
+<div style="background:#2a0a0a;color:#fff;text-align:center;padding:14px;border-radius:8px;margin:2rem 0 1rem">
+  <div class="dr"><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div></div>
+  <div style="font-size:14px;font-weight:700;letter-spacing:2px;margin-top:6px">MAY 2026 — DEEPENING</div>
+  <div style="font-size:10px;opacity:.6;margin-top:2px">21 posts</div>
+</div>
+<div class="week-bar" style="background:var(--rd)">WEEK 1</div>
+<div class="sh ">Post 1 — LinkedIn (Company) <span>May 5 · Industry Education</span><span class="lt lc">Cement</span></div>
+<span class="pt t-li">LinkedIn</span>
+<div class="mc">
+  <div class="lh"><div class="la">R</div><div class="lm"><h4>Riyara Trading</h4><p>Building Materials · Chennai</p></div></div>
+  <div class="lb"><span class="h">You’ve seen them on highways — large cylindrical tanker trucks carrying cement in powder form.</span></div>
+  <div class="cs">
+    <div class="sl" style="background:var(--rdd);color:#fff">
+      <div class="dr"><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div></div>
+      <p style="font-size:9px;letter-spacing:2px;opacity:.6;margin-bottom:6px">BULK CEMENT EXPLAINED #3</p>
+      <h2 style="font-size:18px">What is a Cement Bulker? A Deep Dive into the Vehicle That Powers Construction</h2>
+      <div class="sn" style="color:rgba(255,255,255,.3)">1/5</div>
+    </div>
+    <div class="sl" style="background:var(--rl)">
+      <div style="width:48px;height:48px;border-radius:50%;background:var(--r);display:flex;align-items:center;justify-content:center;margin-bottom:10px;color:#fff;font-size:16px;font-weight:800">2</div>
+      <h3 style="color:var(--rdd);font-size:14px">Key Point</h3>
+      <p style="color:var(--sub);font-size:11px;max-width:80%">Carousel (6 slides): Title → bulker anatomy diagram → loading process → transit tracking → unloading...</p>
+      <div class="sn">2/5</div>
+    </div>
+  </div>
+  <div class="sh2">← Swipe to preview slides →</div>
+  <div class="le"><span>👍 Like</span><span>💬 Comment</span><span>🔄 Repost</span><span>📤 Send</span></div>
+</div>
+<div class="vn"><b>Visual note:</b> Carousel (6 slides): Title → bulker anatomy diagram → loading process → transit tracking → unloading mechanism → V-shaped tanker comparison. Use real fleet photos where available.</div>
+<div class="sh ">Post 2 — Instagram + Facebook <span>May 6 · Reel</span><span class="lt lc">Cement</span></div>
+<span class="pt t-ig">Instagram</span> <span class="pt t-fb">Facebook</span>
+<div class="mc">
+  <div class="ih"><div class="ia">R</div><span class="iu">riyaratrading</span></div>
+  <div class="rm" style="background:linear-gradient(180deg,var(--rdd) 0%,#1a1a1a 50%,var(--rdd) 100%)">
+    <div class="pb"></div>
+    <div class="ri"><div>❤️<span>2.8K</span></div><div>💬<span>94</span></div><div>📤</div><div>🔖</div></div>
+    <div class="ro">POV: Riding with a Cement Bulker at 5 AM</div>
+    <div class="rs">The day starts before dawn. ⼗
+
+This is what cement logistics looks like from ins...</div>
+  </div>
+  <div class="ic"><b>riyaratrading</b> The day starts before dawn. ⼗
+
+This is what cement logistics looks like from inside the truck.
+
+#CementLogistics #POV #TruckLife #Riyara #EarlyMorning...</div>
+</div>
+<div class="vn"><b>Visual note:</b> 15-sec Reel: Pre-dawn truck start → dashboard view on highway → arriving at plant → loading begins. Raw, authentic feel. Phone camera OK. Ambient sound + subtle music.</div>
+<div class="sh ">Post 3 — LinkedIn (Saravanan) <span>May 7 · Founder POV</span><span class="lt lc">Cement</span></div>
+<span class="pt t-li">LinkedIn · Saravanan Udayar</span>
+<div class="mc">
+  <div class="lh"><div class="la f">SU</div><div class="lm"><h4>Saravanan Udayar</h4><p>Founder, Riyara Trading</p></div></div>
+  <div class="lb"><span class="h">I’ve lost count of how many times I’ve heard this:</span>
+
+“We found a cheaper supplier.”
+
+Three months later, the same client calls back. Why?
+
+Because the cheaper supplier couldn’t deliver on a Sunday. Couldn’t arrange a backup when the plant shut down. Couldn’t coordinate across state borders when demand spiked.
+
+Pricing wins the first order. Execution wins the relationship.
+
+In 11 years, we’ve never competed on price alone. We compete on the certainty of delivery.
+
+<span class="tg">#CementIndustry #Logistics #Business #Execution</span></div>
+  <div class="le"><span>👍 Like</span><span>💬 Comment</span><span>🔄 Repost</span><span>📤 Send</span></div>
+</div>
+<div class="sh ">Post 4 — Google Business Profile <span>May 9 · GBP Update</span><span class="lt lc">Cement</span></div>
+<span class="pt t-gbp">Google Business</span>
+<div class="mc">
+  <div class="gc">
+    <div class="gb"><div class="gi">R</div><div><h4>Riyara Trading</h4><p>Building Materials · Chennai, TN</p></div></div>
+    <div class="gt">Riyara’s own fleet of 20+ cement bulkers and V-shaped tanker trucks ensures prompt delivery across Tamil Nadu. No dependency on third-party logistics for your critical supply.</div>
+    <div class="gimg" style="background:var(--rdd);color:#fff">
+      <div style="text-align:center">
+        <div class="dr"><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div></div>
+        <div style="font-size:14px;font-weight:600;margin-top:6px">20+ Owned Cement Bulkers — The Riyara Fleet</div>
+        <div class="lgo" style="color:rgba(255,255,255,.5);margin-top:10px">R I Y A R A</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="week-bar" style="background:var(--rd)">WEEK 2</div>
+<div class="sh steel">Post 5 — LinkedIn (Company) <span>May 12 · Industry Education</span><span class="lt ls">Steel</span></div>
+<span class="pt t-li">LinkedIn</span>
+<div class="mc">
+  <div class="lh"><div class="la">R</div><div class="lm"><h4>Riyara Trading</h4><p>Building Materials · Chennai</p></div></div>
+  <div class="lb"><span class="h">When someone says “12mm TMT bar,” they’re only telling you the size. The grade is what determines strength.</span></div>
+  <div class="cs">
+    <div class="sl" style="background:#0D3B66;color:#fff">
+      <div class="dr"><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div></div>
+      <p style="font-size:9px;letter-spacing:2px;opacity:.6;margin-bottom:6px">STEEL DEEP DIVE #1</p>
+      <h2 style="font-size:18px">Fe415 vs Fe500 vs Fe550: What TMT Bar Grades Actually Mean</h2>
+      <div class="sn" style="color:rgba(255,255,255,.3)">1/5</div>
+    </div>
+    <div class="sl" style="background:#E3F2FD">
+      <div style="width:48px;height:48px;border-radius:50%;background:#1565C0;display:flex;align-items:center;justify-content:center;margin-bottom:10px;color:#fff;font-size:16px;font-weight:800">2</div>
+      <h3 style="color:#0D3B66;font-size:14px">Key Point</h3>
+      <p style="color:var(--sub);font-size:11px;max-width:80%">Carousel: Title → Fe415 with use cases → Fe500 with use cases → Fe550 with use cases → grade selecti...</p>
+      <div class="sn">2/5</div>
+    </div>
+  </div>
+  <div class="sh2">← Swipe to preview slides →</div>
+  <div class="le"><span>👍 Like</span><span>💬 Comment</span><span>🔄 Repost</span><span>📤 Send</span></div>
+</div>
+<div class="sh steel">Post 6 — Instagram + Facebook <span>May 13 · Carousel</span><span class="lt ls">Steel</span></div>
+<span class="pt t-ig">Instagram</span> <span class="pt t-fb">Facebook</span>
+<div class="mc">
+  <div class="ih"><div class="ia">R</div><span class="iu">riyaratrading</span></div>
+  <div class="cs">
+    <div class="sl" style="background:#0D3B66;color:#fff">
+      <div class="dr"><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div></div>
+      <p style="font-size:9px;letter-spacing:2px;opacity:.6;margin-bottom:6px">STEEL 101</p>
+      <h2 style="font-size:18px">TATA vs VSP vs SAIL — Know Your Steel Brands</h2>
+      <div class="sn" style="color:rgba(255,255,255,.3)">1/5</div>
+    </div>
+    <div class="sl" style="background:#E3F2FD">
+      <div style="width:48px;height:48px;border-radius:50%;background:#1565C0;display:flex;align-items:center;justify-content:center;margin-bottom:10px;color:#fff;font-size:16px;font-weight:800">2</div>
+      <h3 style="color:#0D3B66;font-size:14px">Key Point</h3>
+      <p style="color:var(--sub);font-size:11px;max-width:80%">Carousel (5 slides): Title → TATA Steel (premium, widest range) → VSP Vizag Steel (value, strong in ...</p>
+      <div class="sn">2/5</div>
+    </div>
+  </div>
+  <div class="sh2">← Swipe to preview slides →</div>
+  <div class="id"><div class="idt a"></div><div class="idt"></div><div class="idt"></div><div class="idt"></div><div class="idt"></div></div>
+  <div class="iact"><span>♡</span><span>💬</span><span>📤</span><span style="margin-left:auto">🔖</span></div>
+  <div class="ic"><b>riyaratrading</b> India’s three biggest TMT bar manufacturers. But what makes each one different?
+
+Swipe to find out. ➡️
+
+#TATA #VSP #SAIL #TMTBars #Steel #ConstructionIndia...</div>
+</div>
+<div class="sh steel">Post 7 — LinkedIn (Saravanan) <span>May 14 · Industry Insight</span><span class="lt ls">Steel</span></div>
+<span class="pt t-li">LinkedIn · Saravanan Udayar</span>
+<div class="mc">
+  <div class="lh"><div class="la f">SU</div><div class="lm"><h4>Saravanan Udayar</h4><p>Founder, Riyara Trading</p></div></div>
+  <div class="lb"><span class="h">It’s not “what’s the price?”</span>
+
+It’s: “Can you show me the test certificate?”
+
+Every batch of TMT bars comes with a mill test certificate that confirms the grade, chemical composition, and mechanical properties.
+
+But how many buyers actually ask for it? Very few.
+
+In a market where re-rolling and re-branding exist, the test certificate is your only guarantee that what’s delivered is what was promised.
+
+A responsible supplier provides it without being asked.
+
+<span class="tg">#Steel #QualityControl #Construction #TMTBars</span></div>
+  <div class="le"><span>👍 Like</span><span>💬 Comment</span><span>🔄 Repost</span><span>📤 Send</span></div>
+</div>
+<div class="sh steel">Post 8 — Google Business Profile <span>May 16 · GBP Update</span><span class="lt ls">Steel</span></div>
+<span class="pt t-gbp">Google Business</span>
+<div class="mc">
+  <div class="gc">
+    <div class="gb"><div class="gi">R</div><div><h4>Riyara Trading</h4><p>Building Materials · Chennai, TN</p></div></div>
+    <div class="gt">Riyara supplies TMT bars in all grades — Fe415, Fe500, and Fe550 — from TATA, VSP, and SAIL. Sizes from 8mm to 32mm. Quality certified.</div>
+    <div class="gimg" style="background:#0D3B66;color:#fff">
+      <div style="text-align:center">
+        <div class="dr"><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div></div>
+        <div style="font-size:14px;font-weight:600;margin-top:6px">All TMT Bar Grades: Fe415, Fe500, Fe550</div>
+        <div class="lgo" style="color:rgba(255,255,255,.5);margin-top:10px">R I Y A R A</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="week-bar" style="background:var(--rd)">WEEK 3</div>
+<div class="sh ">Post 9 — LinkedIn (Company) <span>May 19 · Industry Education</span><span class="lt lc">Cement</span></div>
+<span class="pt t-li">LinkedIn</span>
+<div class="mc">
+  <div class="lh"><div class="la">R</div><div class="lm"><h4>Riyara Trading</h4><p>Building Materials · Chennai</p></div></div>
+  <div class="lb"><span class="h">Every year, between June and September, the cement supply chain in South India faces its toughest test.</span></div>
+  <div class="cs">
+    <div class="sl" style="background:var(--rdd);color:#fff">
+      <div class="dr"><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div></div>
+      <p style="font-size:9px;letter-spacing:2px;opacity:.6;margin-bottom:6px">SEASONAL INSIGHTS</p>
+      <h2 style="font-size:18px">How Monsoon Season Impacts Cement Supply Chains</h2>
+      <div class="sn" style="color:rgba(255,255,255,.3)">1/5</div>
+    </div>
+    <div class="sl" style="background:var(--rl)">
+      <div style="width:48px;height:48px;border-radius:50%;background:var(--r);display:flex;align-items:center;justify-content:center;margin-bottom:10px;color:#fff;font-size:16px;font-weight:800">2</div>
+      <h3 style="color:var(--rdd);font-size:14px">Key Point</h3>
+      <p style="color:var(--sub);font-size:11px;max-width:80%">Carousel: Title → 5 monsoon challenges (one per slide with icon) → how Riyara prepares → Riyara logo...</p>
+      <div class="sn">2/5</div>
+    </div>
+  </div>
+  <div class="sh2">← Swipe to preview slides →</div>
+  <div class="le"><span>👍 Like</span><span>💬 Comment</span><span>🔄 Repost</span><span>📤 Send</span></div>
+</div>
+<div class="sh ">Post 10 — Instagram + Facebook <span>May 20 · Reel</span><span class="lt lc">Cement</span></div>
+<span class="pt t-ig">Instagram</span> <span class="pt t-fb">Facebook</span>
+<div class="mc">
+  <div class="ih"><div class="ia">R</div><span class="iu">riyaratrading</span></div>
+  <div class="rm" style="background:linear-gradient(180deg,var(--rdd) 0%,#1a1a1a 50%,var(--rdd) 100%)">
+    <div class="pb"></div>
+    <div class="ri"><div>❤️<span>2.8K</span></div><div>💬<span>94</span></div><div>📤</div><div>🔖</div></div>
+    <div class="ro">Rain or Shine, the Fleet Keeps Moving</div>
+    <div class="rs">Monsoon doesn’t stop construction. So we don’t stop delivering. ⼗
+
+#Monsoon #Cem...</div>
+  </div>
+  <div class="ic"><b>riyaratrading</b> Monsoon doesn’t stop construction. So we don’t stop delivering. ⼗
+
+#Monsoon #CementLogistics #Riyara #TamilNadu #RainOrShine...</div>
+</div>
+<div class="vn"><b>Visual note:</b> 15-sec Reel: Bulker driving through rain → wet loading bay → delivery at site despite weather. Raw, gritty footage. Shows operational resilience. Dramatic audio.</div>
+<div class="sh agg">Post 11 — LinkedIn (Company) <span>May 21 · Industry Education</span><span class="lt lag">Aggregates</span></div>
+<span class="pt t-li">LinkedIn</span>
+<div class="mc">
+  <div class="lh"><div class="la">R</div><div class="lm"><h4>Riyara Trading</h4><p>Building Materials · Chennai</p></div></div>
+  <div class="lb"><span class="h">Ten years ago, river sand was the default. Today, M-Sand (manufactured sand) is rapidly replacing it across Tamil Nadu.</span></div>
+  <div class="cs">
+    <div class="sl" style="background:#1B4332;color:#fff">
+      <div class="dr"><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div></div>
+      <p style="font-size:9px;letter-spacing:2px;opacity:.6;margin-bottom:6px">BUILDING MATERIALS SPOTLIGHT</p>
+      <h2 style="font-size:18px">M-Sand vs River Sand: The Shift Happening in Tamil Nadu Construction</h2>
+      <div class="sn" style="color:rgba(255,255,255,.3)">1/5</div>
+    </div>
+    <div class="sl" style="background:#E8F5E9">
+      <div style="width:48px;height:48px;border-radius:50%;background:#2E7D32;display:flex;align-items:center;justify-content:center;margin-bottom:10px;color:#fff;font-size:16px;font-weight:800">2</div>
+      <h3 style="color:#1B4332;font-size:14px">Key Point</h3>
+      <p style="color:var(--sub);font-size:11px;max-width:80%">Carousel: Title → M-Sand properties → River Sand properties → comparison table → when to use which →...</p>
+      <div class="sn">2/5</div>
+    </div>
+  </div>
+  <div class="sh2">← Swipe to preview slides →</div>
+  <div class="le"><span>👍 Like</span><span>💬 Comment</span><span>🔄 Repost</span><span>📤 Send</span></div>
+</div>
+<div class="sh agg">Post 12 — LinkedIn (Saravanan) <span>May 22 · Founder POV</span><span class="lt lag">Aggregates</span></div>
+<span class="pt t-li">LinkedIn · Saravanan Udayar</span>
+<div class="mc">
+  <div class="lh"><div class="la f">SU</div><div class="lm"><h4>Saravanan Udayar</h4><p>Founder, Riyara Trading</p></div></div>
+  <div class="lb"><span class="h">When we started Riyara, we were purely a cement company.</span>
+
+But our clients kept asking: “Can you also supply blue metal? M-Sand? River sand?”
+
+The aggregate market in Tamil Nadu is largely unorganised. Quality varies wildly. Delivery timelines are unpredictable. For clients managing large projects, dealing with multiple unorganised suppliers is a headache.
+
+So we built our own network — crushing units, dedicated vehicle fleets, quality-checked supply.
+
+Today, aggregates is a growing part of our business. Not because we planned it from day one. But because our clients needed it, and we listened.
+
+<span class="tg">#Aggregates #Entrepreneurship #BuildingMaterials #CustomerFirst</span></div>
+  <div class="le"><span>👍 Like</span><span>💬 Comment</span><span>🔄 Repost</span><span>📤 Send</span></div>
+</div>
+<div class="week-bar" style="background:var(--rd)">WEEK 4</div>
+<div class="sh ">Post 13 — Google Business Profile <span>May 23 · GBP Update</span><span class="lt lc">Cement</span></div>
+<span class="pt t-gbp">Google Business</span>
+<div class="mc">
+  <div class="gc">
+    <div class="gb"><div class="gi">R</div><div><h4>Riyara Trading</h4><p>Building Materials · Chennai, TN</p></div></div>
+    <div class="gt">Riyara’s multi-state sourcing network ensures uninterrupted cement supply even during monsoon season. Advance planning, diversified sources, and vehicle readiness keep your project on track.</div>
+    <div class="gimg" style="background:var(--rdd);color:#fff">
+      <div style="text-align:center">
+        <div class="dr"><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div></div>
+        <div style="font-size:14px;font-weight:600;margin-top:6px">Monsoon-Ready Cement Supply</div>
+        <div class="lgo" style="color:rgba(255,255,255,.5);margin-top:10px">R I Y A R A</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="sh ">Post 14 — LinkedIn (Company) <span>May 26 · Operations Breakdown</span><span class="lt lc">Cement</span></div>
+<span class="pt t-li">LinkedIn</span>
+<div class="mc">
+  <div class="lh"><div class="la">R</div><div class="lm"><h4>Riyara Trading</h4><p>Building Materials · Chennai</p></div></div>
+  <div class="lb"><span class="h">Between loading and delivery, there’s a step most people never think about: the weighbridge.</span></div>
+  <div class="cs">
+    <div class="sl" style="background:var(--rdd);color:#fff">
+      <div class="dr"><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div></div>
+      <p style="font-size:9px;letter-spacing:2px;opacity:.6;margin-bottom:6px">INSIDE RIYARA OPERATIONS #3</p>
+      <h2 style="font-size:18px">The Weighbridge: The Most Overlooked Step in Cement Logistics</h2>
+      <div class="sn" style="color:rgba(255,255,255,.3)">1/5</div>
+    </div>
+    <div class="sl" style="background:var(--rl)">
+      <div style="width:48px;height:48px;border-radius:50%;background:var(--r);display:flex;align-items:center;justify-content:center;margin-bottom:10px;color:#fff;font-size:16px;font-weight:800">2</div>
+      <h3 style="color:var(--rdd);font-size:14px">Key Point</h3>
+      <p style="color:var(--sub);font-size:11px;max-width:80%">Carousel: Title → weighbridge process diagram → why it matters (4 reasons as cards) → Riyara logo....</p>
+      <div class="sn">2/5</div>
+    </div>
+  </div>
+  <div class="sh2">← Swipe to preview slides →</div>
+  <div class="le"><span>👍 Like</span><span>💬 Comment</span><span>🔄 Repost</span><span>📤 Send</span></div>
+</div>
+<div class="sh agg">Post 15 — Instagram + Facebook <span>May 27 · Carousel</span><span class="lt lag">Aggregates</span></div>
+<span class="pt t-ig">Instagram</span> <span class="pt t-fb">Facebook</span>
+<div class="mc">
+  <div class="ih"><div class="ia">R</div><span class="iu">riyaratrading</span></div>
+  <div class="cs">
+    <div class="sl" style="background:#1B4332;color:#fff">
+      <div class="dr"><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div></div>
+      <p style="font-size:9px;letter-spacing:2px;opacity:.6;margin-bottom:6px">AGGREGATES 101</p>
+      <h2 style="font-size:18px">Types of Aggregates: A Visual Guide</h2>
+      <div class="sn" style="color:rgba(255,255,255,.3)">1/5</div>
+    </div>
+    <div class="sl" style="background:#E8F5E9">
+      <div style="width:48px;height:48px;border-radius:50%;background:#2E7D32;display:flex;align-items:center;justify-content:center;margin-bottom:10px;color:#fff;font-size:16px;font-weight:800">2</div>
+      <h3 style="color:#1B4332;font-size:14px">Key Point</h3>
+      <p style="color:var(--sub);font-size:11px;max-width:80%">Carousel (6 slides): Title → Blue Metal (with sizes) → M-Sand (fine vs wet) → River Sand → Boulders ...</p>
+      <div class="sn">2/5</div>
+    </div>
+  </div>
+  <div class="sh2">← Swipe to preview slides →</div>
+  <div class="id"><div class="idt a"></div><div class="idt"></div><div class="idt"></div><div class="idt"></div><div class="idt"></div></div>
+  <div class="iact"><span>♡</span><span>💬</span><span>📤</span><span style="margin-left:auto">🔖</span></div>
+  <div class="ic"><b>riyaratrading</b> Blue metal, M-Sand, river sand, boulders, GSB — not all aggregates are the same.
+
+Swipe to see the full range and where each one is used. ➡️
+
+#Aggregates #BlueMetal #MSand #ConstructionMaterials #Riya...</div>
+</div>
+<div class="sh steel">Post 16 — LinkedIn (Company) <span>May 28 · Industry Education</span><span class="lt ls">Steel</span></div>
+<span class="pt t-li">LinkedIn</span>
+<div class="mc">
+  <div class="lh"><div class="la">R</div><div class="lm"><h4>Riyara Trading</h4><p>Building Materials · Chennai</p></div></div>
+  <div class="lb"><span class="h">TMT stands for Thermo Mechanical Treatment. It’s the process that gives construction steel its unique properties.</span></div>
+  <div class="cs">
+    <div class="sl" style="background:#0D3B66;color:#fff">
+      <div class="dr"><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div></div>
+      <p style="font-size:9px;letter-spacing:2px;opacity:.6;margin-bottom:6px">STEEL DEEP DIVE #2</p>
+      <h2 style="font-size:18px">How TMT Bars Get Their Strength: The Thermo Mechanical Treatment Process</h2>
+      <div class="sn" style="color:rgba(255,255,255,.3)">1/5</div>
+    </div>
+    <div class="sl" style="background:#E3F2FD">
+      <div style="width:48px;height:48px;border-radius:50%;background:#1565C0;display:flex;align-items:center;justify-content:center;margin-bottom:10px;color:#fff;font-size:16px;font-weight:800">2</div>
+      <h3 style="color:#0D3B66;font-size:14px">Key Point</h3>
+      <p style="color:var(--sub);font-size:11px;max-width:80%">Carousel: Title → 4-step process illustration → cross-section showing dual structure → why it matter...</p>
+      <div class="sn">2/5</div>
+    </div>
+  </div>
+  <div class="sh2">← Swipe to preview slides →</div>
+  <div class="le"><span>👍 Like</span><span>💬 Comment</span><span>🔄 Repost</span><span>📤 Send</span></div>
+</div>
+<div class="week-bar" style="background:var(--rd)">WEEK 5 (PARTIAL)</div>
+<div class="sh ">Post 17 — LinkedIn (Saravanan) <span>May 29 · Industry Insight</span><span class="lt lc">Cement</span></div>
+<span class="pt t-li">LinkedIn · Saravanan Udayar</span>
+<div class="mc">
+  <div class="lh"><div class="la f">SU</div><div class="lm"><h4>Saravanan Udayar</h4><p>Founder, Riyara Trading</p></div></div>
+  <div class="lb"><span class="h">Cement has an expiry date. And most people don’t know this.</span>
+
+From the date of manufacture:
+→ 0-3 months: Full strength. Ideal usage window.
+→ 3-6 months: Slight strength reduction. Still usable.
+→ 6+ months: Significant degradation. Should be retested before use.
+
+This is why bulk cement (used immediately upon delivery) often outperforms bagged cement that’s been sitting in a warehouse for months.
+
+Freshness isn’t just for food. It matters in construction too.
+
+<span class="tg">#Cement #QualityControl #Construction #BuildingMaterials</span></div>
+  <div class="le"><span>👍 Like</span><span>💬 Comment</span><span>🔄 Repost</span><span>📤 Send</span></div>
+</div>
+<div class="sh agg">Post 18 — Google Business Profile <span>May 30 · GBP Update</span><span class="lt lag">Aggregates</span></div>
+<span class="pt t-gbp">Google Business</span>
+<div class="mc">
+  <div class="gc">
+    <div class="gb"><div class="gi">R</div><div><h4>Riyara Trading</h4><p>Building Materials · Chennai, TN</p></div></div>
+    <div class="gt">Riyara’s own network of crushing units and dedicated vehicle fleets in Chennai deliver quality aggregates — blue metal, M-Sand, river sand, and more — directly to your project site.</div>
+    <div class="gimg" style="background:#1B4332;color:#fff">
+      <div style="text-align:center">
+        <div class="dr"><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div></div>
+        <div style="font-size:14px;font-weight:600;margin-top:6px">Aggregates: From Crushing Unit to Construction Site</div>
+        <div class="lgo" style="color:rgba(255,255,255,.5);margin-top:10px">R I Y A R A</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="sh ">Post 19 — Instagram + Facebook <span>May 13 · Reel</span><span class="lt lc">Cement</span></div>
+<span class="pt t-ig">Instagram</span> <span class="pt t-fb">Facebook</span>
+<div class="mc">
+  <div class="ih"><div class="ia">R</div><span class="iu">riyaratrading</span></div>
+  <div class="rm" style="background:linear-gradient(180deg,var(--rdd) 0%,#1a1a1a 50%,var(--rdd) 100%)">
+    <div class="pb"></div>
+    <div class="ri"><div>❤️<span>2.8K</span></div><div>💬<span>94</span></div><div>📤</div><div>🔖</div></div>
+    <div class="ro">Inside a Cement Storage Silo</div>
+    <div class="rs">This is where 100+ tonnes of cement wait for their next project. ⼗
+
+The inside o...</div>
+  </div>
+  <div class="ic"><b>riyaratrading</b> This is where 100+ tonnes of cement wait for their next project. ⼗
+
+The inside of a storage silo is surprisingly clean. And surprisingly impressive.
+
+...</div>
+</div>
+<div class="vn"><b>Visual note:</b> 15-sec Reel: Looking up inside a silo → cement being pneumatically pumped in → close-up of the pipe connection. Satisfying industrial content.</div>
+<div class="sh steel">Post 20 — Instagram + Facebook <span>May 22 · Carousel</span><span class="lt ls">Steel</span></div>
+<span class="pt t-ig">Instagram</span> <span class="pt t-fb">Facebook</span>
+<div class="mc">
+  <div class="ih"><div class="ia">R</div><span class="iu">riyaratrading</span></div>
+  <div class="cs">
+    <div class="sl" style="background:#0D3B66;color:#fff">
+      <div class="dr"><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div></div>
+      <p style="font-size:9px;letter-spacing:2px;opacity:.6;margin-bottom:6px">DID YOU KNOW?</p>
+      <h2 style="font-size:18px">5 Things You Didn’t Know About TMT Steel Bars</h2>
+      <div class="sn" style="color:rgba(255,255,255,.3)">1/5</div>
+    </div>
+    <div class="sl" style="background:#E3F2FD">
+      <div style="width:48px;height:48px;border-radius:50%;background:#1565C0;display:flex;align-items:center;justify-content:center;margin-bottom:10px;color:#fff;font-size:16px;font-weight:800">2</div>
+      <h3 style="color:#0D3B66;font-size:14px">Key Point</h3>
+      <p style="color:var(--sub);font-size:11px;max-width:80%">Carousel (6 slides): Title → Fact 1: TMT stands for Thermo Mechanical Treatment → Fact 2: they’re ea...</p>
+      <div class="sn">2/5</div>
+    </div>
+  </div>
+  <div class="sh2">← Swipe to preview slides →</div>
+  <div class="id"><div class="idt a"></div><div class="idt"></div><div class="idt"></div><div class="idt"></div><div class="idt"></div></div>
+  <div class="iact"><span>♡</span><span>💬</span><span>📤</span><span style="margin-left:auto">🔖</span></div>
+  <div class="ic"><b>riyaratrading</b> TMT bars are the most used construction material after cement. But how much do you really know about them?
+
+Swipe for 5 surprising facts. ➡️
+
+#TMTBars #Steel #ConstructionFacts #DidYouKnow...</div>
+</div>
+<div class="sh all">Post 21 — LinkedIn (Saravanan) <span>May 30 · Month-End Reflection</span><span class="lt lall">All Lines</span></div>
+<span class="pt t-li">LinkedIn · Saravanan Udayar</span>
+<div class="mc">
+  <div class="lh"><div class="la f">SU</div><div class="lm"><h4>Saravanan Udayar</h4><p>Founder, Riyara Trading</p></div></div>
+  <div class="lb"><span class="h">This month we went deeper into steel grades and aggregate types. Some reflections:</span>
+
+1. The more we educate our audience about materials, the better the conversations become. Informed clients make better decisions.
+
+2. Monsoon prep is already underway. Multi-state sourcing isn’t a strategy — it’s a survival mechanism.
+
+3. The aggregate market in TN is ripe for organised players. Quality consistency is still a major gap.
+
+June will focus on supply chain mastery and what it takes to deliver across three material lines simultaneously.
+
+<span class="tg">#BuildingMaterials #SupplyChain #Entrepreneurship #TamilNadu</span></div>
+  <div class="le"><span>👍 Like</span><span>💬 Comment</span><span>🔄 Repost</span><span>📤 Send</span></div>
+</div>
+<div style="background:#1a0505;color:#fff;text-align:center;padding:14px;border-radius:8px;margin:2rem 0 1rem">
+  <div class="dr"><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div></div>
+  <div style="font-size:14px;font-weight:700;letter-spacing:2px;margin-top:6px">JUNE 2026 — AUTHORITY</div>
+  <div style="font-size:10px;opacity:.6;margin-top:2px">21 posts</div>
+</div>
+<div class="week-bar" style="background:var(--rd)">WEEK 1</div>
+<div class="sh ">Post 1 — LinkedIn (Company) <span>Jun 2 · Industry Education</span><span class="lt lc">Cement</span></div>
+<span class="pt t-li">LinkedIn</span>
+<div class="mc">
+  <div class="lh"><div class="la">R</div><div class="lm"><h4>Riyara Trading</h4><p>Building Materials · Chennai</p></div></div>
+  <div class="lb"><span class="h">We’ve talked about individual steps. Now let’s map the entire journey.</span></div>
+  <div class="cs">
+    <div class="sl" style="background:var(--rdd);color:#fff">
+      <div class="dr"><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div></div>
+      <p style="font-size:9px;letter-spacing:2px;opacity:.6;margin-bottom:6px">SUPPLY CHAIN MASTERY #1</p>
+      <h2 style="font-size:18px">From Plant to Project: The Complete Bulk Cement Journey — Mapped</h2>
+      <div class="sn" style="color:rgba(255,255,255,.3)">1/5</div>
+    </div>
+    <div class="sl" style="background:var(--rl)">
+      <div style="width:48px;height:48px;border-radius:50%;background:var(--r);display:flex;align-items:center;justify-content:center;margin-bottom:10px;color:#fff;font-size:16px;font-weight:800">2</div>
+      <h3 style="color:var(--rdd);font-size:14px">Key Point</h3>
+      <p style="color:var(--sub);font-size:11px;max-width:80%">Carousel (8 slides): One step per slide, numbered, with clean icons. Final slide = Riyara manages al...</p>
+      <div class="sn">2/5</div>
+    </div>
+  </div>
+  <div class="sh2">← Swipe to preview slides →</div>
+  <div class="le"><span>👍 Like</span><span>💬 Comment</span><span>🔄 Repost</span><span>📤 Send</span></div>
+</div>
+<div class="sh ">Post 2 — Instagram + Facebook <span>Jun 3 · Reel</span><span class="lt lc">Cement</span></div>
+<span class="pt t-ig">Instagram</span> <span class="pt t-fb">Facebook</span>
+<div class="mc">
+  <div class="ih"><div class="ia">R</div><span class="iu">riyaratrading</span></div>
+  <div class="rm" style="background:linear-gradient(180deg,var(--rdd) 0%,#1a1a1a 50%,var(--rdd) 100%)">
+    <div class="pb"></div>
+    <div class="ri"><div>❤️<span>2.8K</span></div><div>💬<span>94</span></div><div>📤</div><div>🔖</div></div>
+    <div class="ro">Cement Delivery at Dawn — When the City Still Sleeps</div>
+    <div class="rs">Most cement deliveries happen before the city wakes up. Here’s why. ⼗
+
+#CementDe...</div>
+  </div>
+  <div class="ic"><b>riyaratrading</b> Most cement deliveries happen before the city wakes up. Here’s why. ⼗
+
+#CementDelivery #Dawn #Logistics #Riyara #Construction...</div>
+</div>
+<div class="vn"><b>Visual note:</b> 15-sec Reel: Cinematic — pre-dawn sky → bulker headlights on empty road → arriving at construction site as sun rises → unloading begins. Beautiful, moody lighting. Trending cinematic audio.</div>
+<div class="sh ">Post 3 — LinkedIn (Saravanan) <span>Jun 4 · Founder POV</span><span class="lt lc">Cement</span></div>
+<span class="pt t-li">LinkedIn · Saravanan Udayar</span>
+<div class="mc">
+  <div class="lh"><div class="la f">SU</div><div class="lm"><h4>Saravanan Udayar</h4><p>Founder, Riyara Trading</p></div></div>
+  <div class="lb"><span class="h">In our business, being early is almost as bad as being late.</span>
+
+Deliver too early: the site isn’t ready. The silo is full. The truck waits for hours. Driver costs pile up.
+
+Deliver too late: the pour is delayed. The RMC plant runs dry. The project timeline slips.
+
+The window is narrow. And it’s different for every client, every site, every day.
+
+This is why we don’t just dispatch trucks. We coordinate with the client’s project team, the plant’s loading schedule, and the driver’s route — simultaneously.
+
+Timing isn’t a logistics problem. It’s a relationship problem. You have to know your client’s rhythm.
+
+<span class="tg">#Logistics #CementSupply #Timing #Business</span></div>
+  <div class="le"><span>👍 Like</span><span>💬 Comment</span><span>🔄 Repost</span><span>📤 Send</span></div>
+</div>
+<div class="sh all">Post 4 — Google Business Profile <span>Jun 6 · GBP Update</span><span class="lt lall">All Lines</span></div>
+<span class="pt t-gbp">Google Business</span>
+<div class="mc">
+  <div class="gc">
+    <div class="gb"><div class="gi">R</div><div><h4>Riyara Trading</h4><p>Building Materials · Chennai, TN</p></div></div>
+    <div class="gt">Since 2014, Riyara Trading has been Tamil Nadu’s trusted partner for cement, steel, and aggregates. Authorised distributor. Own fleet. Multi-state sourcing. One principle: Earn Trust with Business.</div>
+    <div class="gimg" style="background:var(--rdd);color:#fff">
+      <div style="text-align:center">
+        <div class="dr"><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div></div>
+        <div style="font-size:14px;font-weight:600;margin-top:6px">11 Years of Building Trust in Tamil Nadu</div>
+        <div class="lgo" style="color:rgba(255,255,255,.5);margin-top:10px">R I Y A R A</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="week-bar" style="background:var(--rd)">WEEK 2</div>
+<div class="sh steel">Post 5 — LinkedIn (Company) <span>Jun 9 · Industry Education</span><span class="lt ls">Steel</span></div>
+<span class="pt t-li">LinkedIn</span>
+<div class="mc">
+  <div class="lh"><div class="la">R</div><div class="lm"><h4>Riyara Trading</h4><p>Building Materials · Chennai</p></div></div>
+  <div class="lb"><span class="h">A building’s lifespan isn’t determined by its design alone. The materials matter. Especially steel.</span></div>
+  <div class="cs">
+    <div class="sl" style="background:#0D3B66;color:#fff">
+      <div class="dr"><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div></div>
+      <p style="font-size:9px;letter-spacing:2px;opacity:.6;margin-bottom:6px">STEEL DEEP DIVE #3</p>
+      <h2 style="font-size:18px">How TMT Bar Quality Affects a Structure’s Lifespan</h2>
+      <div class="sn" style="color:rgba(255,255,255,.3)">1/5</div>
+    </div>
+    <div class="sl" style="background:#E3F2FD">
+      <div style="width:48px;height:48px;border-radius:50%;background:#1565C0;display:flex;align-items:center;justify-content:center;margin-bottom:10px;color:#fff;font-size:16px;font-weight:800">2</div>
+      <h3 style="color:#0D3B66;font-size:14px">Key Point</h3>
+      <p style="color:var(--sub);font-size:11px;max-width:80%">Carousel: Title → 4 quality factors (one per slide with diagram) → brand logos as quality benchmarks...</p>
+      <div class="sn">2/5</div>
+    </div>
+  </div>
+  <div class="sh2">← Swipe to preview slides →</div>
+  <div class="le"><span>👍 Like</span><span>💬 Comment</span><span>🔄 Repost</span><span>📤 Send</span></div>
+</div>
+<div class="sh steel">Post 6 — Instagram + Facebook <span>Jun 10 · Carousel</span><span class="lt ls">Steel</span></div>
+<span class="pt t-ig">Instagram</span> <span class="pt t-fb">Facebook</span>
+<div class="mc">
+  <div class="ih"><div class="ia">R</div><span class="iu">riyaratrading</span></div>
+  <div class="cs">
+    <div class="sl" style="background:#0D3B66;color:#fff">
+      <div class="dr"><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div></div>
+      <p style="font-size:9px;letter-spacing:2px;opacity:.6;margin-bottom:6px">PROCESS EXPLAINER</p>
+      <h2 style="font-size:18px">From Raw Steel to TMT Bar: The Manufacturing Process</h2>
+      <div class="sn" style="color:rgba(255,255,255,.3)">1/5</div>
+    </div>
+    <div class="sl" style="background:#E3F2FD">
+      <div style="width:48px;height:48px;border-radius:50%;background:#1565C0;display:flex;align-items:center;justify-content:center;margin-bottom:10px;color:#fff;font-size:16px;font-weight:800">2</div>
+      <h3 style="color:#0D3B66;font-size:14px">Key Point</h3>
+      <p style="color:var(--sub);font-size:11px;max-width:80%">Carousel (5 slides): Title → Stage 1: Hot rolling at 1100°C → Stage 2: Quenching (water jets) → Stag...</p>
+      <div class="sn">2/5</div>
+    </div>
+  </div>
+  <div class="sh2">← Swipe to preview slides →</div>
+  <div class="id"><div class="idt a"></div><div class="idt"></div><div class="idt"></div><div class="idt"></div><div class="idt"></div></div>
+  <div class="iact"><span>♡</span><span>💬</span><span>📤</span><span style="margin-left:auto">🔖</span></div>
+  <div class="ic"><b>riyaratrading</b> Ever wondered how a TMT bar is made?
+
+Swipe to see the 4-stage process that gives steel its strength. ➡️
+
+#TMTBars #SteelManufacturing #HowItsMade #ConstructionScience...</div>
+</div>
+<div class="sh steel">Post 7 — LinkedIn (Saravanan) <span>Jun 11 · Industry Insight</span><span class="lt ls">Steel</span></div>
+<span class="pt t-li">LinkedIn · Saravanan Udayar</span>
+<div class="mc">
+  <div class="lh"><div class="la f">SU</div><div class="lm"><h4>Saravanan Udayar</h4><p>Founder, Riyara Trading</p></div></div>
+  <div class="lb"><span class="h">Steel distribution is a different beast from cement.</span>
+
+In cement, the challenge is logistics — getting bulk material from plant to site on time. In steel, the challenge is inventory — having the right sizes in the right grades when the client calls.
+
+A contractor pouring a foundation doesn’t call two weeks in advance. They call when they need it. And they need 16mm Fe500 from TATA, not “whatever you have.”
+
+This is why steel distribution requires deep inventory planning and strong relationships with multiple manufacturers. You can’t stock everything. But you can know where to source everything, fast.
+
+<span class="tg">#Steel #Distribution #BusinessLessons #SupplyChain</span></div>
+  <div class="le"><span>👍 Like</span><span>💬 Comment</span><span>🔄 Repost</span><span>📤 Send</span></div>
+</div>
+<div class="sh steel">Post 8 — Google Business Profile <span>Jun 13 · GBP Update</span><span class="lt ls">Steel</span></div>
+<span class="pt t-gbp">Google Business</span>
+<div class="mc">
+  <div class="gc">
+    <div class="gb"><div class="gi">R</div><div><h4>Riyara Trading</h4><p>Building Materials · Chennai, TN</p></div></div>
+    <div class="gt">Riyara supplies mill-test-certified TMT bars from India’s top manufacturers. Fe415, Fe500, Fe550 grades. 8mm to 32mm. TATA, VSP, SAIL. Quality you can verify.</div>
+    <div class="gimg" style="background:#0D3B66;color:#fff">
+      <div style="text-align:center">
+        <div class="dr"><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div></div>
+        <div style="font-size:14px;font-weight:600;margin-top:6px">Quality-Certified TMT Bars for Every Structure</div>
+        <div class="lgo" style="color:rgba(255,255,255,.5);margin-top:10px">R I Y A R A</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="week-bar" style="background:var(--rd)">WEEK 3</div>
+<div class="sh agg">Post 9 — LinkedIn (Company) <span>Jun 16 · Industry Education</span><span class="lt lag">Aggregates</span></div>
+<span class="pt t-li">LinkedIn</span>
+<div class="mc">
+  <div class="lh"><div class="la">R</div><div class="lm"><h4>Riyara Trading</h4><p>Building Materials · Chennai</p></div></div>
+  <div class="lb"><span class="h">Ask a contractor about cement, and they’ll specify the grade. Ask about steel, and they’ll specify the size.</span></div>
+  <div class="cs">
+    <div class="sl" style="background:#1B4332;color:#fff">
+      <div class="dr"><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div></div>
+      <p style="font-size:9px;letter-spacing:2px;opacity:.6;margin-bottom:6px">BUILDING MATERIALS SPOTLIGHT</p>
+      <h2 style="font-size:18px">Why Aggregate Grading Matters More Than You Think</h2>
+      <div class="sn" style="color:rgba(255,255,255,.3)">1/5</div>
+    </div>
+    <div class="sl" style="background:#E8F5E9">
+      <div style="width:48px;height:48px;border-radius:50%;background:#2E7D32;display:flex;align-items:center;justify-content:center;margin-bottom:10px;color:#fff;font-size:16px;font-weight:800">2</div>
+      <h3 style="color:#1B4332;font-size:14px">Key Point</h3>
+      <p style="color:var(--sub);font-size:11px;max-width:80%">Carousel: Title → what is grading (diagram) → 4 impacts on concrete → well-graded vs poorly graded v...</p>
+      <div class="sn">2/5</div>
+    </div>
+  </div>
+  <div class="sh2">← Swipe to preview slides →</div>
+  <div class="le"><span>👍 Like</span><span>💬 Comment</span><span>🔄 Repost</span><span>📤 Send</span></div>
+</div>
+<div class="sh agg">Post 10 — Instagram + Facebook <span>Jun 17 · Reel</span><span class="lt lag">Aggregates</span></div>
+<span class="pt t-ig">Instagram</span> <span class="pt t-fb">Facebook</span>
+<div class="mc">
+  <div class="ih"><div class="ia">R</div><span class="iu">riyaratrading</span></div>
+  <div class="rm" style="background:linear-gradient(180deg,#1B4332 0%,#1a1a1a 50%,#1B4332 100%)">
+    <div class="pb"></div>
+    <div class="ri"><div>❤️<span>2.8K</span></div><div>💬<span>94</span></div><div>📤</div><div>🔖</div></div>
+    <div class="ro">Inside a Crushing Unit: How Blue Metal is Made</div>
+    <div class="rs">From boulder to 20mm aggregate in minutes. ⼗
+
+This is where your concrete starts...</div>
+  </div>
+  <div class="ic"><b>riyaratrading</b> From boulder to 20mm aggregate in minutes. ⼗
+
+This is where your concrete starts.
+
+#BlueMetal #CrushingUnit #Aggregates #HowItsMade #Construction...</div>
+</div>
+<div class="vn"><b>Visual note:</b> 15-sec Reel: Large boulders fed into crusher → machine in action (powerful, visual) → different sized aggregates coming out on conveyor. Industrial, satisfying footage. Strong audio.</div>
+<div class="sh ">Post 11 — LinkedIn (Company) <span>Jun 18 · Operations Breakdown</span><span class="lt lc">Cement</span></div>
+<span class="pt t-li">LinkedIn</span>
+<div class="mc">
+  <div class="lh"><div class="la">R</div><div class="lm"><h4>Riyara Trading</h4><p>Building Materials · Chennai</p></div></div>
+  <div class="lb"><span class="h">Scale in logistics isn’t just about having more trucks. It’s about coordination.</span></div>
+  <div style="aspect-ratio:16/9;background:var(--rdd);display:flex;align-items:center;justify-content:center;color:#fff;padding:1.5rem;text-align:center">
+    <div>
+      <div class="dr"><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div></div>
+      <div style="font-size:16px;font-weight:600;margin-top:8px">How Riyara Manages 200+ Deliveries a Month Without Missing One</div>
+      <div style="font-size:11px;opacity:.7;margin-top:4px">Infographic: Key numbers visualised — 200+ deliveries, 4 states, 20+ trucks, 8-s</div>
+      <div class="lgo" style="color:rgba(255,255,255,.6);margin-top:12px">R I Y A R A</div>
+    </div>
+  </div>
+  <div class="le"><span>👍 Like</span><span>💬 Comment</span><span>🔄 Repost</span><span>📤 Send</span></div>
+</div>
+<div class="sh agg">Post 12 — LinkedIn (Saravanan) <span>Jun 19 · Founder POV</span><span class="lt lag">Aggregates</span></div>
+<span class="pt t-li">LinkedIn · Saravanan Udayar</span>
+<div class="mc">
+  <div class="lh"><div class="la f">SU</div><div class="lm"><h4>Saravanan Udayar</h4><p>Founder, Riyara Trading</p></div></div>
+  <div class="lb"><span class="h">Cement has organised manufacturers. Steel has national brands. But aggregates?</span>
+
+Most of the aggregate supply chain in Tamil Nadu is unorganised. Small crushing units. Inconsistent quality. Unpredictable availability. No traceability.
+
+For a contractor managing a large project, this is a nightmare. You can have the best cement and the best steel, and still have problems if your aggregates are inconsistent.
+
+This is why we invested in building our own aggregate network — vetted crushing units, dedicated vehicles, quality checks.
+
+It’s the hardest part of our business to systematise. But it’s where the market needs it most.
+
+<span class="tg">#Aggregates #SupplyChain #Construction #QualityControl</span></div>
+  <div class="le"><span>👍 Like</span><span>💬 Comment</span><span>🔄 Repost</span><span>📤 Send</span></div>
+</div>
+<div class="week-bar" style="background:var(--rd)">WEEK 4</div>
+<div class="sh agg">Post 13 — Google Business Profile <span>Jun 20 · GBP Update</span><span class="lt lag">Aggregates</span></div>
+<span class="pt t-gbp">Google Business</span>
+<div class="mc">
+  <div class="gc">
+    <div class="gb"><div class="gi">R</div><div><h4>Riyara Trading</h4><p>Building Materials · Chennai, TN</p></div></div>
+    <div class="gt">Riyara’s own network of crushing units and vehicle fleets ensures consistent aggregate quality. Blue metal, M-Sand, river sand — all grades, all sizes, quality assured.</div>
+    <div class="gimg" style="background:#1B4332;color:#fff">
+      <div style="text-align:center">
+        <div class="dr"><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div></div>
+        <div style="font-size:14px;font-weight:600;margin-top:6px">Quality-Checked Aggregates — Own Network in Chennai</div>
+        <div class="lgo" style="color:rgba(255,255,255,.5);margin-top:10px">R I Y A R A</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="sh ">Post 14 — LinkedIn (Company) <span>Jun 23 · Industry Education</span><span class="lt lc">Cement</span></div>
+<span class="pt t-li">LinkedIn</span>
+<div class="mc">
+  <div class="lh"><div class="la">R</div><div class="lm"><h4>Riyara Trading</h4><p>Building Materials · Chennai</p></div></div>
+  <div class="lb"><span class="h">Switching from bagged to bulk cement isn’t just an operational decision. It’s a financial one.</span></div>
+  <div class="cs">
+    <div class="sl" style="background:var(--rdd);color:#fff">
+      <div class="dr"><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div></div>
+      <p style="font-size:9px;letter-spacing:2px;opacity:.6;margin-bottom:6px">BULK CEMENT EXPLAINED #4</p>
+      <h2 style="font-size:18px">The Economics of Bulk Cement: Why the Numbers Make Sense</h2>
+      <div class="sn" style="color:rgba(255,255,255,.3)">1/5</div>
+    </div>
+    <div class="sl" style="background:var(--rl)">
+      <div style="width:48px;height:48px;border-radius:50%;background:var(--r);display:flex;align-items:center;justify-content:center;margin-bottom:10px;color:#fff;font-size:16px;font-weight:800">2</div>
+      <h3 style="color:var(--rdd);font-size:14px">Key Point</h3>
+      <p style="color:var(--sub);font-size:11px;max-width:80%">Carousel: Title → 5 savings areas with estimated % ranges → silo investment vs savings chart → break...</p>
+      <div class="sn">2/5</div>
+    </div>
+  </div>
+  <div class="sh2">← Swipe to preview slides →</div>
+  <div class="le"><span>👍 Like</span><span>💬 Comment</span><span>🔄 Repost</span><span>📤 Send</span></div>
+</div>
+<div class="sh all">Post 15 — Instagram + Facebook <span>Jun 24 · Carousel</span><span class="lt lall">All Lines</span></div>
 <span class="pt t-ig">Instagram</span> <span class="pt t-fb">Facebook</span>
 <div class="mc">
   <div class="ih"><div class="ia">R</div><span class="iu">riyaratrading</span></div>
   <div class="cs">
     <div class="sl" style="background:var(--rdd);color:#fff">
-      <p style="font-size:9px;letter-spacing:2px;opacity:.6;margin-bottom:8px">FROM PLANT TO PROJECT</p>
-      <h2>The Complete Journey</h2>
-      <p style="opacity:.8;font-size:13px">Bulk cement in 5 steps</p>
+      <div class="dr"><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div></div>
+      <p style="font-size:9px;letter-spacing:2px;opacity:.6;margin-bottom:6px">COMPLETE RANGE</p>
+      <h2 style="font-size:18px">Cement + Steel + Aggregates: Riyara’s Complete Range</h2>
       <div class="sn" style="color:rgba(255,255,255,.3)">1/5</div>
     </div>
     <div class="sl" style="background:var(--rl)">
-      <div class="step-num" style="background:var(--r);color:#fff">1</div>
-      <h3 style="color:var(--rd)">Plant Loading</h3>
-      <p style="color:var(--sub)">Cement loaded pneumatically into the bulker at the manufacturing plant</p>
+      <div style="width:48px;height:48px;border-radius:50%;background:var(--r);display:flex;align-items:center;justify-content:center;margin-bottom:10px;color:#fff;font-size:16px;font-weight:800">2</div>
+      <h3 style="color:var(--rdd);font-size:14px">Key Point</h3>
+      <p style="color:var(--sub);font-size:11px;max-width:80%">Carousel (7 slides): Title → Cement grades → Cement brands → TMT sizes → TMT brands → Aggregate type...</p>
       <div class="sn">2/5</div>
     </div>
-    <div class="sl" style="background:#fff">
-      <div class="step-num" style="background:var(--rd);color:#fff">2</div>
-      <h3 style="color:var(--rd)">Transit</h3>
-      <p style="color:var(--sub)">Bulker transports 25-30 tonnes across highways to the project location</p>
-      <div class="sn">3/5</div>
-    </div>
   </div>
-  <div class="sh2">← Swipe · Steps 3-5: Weighbridge → Site Arrival → Pneumatic Unloading into Silo →</div>
+  <div class="sh2">← Swipe to preview slides →</div>
   <div class="id"><div class="idt a"></div><div class="idt"></div><div class="idt"></div><div class="idt"></div><div class="idt"></div></div>
   <div class="iact"><span>♡</span><span>💬</span><span>📤</span><span style="margin-left:auto">🔖</span></div>
-  <div class="ic"><b>riyaratrading</b> From the plant to your project site, bulk cement goes through 5 critical stages. Swipe to see the full journey. ➡️ Save this if you work in construction. <span style="color:#0A66C2">#BulkCement #CementLogistics #ProcessExplainer</span></div>
+  <div class="ic"><b>riyaratrading</b> One supplier. Three material lines. Every grade and size you need.
+
+Swipe to see the full range. ➡️
+
+Save this as your building materials reference.
+
+#Riyara #BuildingMaterials #Cement #Steel #Aggrega...</div>
 </div>
-
-<!-- POST 21 -->
-<div class="sh">Post 21 — LinkedIn Personal <span>Apr 30 · Month-End Reflection · Lessons from the Field</span></div>
-<span class="pt t-li">LinkedIn · Saravanan Udayar</span>
+<div class="sh all">Post 16 — LinkedIn (Company) <span>Jun 25 · Brand Story</span><span class="lt lall">All Lines</span></div>
+<span class="pt t-li">LinkedIn</span>
 <div class="mc">
-  <div class="lh"><div class="la f">SU</div><div class="lm"><h4>Saravanan Udayar</h4><p>Founder, Riyara Trading · 1h</p></div></div>
-  <div class="lb"><span class="h">As we close another month, a few things on my mind:</span>
-
-1. The bulk cement segment in South India is growing faster than most people realise. More RMC plants, more infrastructure projects, more demand for reliable logistics.
-
-2. In this business, consistency beats everything. Clients don't remember the one great delivery. They remember the one missed one.
-
-3. There's a huge gap in how the cement distribution industry communicates. Most of us are so busy operating that we forget to share what we know.
-
-That last point is exactly why I started posting here. More to come in May.
-
-<span class="tg">#CementIndustry #Reflections #SouthIndia #Logistics #Entrepreneurship</span></div>
+  <div class="lh"><div class="la">R</div><div class="lm"><h4>Riyara Trading</h4><p>Building Materials · Chennai</p></div></div>
+  <div class="lb"><span class="h">Sometimes it helps to step back and see the full picture.</span></div>
+  <div style="aspect-ratio:16/9;background:var(--rdd);display:flex;align-items:center;justify-content:center;color:#fff;padding:1.5rem;text-align:center">
+    <div>
+      <div class="dr"><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div></div>
+      <div style="font-size:16px;font-weight:600;margin-top:8px">Riyara at a Glance: 11 Years, 3 Product Lines, 1 Principle</div>
+      <div style="font-size:11px;opacity:.7;margin-top:4px">Comprehensive infographic: Three-column layout with all details per product line</div>
+      <div class="lgo" style="color:rgba(255,255,255,.6);margin-top:12px">R I Y A R A</div>
+    </div>
+  </div>
   <div class="le"><span>👍 Like</span><span>💬 Comment</span><span>🔄 Repost</span><span>📤 Send</span></div>
 </div>
-<div class="vn"><b>Strategy:</b> Text-only. Personal, reflective tone. Invites engagement naturally. Sets up May content. The "gap in communication" line justifies Riyara's social media presence to any client who sees it.</div>
+<div class="week-bar" style="background:var(--rd)">WEEK 5 (PARTIAL)</div>
+<div class="sh all">Post 17 — LinkedIn (Saravanan) <span>Jun 26 · Founder POV</span><span class="lt lall">All Lines</span></div>
+<span class="pt t-li">LinkedIn · Saravanan Udayar</span>
+<div class="mc">
+  <div class="lh"><div class="la f">SU</div><div class="lm"><h4>Saravanan Udayar</h4><p>Founder, Riyara Trading</p></div></div>
+  <div class="lb"><span class="h">Every company has a tagline. Most are marketing.</span>
 
-<!-- ===== SUMMARY STRIP ===== -->
-<div style="background:var(--rdd);color:#fff;text-align:center;padding:20px;border-radius:8px;margin:2rem 0 1rem">
-  <div class="dr"><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div></div>
-  <div style="font-size:16px;font-weight:700;margin:8px 0 4px">21 Posts · 4 Platforms · 1 Month</div>
-  <div style="font-size:12px;opacity:.7">LinkedIn Company (5) · LinkedIn Saravanan (5) · Instagram + Facebook (6) · Google Business (4) + Stories</div>
-  <div style="margin-top:12px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
-    <div style="background:rgba(255,255,255,.12);padding:6px 14px;border-radius:4px;font-size:11px">10 Education</div>
-    <div style="background:rgba(255,255,255,.12);padding:6px 14px;border-radius:4px;font-size:11px">3 Reels</div>
-    <div style="background:rgba(255,255,255,.12);padding:6px 14px;border-radius:4px;font-size:11px">4 Founder POV</div>
-    <div style="background:rgba(255,255,255,.12);padding:6px 14px;border-radius:4px;font-size:11px">4 GBP Updates</div>
+Ours came from a real moment.
+
+In our early years, a client’s project ran into an emergency — they needed 200 tonnes of OPC 53 within 48 hours. Their regular supplier couldn’t deliver.
+
+We could. We sourced across two states, coordinated 8 bulkers, and delivered on time. No premium charged. No favour expected.
+
+That client is still with us. Not because of that one delivery. But because we showed them what our word means.
+
+“Earn Trust with Business” isn’t something we put on a banner. It’s something that happened to us, and we decided to name it.
+
+<span class="tg">#Trust #Business #Entrepreneurship #Values</span></div>
+  <div class="le"><span>👍 Like</span><span>💬 Comment</span><span>🔄 Repost</span><span>📤 Send</span></div>
+</div>
+<div class="sh all">Post 18 — Google Business Profile <span>Jun 27 · GBP Update</span><span class="lt lall">All Lines</span></div>
+<span class="pt t-gbp">Google Business</span>
+<div class="mc">
+  <div class="gc">
+    <div class="gb"><div class="gi">R</div><div><h4>Riyara Trading</h4><p>Building Materials · Chennai, TN</p></div></div>
+    <div class="gt">Cement. Steel. Aggregates. All grades. All sizes. One trusted partner since 2014. Riyara Trading — Earn Trust with Business.</div>
+    <div class="gimg" style="background:var(--rdd);color:#fff">
+      <div style="text-align:center">
+        <div class="dr"><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div></div>
+        <div style="font-size:14px;font-weight:600;margin-top:6px">Tamil Nadu’s Complete Building Materials Partner</div>
+        <div class="lgo" style="color:rgba(255,255,255,.5);margin-top:10px">R I Y A R A</div>
+      </div>
+    </div>
   </div>
 </div>
-
-<!-- PALETTE REF -->
-<div class="sh">Brand colour palette <span>Extracted from logo</span></div>
-<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:2rem">
-  <div style="text-align:center"><div style="height:50px;border-radius:6px;background:#AB0304"></div><p style="font-size:9px;margin-top:3px;color:var(--sub)">Primary<br>#AB0304</p></div>
-  <div style="text-align:center"><div style="height:50px;border-radius:6px;background:#640607"></div><p style="font-size:9px;margin-top:3px;color:var(--sub)">Dark<br>#640607</p></div>
-  <div style="text-align:center"><div style="height:50px;border-radius:6px;background:#510000"></div><p style="font-size:9px;margin-top:3px;color:var(--sub)">Deepest<br>#510000</p></div>
-  <div style="text-align:center"><div style="height:50px;border-radius:6px;background:#D10303"></div><p style="font-size:9px;margin-top:3px;color:var(--sub)">Bright<br>#D10303</p></div>
-  <div style="text-align:center"><div style="height:50px;border-radius:6px;background:#FEF5F4;border:1px solid #eee"></div><p style="font-size:9px;margin-top:3px;color:var(--sub)">Light BG<br>#FEF5F4</p></div>
+<div class="sh ">Post 19 — LinkedIn (Company) <span>Jun 30 · Operations Breakdown</span><span class="lt lc">Cement</span></div>
+<span class="pt t-li">LinkedIn</span>
+<div class="mc">
+  <div class="lh"><div class="la">R</div><div class="lm"><h4>Riyara Trading</h4><p>Building Materials · Chennai</p></div></div>
+  <div class="lb"><span class="h">Numbers don’t lie. Here’s what Q1-Q2 2026 looked like for Riyara’s cement division:</span></div>
+  <div style="aspect-ratio:16/9;background:var(--rdd);display:flex;align-items:center;justify-content:center;color:#fff;padding:1.5rem;text-align:center">
+    <div>
+      <div class="dr"><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div></div>
+      <div style="font-size:16px;font-weight:600;margin-top:8px">Half-Year in Review: What Our Delivery Numbers Tell Us</div>
+      <div style="font-size:11px;opacity:.7;margin-top:4px">Data visualisation card: Key metrics displayed as clean number cards. No exact f</div>
+      <div class="lgo" style="color:rgba(255,255,255,.6);margin-top:12px">R I Y A R A</div>
+    </div>
+  </div>
+  <div class="le"><span>👍 Like</span><span>💬 Comment</span><span>🔄 Repost</span><span>📤 Send</span></div>
 </div>
+<div class="sh ">Post 20 — Instagram + Facebook <span>Jun 24 · Reel</span><span class="lt lc">Cement</span></div>
+<span class="pt t-ig">Instagram</span> <span class="pt t-fb">Facebook</span>
+<div class="mc">
+  <div class="ih"><div class="ia">R</div><span class="iu">riyaratrading</span></div>
+  <div class="rm" style="background:linear-gradient(180deg,var(--rdd) 0%,#1a1a1a 50%,var(--rdd) 100%)">
+    <div class="pb"></div>
+    <div class="ri"><div>❤️<span>2.8K</span></div><div>💬<span>94</span></div><div>📤</div><div>🔖</div></div>
+    <div class="ro">Bulker Convoy on the Highway — Riyara Fleet</div>
+    <div class="rs">When you see multiple Riyara bulkers on the same highway, you know it’s a big de...</div>
+  </div>
+  <div class="ic"><b>riyaratrading</b> When you see multiple Riyara bulkers on the same highway, you know it’s a big delivery day. ⼗
 
+#Riyara #BulkerConvoy #CementLogistics #FleetLife #Tami...</div>
+</div>
+<div class="vn"><b>Visual note:</b> 15-sec Reel: Drone following 3-4 bulkers in convoy on highway. Dramatic wide shots. Sunrise or sunset lighting. Cinematic audio. The most visually impressive Reel of the quarter.</div>
+<div class="sh all">Post 21 — LinkedIn (Saravanan) <span>Jun 30 · Quarter-End Reflection</span><span class="lt lall">All Lines</span></div>
+<span class="pt t-li">LinkedIn · Saravanan Udayar</span>
+<div class="mc">
+  <div class="lh"><div class="la f">SU</div><div class="lm"><h4>Saravanan Udayar</h4><p>Founder, Riyara Trading</p></div></div>
+  <div class="lb"><span class="h">Three months ago, Riyara had virtually no social media presence.</span>
+
+Today, here’s what I’ve learned from showing up consistently:
+
+1. The construction industry is hungry for genuine content. Not ads. Not promotions. Real operational insights.
+
+2. Educating the market builds more trust than any sales pitch. When we explained cement grades, TMT bar specifications, and aggregate grading, people actually saved and shared those posts.
+
+3. The “don’t upset clients” constraint turned into our biggest advantage. By not promoting ourselves, we ended up building more credibility than any ad campaign could.
+
+4. People want to hear from operators, not marketers. That’s the gap in this industry.
+
+Q3 starts now. Monsoon season. The real test of logistics capability. We’ll keep sharing what we see on the ground.
+
+<span class="tg">#BuildingMaterials #SocialMedia #ContentStrategy #Entrepreneurship #Riyara</span></div>
+  <div class="le"><span>👍 Like</span><span>💬 Comment</span><span>🔄 Repost</span><span>📤 Send</span></div>
+</div>
+<div style="background:var(--rdd);color:#fff;text-align:center;padding:16px;border-radius:8px;margin:2rem 0 1rem">
+  <div class="dr"><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div><div class="dm w"></div></div>
+  <div style="font-size:14px;font-weight:700;margin:6px 0 3px">63 Posts · 3 Months · 4 Platforms</div>
+  <div style="font-size:11px;opacity:.7">April (Foundation) → May (Deepening) → June (Authority)</div>
+  <div style="margin-top:10px;display:flex;gap:6px;justify-content:center;flex-wrap:wrap">
+    <div style="background:rgba(255,255,255,.12);padding:4px 12px;border-radius:4px;font-size:10px">29 Cement</div>
+    <div style="background:rgba(255,255,255,.12);padding:4px 12px;border-radius:4px;font-size:10px">14 Steel</div>
+    <div style="background:rgba(255,255,255,.12);padding:4px 12px;border-radius:4px;font-size:10px">10 Aggregates</div>
+    <div style="background:rgba(255,255,255,.12);padding:4px 12px;border-radius:4px;font-size:10px">10 All Lines</div>
+  </div>
+</div>
+<div class="sh">Brand colour palette <span>Extracted from logo</span></div>
+<div style="display:grid;grid-template-columns:repeat(5,1fr);gap:4px;margin-bottom:1.5rem">
+  <div style="text-align:center"><div style="height:40px;border-radius:4px;background:#AB0304"></div><p style="font-size:8px;margin-top:2px;color:var(--sub)">#AB0304</p></div>
+  <div style="text-align:center"><div style="height:40px;border-radius:4px;background:#640607"></div><p style="font-size:8px;margin-top:2px;color:var(--sub)">#640607</p></div>
+  <div style="text-align:center"><div style="height:40px;border-radius:4px;background:#510000"></div><p style="font-size:8px;margin-top:2px;color:var(--sub)">#510000</p></div>
+  <div style="text-align:center"><div style="height:40px;border-radius:4px;background:#D10303"></div><p style="font-size:8px;margin-top:2px;color:var(--sub)">#D10303</p></div>
+  <div style="text-align:center"><div style="height:40px;border-radius:4px;background:#FEF5F4;border:1px solid #eee"></div><p style="font-size:8px;margin-top:2px;color:var(--sub)">#FEF5F4</p></div>
+</div>
 </div>
