@@ -1,1109 +1,922 @@
-<!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Riyara Trading — Q2 Content Mockups (v3)</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Riyara Trading — All Platform Mockups Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-:root{--r:#AB0304;--rd:#640607;--rdd:#510000;--bg:#FAFAF8;--card:#fff;--txt:#2D2D2D;--sub:#888;--bdr:#E8E5E0}
-body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--txt);line-height:1.55;font-size:13px}
-.wrap{max-width:680px;margin:0 auto;padding:0 16px 60px}
-.hero{text-align:center;padding:28px 0 18px;border-bottom:2px solid var(--bdr);margin-bottom:12px}
-.hero h1{font-family:'DM Serif Display',serif;font-size:22px;color:var(--rdd);margin:6px 0 2px}
-.hero p{font-size:11px;color:var(--sub)}
-.tabs{display:flex;gap:0;border-bottom:2px solid var(--bdr);position:sticky;top:0;background:var(--bg);z-index:100;padding-top:6px}
-.tab{padding:8px 10px;font-size:10px;font-weight:600;letter-spacing:.3px;cursor:pointer;border-bottom:3px solid transparent;color:var(--sub);transition:.2s;white-space:nowrap}
-.tab:hover{color:var(--txt)}.tab.active{color:var(--r);border-bottom-color:var(--r)}
-.tab .cnt{font-size:9px;font-weight:400;opacity:.5;margin-left:2px}
-.panel{display:none}.panel.active{display:block}
-.month-badge{color:#fff;text-align:center;padding:6px 0;border-radius:6px;margin:16px 0 10px;font-size:10px;font-weight:700;letter-spacing:2px}
-.post-card{background:var(--card);border:1px solid var(--bdr);border-radius:8px;margin-bottom:10px;overflow:hidden}
-.post-head{padding:10px 12px 6px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.post-num{font-size:9px;font-weight:700;color:var(--sub);min-width:20px}
-.post-date{font-size:9px;color:var(--sub)}
-.post-type{font-size:8px;font-weight:700;padding:2px 6px;border-radius:3px;letter-spacing:.3px}
-.post-brand{font-size:8px;font-weight:600;padding:2px 6px;border-radius:3px}
-.usp-tag{font-size:7px;font-weight:700;padding:2px 6px;border-radius:3px;color:#fff;letter-spacing:.3px}
-.post-title{padding:0 12px 6px;font-size:12px;font-weight:600;font-family:'DM Serif Display',serif;color:var(--txt)}
-.post-copy{padding:0 12px 10px;font-size:10px;line-height:1.5;color:#555;white-space:pre-line;max-height:120px;overflow:hidden;position:relative}
-.post-copy::after{content:'';position:absolute;bottom:0;left:0;right:0;height:30px;background:linear-gradient(transparent,var(--card))}
-.post-design{padding:6px 12px 10px;font-size:9px;color:var(--sub);border-top:1px solid var(--bdr);background:#FAFAF8}
-.post-design b{color:var(--txt)}
-.post-format{font-size:8px;font-weight:600;padding:2px 5px;border-radius:3px;background:#F0EDE8;color:#666}
-.post-grid{font-size:8px;color:var(--sub);padding:1px 5px;border:1px solid var(--bdr);border-radius:3px}
-.section-note{font-size:10px;color:var(--sub);padding:8px 12px;background:#F5F3F0;border-radius:6px;margin-bottom:12px;line-height:1.5;border-left:3px solid var(--r)}
-.review-flag{font-size:9px;padding:4px 8px;background:#FFF3E0;border-left:3px solid #FF8F00;border-radius:0 4px 4px 0;margin:4px 12px 8px;color:#E65100}
+body{font-family:'Inter',system-ui,sans-serif;background:#0a0a0a;color:#e0e0e0;font-size:13px}
+.top-bar{position:sticky;top:0;z-index:300;background:#111;border-bottom:1px solid #AB0304;padding:8px 16px;text-align:center}
+.top-bar h1{font-size:14px;font-weight:700;color:#AB0304;letter-spacing:1px}
+.top-bar p{font-size:9px;color:#666;margin-top:2px}
+.tabs{display:flex;gap:0;justify-content:center;background:#0d0d0d;border-bottom:1px solid #222;position:sticky;top:52px;z-index:200;overflow-x:auto}
+.tab{padding:10px 14px;font-size:10px;font-weight:600;color:#555;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:.2s}
+.tab:hover{color:#999}.tab.on{color:#fff;border-bottom-color:#AB0304}
+.tab .badge{font-size:8px;background:#222;color:#888;padding:1px 5px;border-radius:8px;margin-left:3px}
+.panel{display:none;max-width:440px;margin:0 auto;padding:0 8px 80px}.panel.on{display:block}
+
+/* Shared post card */
+.card{background:#111;border:1px solid #1e1e1e;border-radius:10px;margin:8px 0;overflow:hidden}
+.card:hover{border-color:#333}
+
+/* Profile frames */
+.profile-frame{background:#000;border-radius:16px;border:2px solid #222;overflow:hidden;margin:12px auto;max-width:400px}
+.pf-bar{height:24px;background:#000;display:flex;align-items:center;justify-content:space-between;padding:0 16px;font-size:8px;font-weight:600}
+.pf-top{display:flex;align-items:center;justify-content:space-between;padding:8px 14px;font-size:14px;font-weight:700}
+
+/* IG specific */
+.ig-prof{padding:12px 14px}
+.ig-row{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+.ig-av{width:68px;height:68px;border-radius:50%;background:#AB0304;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:700;color:#fff;border:2px solid #333;flex-shrink:0}
+.ig-stats{display:flex;gap:16px;flex:1;justify-content:center}
+.ig-stat{text-align:center}.ig-stat b{font-size:15px;display:block}.ig-stat span{font-size:9px;color:#888}
+.ig-bio{font-size:11px;line-height:1.5;margin-bottom:10px}
+.ig-bio .nm{font-weight:700;font-size:12px}.ig-bio .cat{color:#888;font-size:10px;margin:1px 0 3px}
+.ig-bio a{color:#6CB4EE;text-decoration:none;font-size:11px}
+.ig-btns{display:flex;gap:5px;margin-bottom:10px}
+.ig-btns button{flex:1;padding:6px;border-radius:8px;font-size:10px;font-weight:600;border:none;cursor:pointer;font-family:inherit}
+.ig-hls{display:flex;gap:12px;padding-bottom:10px;overflow-x:auto}
+.ig-hl{text-align:center;flex-shrink:0}
+.ig-hl .circ{width:52px;height:52px;border-radius:50%;border:2px solid #AB0304;display:flex;align-items:center;justify-content:center;margin:0 auto 3px;font-size:16px;background:#1a1a1a}
+.ig-hl span{font-size:8px;color:#aaa}
+
+/* Grid */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.gcell{aspect-ratio:1;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6px;text-align:center;cursor:pointer;transition:.15s}
+.gcell:hover{opacity:.8}
+.gcell h4{font-size:7.5px;font-weight:700;line-height:1.25;margin-top:3px}
+.gcell .sub{font-size:6px;opacity:.6;margin-top:1px}
+.gcell .fbadge{position:absolute;top:3px;right:3px;font-size:6px;background:rgba(0,0,0,.55);padding:1px 4px;border-radius:2px;color:#fff}
+.gcell .pnum{position:absolute;bottom:2px;left:3px;font-size:5.5px;color:rgba(255,255,255,.35)}
+.grow-label{grid-column:1/-1;padding:3px 6px;background:#0a0a0a;font-size:7px;color:#444;font-weight:600;letter-spacing:.5px;border-top:1px solid #1a1a1a}
+
+/* Feed post */
+.fp{margin:10px 0}
+.fp-head{display:flex;align-items:center;gap:8px;padding:8px 10px}
+.fp-av{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0}
+.fp-info{flex:1}.fp-info b{font-size:11px;display:block}.fp-info span{font-size:9px;color:#888}
+.fp-img{width:100%;aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px;text-align:center;position:relative}
+.fp-img h3{font-size:12px;font-weight:700;line-height:1.35;max-width:88%}
+.fp-img .fsub{font-size:9px;opacity:.65;margin-top:5px;max-width:85%;line-height:1.4}
+.fp-img .snum{position:absolute;top:8px;right:10px;font-size:8px;background:rgba(0,0,0,.5);padding:1px 7px;border-radius:10px}
+.fp-img .rbadge{position:absolute;bottom:10px;display:flex;align-items:center;gap:5px}
+.fp-img .rbadge .rdot{width:14px;height:14px;background:#AB0304;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:7px;color:#fff}
+.fp-img .rbadge span{font-size:7px;opacity:.5}
+.fp-acts{display:flex;gap:12px;padding:6px 10px;font-size:16px;color:#ccc}
+.fp-acts .r{margin-left:auto}
+.fp-cap{padding:0 10px 8px;font-size:10px;line-height:1.45;color:#ccc}
+.fp-cap b{color:#fff}
+.fp-cap .more{color:#666}
+.fp-time{padding:0 10px 8px;font-size:8px;color:#555}
+
+/* LI specific */
+.li-banner{height:70px;display:flex;align-items:center;justify-content:center;color:#fff;text-align:center;padding:10px;font-size:8px}
+.li-prof{padding:10px 14px;position:relative}
+.li-av-wrap{position:absolute;top:-24px;left:14px}
+.li-av{width:48px;height:48px;border-radius:50%;border:2px solid #000;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;color:#fff}
+.li-info{margin-left:56px;padding-top:4px}
+.li-info h3{font-size:12px;font-weight:700}.li-info p{font-size:9px;color:#888;margin:1px 0}
+.li-post{margin:8px 0}
+.li-post-head{display:flex;align-items:center;gap:8px;padding:8px 10px}
+.li-post-body{padding:0 10px 8px;font-size:10px;line-height:1.5;color:#ccc;max-height:100px;overflow:hidden;position:relative}
+.li-post-body::after{content:'';position:absolute;bottom:0;left:0;right:0;height:25px;background:linear-gradient(transparent,#111)}
+.li-post-img{width:100%;aspect-ratio:1.2;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px;text-align:center;position:relative}
+.li-post-actions{display:flex;gap:16px;padding:6px 10px;font-size:9px;color:#888;border-top:1px solid #1e1e1e}
+
+/* Saravanan text post */
+.sr-post{padding:10px 12px}
+.sr-post .text{font-size:10px;line-height:1.55;color:#ccc;white-space:pre-line;max-height:110px;overflow:hidden;position:relative}
+.sr-post .text::after{content:'';position:absolute;bottom:0;left:0;right:0;height:25px;background:linear-gradient(transparent,#111)}
+.sr-tone{font-size:8px;color:#555;padding:4px 12px 8px;font-style:italic}
+
+/* GBP */
+.gbp-card{padding:10px 12px}
+.gbp-img{width:100%;aspect-ratio:16/9;border-radius:6px;display:flex;align-items:center;justify-content:center;padding:12px;text-align:center;margin-bottom:6px}
+.gbp-title{font-size:11px;font-weight:600;margin-bottom:3px}
+.gbp-copy{font-size:9px;color:#999;line-height:1.45}
+
+/* Reel */
+.reel{aspect-ratio:9/16;max-height:300px;position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:14px;overflow:hidden;border-radius:8px;margin:0 auto;max-width:200px}
+.reel .play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center}
+.reel .play::after{content:'';border-left:12px solid #fff;border-top:7px solid transparent;border-bottom:7px solid transparent;margin-left:2px}
+
+.month-div{text-align:center;padding:10px 0 4px;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#444}
+.month-div span{color:#AB0304}
+.note{margin:8px 0;padding:8px 10px;background:#0d0d00;border-left:2px solid #AB0304;border-radius:0 4px 4px 0;font-size:9px;color:#777;line-height:1.45}
+.note b{color:#bbb}
+.stitle{text-align:center;padding:16px 0 6px;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#444}
 </style></head><body>
-<div class="wrap">
-<div class="hero">
-<div style="font-size:28px;color:var(--r);font-weight:700">◆</div>
-<h1>Riyara Trading</h1>
-<p>Q2 Content Calendar — v3 · 85 Posts · 4 Platforms · Apr–Jun 2026</p>
-</div>
+<div class="top-bar"><h1>♦ RIYARA TRADING — CONTENT MOCKUPS</h1><p>Q2 2026 · v3 · 85 Posts · All Platforms</p></div>
 <div class="tabs">
-
-<div class="tab active" onclick="sw(this,'ig')">Instagram + FB (27)</div>
-<div class="tab" onclick="sw(this,'li')">LinkedIn Co. (30)</div>
-<div class="tab" onclick="sw(this,'sr')">Saravanan (16)</div>
-<div class="tab" onclick="sw(this,'gb')">Google Biz (12)</div>
+<div class="tab on" onclick="go('ig',this)">Instagram<span class="badge">27</span></div>
+<div class="tab" onclick="go('li',this)">LinkedIn Co.<span class="badge">30</span></div>
+<div class="tab" onclick="go('sr',this)">Saravanan<span class="badge">16</span></div>
+<div class="tab" onclick="go('fb',this)">Facebook<span class="badge">27</span></div>
+<div class="tab" onclick="go('gb',this)">Google Biz<span class="badge">12</span></div>
 </div>
-<div id="p-ig" class="panel active">
-<div class="section-note">Visual-first. Diamond Frame for brand collabs. Grid-aware Row-of-3 posting. Brand collabs repeat with different USPs. No "bulk cement" or "loose cement".</div>
-<div class="month-badge" style="background:#510000">APRIL</div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#1</span>
-<span class="post-date">Apr 1 (AM)</span>
-<span class="post-type" style="background:#FDDADA;color:#AB0304">Grand Opening</span>
-<span class="post-brand" style="background:#FDDADA;color:#510000">Riyara</span>
-<span class="post-format">static</span>
-<span class="post-grid">Row 1</span>
+
+<div id="p-ig" class="panel on">
+<div class="stitle">♦ Profile + Grid + Feed</div>
+<div class="profile-frame">
+<div class="pf-bar"><span>9:41</span><span style="color:#666">●●● WiFi</span></div>
+<div class="pf-top"><span>riyaratrading ▾</span><span style="color:#666;font-size:16px">＋ ≡</span></div>
+<div class="ig-prof">
+<div class="ig-row">
+<div class="ig-av">♦</div>
+<div class="ig-stats"><div class="ig-stat"><b>27</b><span>posts</span></div><div class="ig-stat"><b>—</b><span>followers</span></div><div class="ig-stat"><b>—</b><span>following</span></div></div>
 </div>
-<div class="post-title">Every major cement brand in Tamil Nadu. One authorised distributor.</div>
-<div class="post-copy">Zuari · Maha · Sagar · Priya · Nagarjuna · Chettinad · UltraTech.
-
-All seven. All grades. Delivered by our own fleet across Tamil Nadu.
-
-#RiyaraTrading #CementDealer #AuthorisedDistributor #TamilNadu</div>
-<div class="post-design"><b>Design:</b> RIGHT third of diamond logo. Crimson #640607 bg. &quot;Cement&quot; + 7 brand names in vertical text. Post FIRST — this lands on the RIGHT of the grid, but is the FIRST thing people see in their feed.</div>
+<div class="ig-bio">
+<div class="nm">Riyara Trading</div>
+<div class="cat">Building Materials</div>
+Authorised Distributor — Cement · Steel · Aggregates<br>7 major brands across Tamil Nadu<br>Own fleet ♦️ Since 2014<br>
+<a href="#">riyara.com</a>
 </div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#2</span>
-<span class="post-date">Apr 1 (PM)</span>
-<span class="post-type" style="background:#FDDADA;color:#AB0304">Grand Opening</span>
-<span class="post-brand" style="background:#FDDADA;color:#510000">Riyara</span>
-<span class="post-format">static</span>
-<span class="post-grid">Row 1</span>
+<div class="ig-btns"><button style="background:#25D366;color:#fff">💬 WhatsApp</button><button style="background:#333;color:#fff">Message</button><button style="background:#333;color:#fff">Contact</button></div>
+<div class="ig-hls">
+<div class="ig-hl"><div class="circ">🏭</div><span>Brands</span></div>
+<div class="ig-hl"><div class="circ">🚛</div><span>Fleet</span></div>
+<div class="ig-hl"><div class="circ">📋</div><span>Grades</span></div>
+<div class="ig-hl"><div class="circ">♦️</div><span>About</span></div>
+</div></div></div>
+<div class="stitle">INSTAGRAM GRID · 9 Rows of 3</div>
+<div class="grid" style="max-width:400px;margin:0 auto">
+<div class="grow-label">Row 1 — GRAND OPENING · Diamond Split</div>
+<div class="gcell" style="background:#AB0304;color:#fff">
+<h4>RIYARA — 7 Brands. All Grades. Earn</h4><span class="pnum">#3</span></div>
+<div class="gcell" style="background:#AB0304;color:#fff">
+<h4>RIYARA — Authorised Distributor &amp; D</h4><span class="pnum">#2</span></div>
+<div class="gcell" style="background:#AB0304;color:#fff">
+<h4>Every major cement brand in Tamil N</h4><span class="pnum">#1</span></div>
+<div class="grow-label">Row 2 — BRAND COLLABS · Big 3</div>
+<div class="gcell" style="background:#8B1A1A;color:#fff">
+<h4>Zuari Cement — German Precision. Se</h4><div class="sub">SEALED DELIVERY</div><span class="fbadge">1/5</span><span class="pnum">#6</span></div>
+<div class="gcell" style="background:#143D8D;color:#62BB47">
+<h4>Chettinad Cement — 60 Years of Trus</h4><div class="sub">ALL GRADES ALWAYS</div><span class="fbadge">1/5</span><span class="pnum">#5</span></div>
+<div class="gcell" style="background:#1A1A1A;color:#FFF21A">
+<h4>UltraTech Cement — India&#x27;s No. 1. D</h4><div class="sub">OWN FLEET</div><span class="fbadge">1/5</span><span class="pnum">#4</span></div>
+<div class="grow-label">Row 3 — USP SHOWCASE · Riyara Grey</div>
+<div class="gcell" style="background:#AB0304;color:#fff">
+<h4>No surprise price changes mid-order</h4><div class="sub">CONSISTENT PRICING</div><span class="fbadge">1/5</span><span class="pnum">#9</span></div>
+<div class="gcell" style="background:#AB0304;color:#fff">
+<h4>One call. Every major brand. Every </h4><div class="sub">SINGLE WINDOW</div><span class="fbadge">🎬</span><span class="pnum">#8</span></div>
+<div class="gcell" style="background:#AB0304;color:#fff">
+<h4>Emergency delivery. Weekends. Holid</h4><div class="sub">EMERGENCY DELIVERY</div><span class="fbadge">1/5</span><span class="pnum">#7</span></div>
+<div class="grow-label">Row 4 — BRAND COLLABS · Next 3</div>
+<div class="gcell" style="background:#BF360C;color:#fff">
+<h4>Priya Cement × Nagarjuna Cement — T</h4><div class="sub">SINGLE WINDOW</div><span class="fbadge">1/5</span><span class="pnum">#12</span></div>
+<div class="gcell" style="background:#0D47A1;color:#FF8F00">
+<h4>Sagar Cement — 30 Years of Quality.</h4><div class="sub">V-SHAPED PREMIUM</div><span class="fbadge">1/5</span><span class="pnum">#11</span></div>
+<div class="gcell" style="background:#1A237E;color:#C62828">
+<h4>Maha Cement HD+ — South India&#x27;s Tru</h4><div class="sub">MULTI-STATE DIRECT</div><span class="fbadge">1/5</span><span class="pnum">#10</span></div>
+<div class="grow-label">Row 5 — STEEL · AGGREGATES · FLEET</div>
+<div class="gcell" style="background:#AB0304;color:#fff">
+<h4>5 AM. The fleet moves.</h4><div class="sub">OWN FLEET</div><span class="fbadge">🎬</span><span class="pnum">#15</span></div>
+<div class="gcell" style="background:#AB0304;color:#fff">
+<h4>Blue Metal. M-Sand. River Sand. Bou</h4><span class="fbadge">1/5</span><span class="pnum">#14</span></div>
+<div class="gcell" style="background:#1A3A5C;color:#8CF">
+<h4>TATA · VSP · SAIL — India&#x27;s Infrast</h4><span class="fbadge">1/5</span><span class="pnum">#13</span></div>
+<div class="grow-label">Row 6 — BRAND COLLAB R2</div>
+<div class="gcell" style="background:#8B1A1A;color:#fff">
+<h4>Zuari + 6 Other Brands. Heidelberg </h4><div class="sub">SINGLE WINDOW</div><span class="fbadge">1/5</span><span class="pnum">#18</span></div>
+<div class="gcell" style="background:#143D8D;color:#62BB47">
+<h4>Three Generations of Chettinad. Riy</h4><div class="sub">MULTI-STATE BACKUP</div><span class="fbadge">1/5</span><span class="pnum">#17</span></div>
+<div class="gcell" style="background:#1A1A1A;color:#FFF21A">
+<h4>UltraTech + 6 Other Brands. One Cal</h4><div class="sub">SINGLE WINDOW</div><span class="fbadge">1/5</span><span class="pnum">#16</span></div>
+<div class="grow-label">Row 7 — USP SHOWCASE R2</div>
+<div class="gcell" style="background:#AB0304;color:#fff">
+<h4>One person manages your account. Kn</h4><div class="sub">DEDICATED ACCOUNT MGR</div><span class="fbadge">1/5</span><span class="pnum">#21</span></div>
+<div class="gcell" style="background:#AB0304;color:#fff">
+<h4>11 Years. Zero Supply Gaps. Since 2</h4><div class="sub">11 YEARS ZERO GAPS</div><span class="fbadge">🎬</span><span class="pnum">#20</span></div>
+<div class="gcell" style="background:#AB0304;color:#fff">
+<h4>Proper documentation. Every tonne. </h4><div class="sub">DOCUMENTATION</div><span class="fbadge">1/5</span><span class="pnum">#19</span></div>
+<div class="grow-label">Row 8 — BRAND COLLAB R2 · Remaining</div>
+<div class="gcell" style="background:#0D47A1;color:#FF8F00">
+<h4>Sagar Cement — Multi-State Sourcing</h4><div class="sub">MULTI-STATE BACKUP</div><span class="fbadge">1/5</span><span class="pnum">#24</span></div>
+<div class="gcell" style="background:#1A237E;color:#C62828">
+<h4>Maha Cement HD+ — Premium Cement. S</h4><div class="sub">V-SHAPED PREMIUM</div><span class="fbadge">1/5</span><span class="pnum">#23</span></div>
+<div class="gcell" style="background:#006838;color:#F7941D">
+<h4>Nagarjuna Cement — 40 Years of Trus</h4><div class="sub">PAN-TN REACH</div><span class="fbadge">1/5</span><span class="pnum">#22</span></div>
+<div class="grow-label">Row 9 — EDUCATION + CLOSE</div>
+<div class="gcell" style="background:#AB0304;color:#fff">
+<h4>Carrying the brands you trust, to t</h4><span class="fbadge">🎬</span><span class="pnum">#27</span></div>
+<div class="gcell" style="background:#AB0304;color:#fff">
+<h4>TMT bar sizes: 8mm to 32mm — which </h4><span class="fbadge">1/5</span><span class="pnum">#26</span></div>
+<div class="gcell" style="background:#AB0304;color:#fff">
+<h4>Pneumatic cement unloading. No bags</h4><span class="fbadge">🎬</span><span class="pnum">#25</span></div>
 </div>
-<div class="post-title">RIYARA — Authorised Distributor &amp; Dealer. Since 2014.</div>
-<div class="post-copy">Seven of South India&#x27;s most trusted cement manufacturers.
-All grades — OPC 43, OPC 53, PPC, Slag.
-Own fleet of 20+ V-shaped tanker trucks.
-Sealed delivery. Plant to project.
+<div class="stitle">FEED POST MOCKUPS · All 27</div>
+<div class="month-div"><span>♦</span> APRIL</div>
+<div class="card fp">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b>riyaratrading</b><span>#1 · Apr 1 (AM) · 🖼 Static</span></div></div>
+<div class="fp-img" style="background:#AB0304;color:#fff">
 
-Riyara Trading. Earn Trust with Business.
+<h3>Every major cement brand in Tamil Nadu. One authorised distributor.</h3>
+<div class="fsub">Riyara</div>
 
-#RiyaraTrading #NowOnInstagram #CementDistributor #TamilNadu</div>
-<div class="post-design"><b>Design:</b> CENTRE of diamond logo. Full diamond icon + RIYARA text. Crimson #AB0304 bg. Hero piece. Post SECOND.</div>
+<div class="rbadge"><div class="rdot">♦</div><span>Riyara Trading</span></div>
 </div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#3</span>
-<span class="post-date">Apr 1 (EVE)</span>
-<span class="post-type" style="background:#FDDADA;color:#AB0304">Grand Opening</span>
-<span class="post-brand" style="background:#FDDADA;color:#510000">Riyara</span>
-<span class="post-format">static</span>
-<span class="post-grid">Row 1</span>
+<div class="fp-acts">♡ 💬 ⤴ <span class="r">🔖</span></div>
+<div class="fp-cap"><b>riyaratrading</b> Zuari · Maha · Sagar · Priya · Nagarjuna · Chettinad · UltraTech.  All seven. All grades. Delivered ... <span class="more">more</span></div>
+<div class="fp-time">Apr 1 (AM) 2026</div></div>
+<div class="card fp">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b>riyaratrading</b><span>#2 · Apr 1 (PM) · 🖼 Static</span></div></div>
+<div class="fp-img" style="background:#AB0304;color:#fff">
+
+<h3>RIYARA — Authorised Distributor &amp; Dealer. Since 2014.</h3>
+<div class="fsub">Riyara</div>
+
+<div class="rbadge"><div class="rdot">♦</div><span>Riyara Trading</span></div>
 </div>
-<div class="post-title">RIYARA — 7 Brands. All Grades. Earn Trust with Business.</div>
-<div class="post-copy">Zuari. Maha. Sagar. Priya. Nagarjuna. Chettinad. UltraTech.
+<div class="fp-acts">♡ 💬 ⤴ <span class="r">🔖</span></div>
+<div class="fp-cap"><b>riyaratrading</b> Seven of South India&#x27;s most trusted cement manufacturers. All grades — OPC 43, OPC 53, PPC, Slag. Ow... <span class="more">more</span></div>
+<div class="fp-time">Apr 1 (PM) 2026</div></div>
+<div class="card fp">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b>riyaratrading</b><span>#3 · Apr 1 (EVE) · 🖼 Static</span></div></div>
+<div class="fp-img" style="background:#AB0304;color:#fff">
 
-Seven cement brands. All grades — OPC 43, OPC 53, PPC, Slag.
-Own fleet. Sealed delivery. Plant to project.
+<h3>RIYARA — 7 Brands. All Grades. Earn Trust with Business.</h3>
+<div class="fsub">Riyara</div>
 
-Riyara Trading. Since 2014.
-
-#RiyaraTrading #NowOnInstagram #CementDistributor #TamilNadu</div>
-<div class="post-design"><b>Design:</b> LEFT third of diamond logo. Crimson #510000 bg. &quot;7 Brands&quot; + &quot;All Grades&quot; in vertical text. Post LAST — this lands on the LEFT of the grid.</div>
+<div class="rbadge"><div class="rdot">♦</div><span>Riyara Trading</span></div>
 </div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#4</span>
-<span class="post-date">Apr 2</span>
-<span class="post-type" style="background:#F5F5F5;color:#000000">Brand Collab</span>
-<span class="post-brand" style="background:#F5F5F5;color:#1A1A1A">UltraTech Cement</span>
-<span class="post-format">carousel</span>
-<span class="post-grid">Row 2</span>
-<span class="usp-tag" style="background:#AB0304">OWN FLEET</span>
+<div class="fp-acts">♡ 💬 ⤴ <span class="r">🔖</span></div>
+<div class="fp-cap"><b>riyaratrading</b> Zuari. Maha. Sagar. Priya. Nagarjuna. Chettinad. UltraTech.  Seven cement brands. All grades — OPC 4... <span class="more">more</span></div>
+<div class="fp-time">Apr 1 (EVE) 2026</div></div>
+<div class="card fp">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b>riyaratrading</b><span>#4 · Apr 2 · 📑 Carousel</span></div></div>
+<div class="fp-img" style="background:#1A1A1A;color:#FFF21A">
+<span class="snum">1/5</span>
+<h3>UltraTech Cement — India&#x27;s No. 1. Delivered by Riyara&#x27;s Own Fleet.</h3>
+<div class="fsub">UltraTech Cement</div>
+<div style="margin-top:6px;font-size:7px;background:rgba(0,0,0,.3);display:inline-block;padding:2px 6px;border-radius:3px">OWN FLEET</div>
+<div class="rbadge"><div class="rdot">♦</div><span>Riyara Trading</span></div>
 </div>
-<div class="post-title">UltraTech Cement — India&#x27;s No. 1. Delivered by Riyara&#x27;s Own Fleet.</div>
-<div class="post-copy">UltraTech Cement from the Aditya Birla Group — India&#x27;s largest cement manufacturer.
-
-Riyara delivers UltraTech across Tamil Nadu with our own fleet of 20+ cement bulkers and V-shaped tanker trucks. No third-party logistics. Your UltraTech order moves on Riyara&#x27;s trucks.
-
-All grades: OPC 43 · OPC 53 · PPC.
-
-Riyara Trading — authorised distributor and dealer for UltraTech Cement across Tamil Nadu.
-
-#UltraTechCement #UltraTechDealer #UltraTechDistributor #UltraTechCementTamilNadu #AdityaBirlaGroup #RiyaraTrading #TamilNadu</div>
-<div class="post-design"><b>Design:</b> UltraTech black+yellow dominant. Diamond frame. V-shaped tanker in UltraTech colours. Logo LARGE.</div>
+<div class="fp-acts">♡ 💬 ⤴ <span class="r">🔖</span></div>
+<div class="fp-cap"><b>riyaratrading</b> UltraTech Cement from the Aditya Birla Group — India&#x27;s largest cement manufacturer.  Riyara delivers... <span class="more">more</span></div>
+<div class="fp-time">Apr 2 2026</div></div>
+<div class="card fp">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b>riyaratrading</b><span>#5 · Apr 5 · 📑 Carousel</span></div></div>
+<div class="fp-img" style="background:#143D8D;color:#62BB47">
+<span class="snum">1/5</span>
+<h3>Chettinad Cement — 60 Years of Trust. Every Grade Always Available.</h3>
+<div class="fsub">Chettinad Cement</div>
+<div style="margin-top:6px;font-size:7px;background:rgba(0,0,0,.3);display:inline-block;padding:2px 6px;border-radius:3px">ALL GRADES ALWAYS</div>
+<div class="rbadge"><div class="rdot">♦</div><span>Riyara Trading</span></div>
 </div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#5</span>
-<span class="post-date">Apr 5</span>
-<span class="post-type" style="background:#E8EFF8;color:#0A1F47">Brand Collab</span>
-<span class="post-brand" style="background:#E8EFF8;color:#143D8D">Chettinad Cement</span>
-<span class="post-format">carousel</span>
-<span class="post-grid">Row 2</span>
-<span class="usp-tag" style="background:#1A237E">ALL GRADES ALWAYS</span>
+<div class="fp-acts">♡ 💬 ⤴ <span class="r">🔖</span></div>
+<div class="fp-cap"><b>riyaratrading</b> Since 1962. Three generations of manufacturing leadership.  Riyara stocks every Chettinad grade — OP... <span class="more">more</span></div>
+<div class="fp-time">Apr 5 2026</div></div>
+<div class="card fp">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b>riyaratrading</b><span>#6 · Apr 8 · 📑 Carousel</span></div></div>
+<div class="fp-img" style="background:#8B1A1A;color:#fff">
+<span class="snum">1/5</span>
+<h3>Zuari Cement — German Precision. Sealed Delivery by Riyara.</h3>
+<div class="fsub">Zuari Cement</div>
+<div style="margin-top:6px;font-size:7px;background:rgba(0,0,0,.3);display:inline-block;padding:2px 6px;border-radius:3px">SEALED DELIVERY</div>
+<div class="rbadge"><div class="rdot">♦</div><span>Riyara Trading</span></div>
 </div>
-<div class="post-title">Chettinad Cement — 60 Years of Trust. Every Grade Always Available.</div>
-<div class="post-copy">Since 1962. Three generations of manufacturing leadership.
-
-Riyara stocks every Chettinad grade — OPC 43, OPC 53, PPC. Not just the popular ones. All of them. Always.
-
-Because the project that needs Chettinad PPC at 6 AM shouldn&#x27;t hear &quot;we only have OPC 53 right now.&quot;
-
-Riyara Trading — authorised distributor and dealer for Chettinad Cement across Tamil Nadu.
-
-#ChettinadCement #ChettinadDealer #ChettinadDistributor #ChettinadCementTamilNadu #RiyaraTrading #TamilNadu</div>
-<div class="post-design"><b>Design:</b> Chettinad blue+green. Diamond frame. Heritage 1962 timeline. Grade availability grid — all ticked.</div>
+<div class="fp-acts">♡ 💬 ⤴ <span class="r">🔖</span></div>
+<div class="fp-cap"><b>riyaratrading</b> Zuari Cement is part of Heidelberg Materials, Germany — world&#x27;s #2 cement company.  Global manufactu... <span class="more">more</span></div>
+<div class="fp-time">Apr 8 2026</div></div>
+<div class="card fp">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b>riyaratrading</b><span>#7 · Apr 11 · 📑 Carousel</span></div></div>
+<div class="fp-img" style="background:#AB0304;color:#fff">
+<span class="snum">1/5</span>
+<h3>Emergency delivery. Weekends. Holidays. The fleet moves when you need it.</h3>
+<div class="fsub">Riyara</div>
+<div style="margin-top:6px;font-size:7px;background:rgba(0,0,0,.3);display:inline-block;padding:2px 6px;border-radius:3px">EMERGENCY DELIVERY</div>
+<div class="rbadge"><div class="rdot">♦</div><span>Riyara Trading</span></div>
 </div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#6</span>
-<span class="post-date">Apr 8</span>
-<span class="post-type" style="background:#F5E6E6;color:#4A0E0E">Brand Collab</span>
-<span class="post-brand" style="background:#F5E6E6;color:#8B1A1A">Zuari Cement</span>
-<span class="post-format">carousel</span>
-<span class="post-grid">Row 2</span>
-<span class="usp-tag" style="background:#4A0E0E">SEALED DELIVERY</span>
+<div class="fp-acts">♡ 💬 ⤴ <span class="r">🔖</span></div>
+<div class="fp-cap"><b>riyaratrading</b> Construction doesn&#x27;t stop for weekends. Neither does Riyara.  Own fleet of 20+ trucks. We dispatch w... <span class="more">more</span></div>
+<div class="fp-time">Apr 11 2026</div></div>
+<div class="card fp">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b>riyaratrading</b><span>#8 · Apr 14 · 🎬 Reel</span></div></div>
+<div class="reel" style="background:linear-gradient(180deg,#1a1a2e,#AB0304)">
+<div class="play"></div>
+<div style="text-align:center;margin-bottom:20px">
+<div style="font-size:13px;font-weight:700;line-height:1.35">One call. Every major brand. Every grade. The single-window advantage.</div>
+<div style="font-size:8px;opacity:.5;margin-top:4px">Riyara</div>
+</div></div>
+<div class="fp-cap"><b>riyaratrading</b> As an authorised distributor for all 7 major cement manufacturers in Tamil Nadu, Riyara offers a sin... <span class="more">more</span></div>
+<div class="fp-time">Apr 14 2026</div></div>
+<div class="card fp">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b>riyaratrading</b><span>#9 · Apr 18 · 📑 Carousel</span></div></div>
+<div class="fp-img" style="background:#AB0304;color:#fff">
+<span class="snum">1/5</span>
+<h3>No surprise price changes mid-order. That&#x27;s the Riyara commitment.</h3>
+<div class="fsub">Riyara</div>
+<div style="margin-top:6px;font-size:7px;background:rgba(0,0,0,.3);display:inline-block;padding:2px 6px;border-radius:3px">CONSISTENT PRICING</div>
+<div class="rbadge"><div class="rdot">♦</div><span>Riyara Trading</span></div>
 </div>
-<div class="post-title">Zuari Cement — German Precision. Sealed Delivery by Riyara.</div>
-<div class="post-copy">Zuari Cement is part of Heidelberg Materials, Germany — world&#x27;s #2 cement company.
-
-Global manufacturing precision deserves equally precise delivery. Riyara delivers Zuari in sealed V-shaped tanker trucks — cement moves from plant to silo without exposure to moisture, dust, or transit damage.
-
-Own fleet. Sealed delivery. Quality preserved.
-
-Riyara Trading — authorised distributor and dealer for Zuari Cement across Tamil Nadu.
-
-#ZuariCement #ZuariDealer #ZuariDistributor #ZuariCementTamilNadu #HeidelbergMaterials #RiyaraTrading #TamilNadu</div>
-<div class="post-design"><b>Design:</b> Zuari maroon + Heidelberg badge. Diamond frame. V-tanker cross-section — sealed cement inside.</div>
+<div class="fp-acts">♡ 💬 ⤴ <span class="r">🔖</span></div>
+<div class="fp-cap"><b>riyaratrading</b> Transparent pricing. Volume brackets communicated upfront. No mid-order surprises.  Consistent prici... <span class="more">more</span></div>
+<div class="fp-time">Apr 18 2026</div></div>
+<div class="card fp">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b>riyaratrading</b><span>#10 · Apr 22 · 📑 Carousel</span></div></div>
+<div class="fp-img" style="background:#1A237E;color:#C62828">
+<span class="snum">1/5</span>
+<h3>Maha Cement HD+ — South India&#x27;s Trusted Brand, Direct to Tamil Nadu.</h3>
+<div class="fsub">Maha Cement</div>
+<div style="margin-top:6px;font-size:7px;background:rgba(0,0,0,.3);display:inline-block;padding:2px 6px;border-radius:3px">MULTI-STATE DIRECT</div>
+<div class="rbadge"><div class="rdot">♦</div><span>Riyara Trading</span></div>
 </div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#7</span>
-<span class="post-date">Apr 11</span>
-<span class="post-type" style="background:#FDDADA;color:#AB0304">USP Showcase</span>
-<span class="post-brand" style="background:#FDDADA;color:#510000">Riyara</span>
-<span class="post-format">carousel</span>
-<span class="post-grid">Row 3</span>
-<span class="usp-tag" style="background:#3D3D3D">EMERGENCY DELIVERY</span>
+<div class="fp-acts">♡ 💬 ⤴ <span class="r">🔖</span></div>
+<div class="fp-cap"><b>riyaratrading</b> Maha Cement from My Home Industries has earned strong loyalty across Telangana, AP, and Karnataka.  ... <span class="more">more</span></div>
+<div class="fp-time">Apr 22 2026</div></div>
+<div class="card fp">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b>riyaratrading</b><span>#11 · Apr 26 · 📑 Carousel</span></div></div>
+<div class="fp-img" style="background:#0D47A1;color:#FF8F00">
+<span class="snum">1/5</span>
+<h3>Sagar Cement — 30 Years of Quality. V-Shaped Tankers for Faster Delivery.</h3>
+<div class="fsub">Sagar Cement</div>
+<div style="margin-top:6px;font-size:7px;background:rgba(0,0,0,.3);display:inline-block;padding:2px 6px;border-radius:3px">V-SHAPED PREMIUM</div>
+<div class="rbadge"><div class="rdot">♦</div><span>Riyara Trading</span></div>
 </div>
-<div class="post-title">Emergency delivery. Weekends. Holidays. The fleet moves when you need it.</div>
-<div class="post-copy">Construction doesn&#x27;t stop for weekends. Neither does Riyara.
-
-Own fleet of 20+ trucks. We dispatch when your project needs it — not when it&#x27;s convenient for someone else.
-
-#RiyaraTrading #EmergencyDelivery #ReliableDistribution #TamilNadu</div>
-<div class="post-design"><b>Design:</b> Grey #3D3D3D base + crimson accent. Emergency phone icon. Fleet silhouette.</div>
+<div class="fp-acts">♡ 💬 ⤴ <span class="r">🔖</span></div>
+<div class="fp-cap"><b>riyaratrading</b> Sagar Cements — trusted for over 30 years.  Riyara delivers Sagar in specialised V-shaped tanker tru... <span class="more">more</span></div>
+<div class="fp-time">Apr 26 2026</div></div>
+<div class="card fp">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b>riyaratrading</b><span>#12 · Apr 29 · 📑 Carousel</span></div></div>
+<div class="fp-img" style="background:#BF360C;color:#fff">
+<span class="snum">1/5</span>
+<h3>Priya Cement × Nagarjuna Cement — Two South Indian Icons. One Distributor.</h3>
+<div class="fsub">Priya + Nagarjuna</div>
+<div style="margin-top:6px;font-size:7px;background:rgba(0,0,0,.3);display:inline-block;padding:2px 6px;border-radius:3px">SINGLE WINDOW</div>
+<div class="rbadge"><div class="rdot">♦</div><span>Riyara Trading</span></div>
 </div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#8</span>
-<span class="post-date">Apr 14</span>
-<span class="post-type" style="background:#FDDADA;color:#AB0304">USP Showcase</span>
-<span class="post-brand" style="background:#FDDADA;color:#510000">Riyara</span>
-<span class="post-format">reel</span>
-<span class="post-grid">Row 3</span>
-<span class="usp-tag" style="background:#0D47A1">SINGLE WINDOW</span>
+<div class="fp-acts">♡ 💬 ⤴ <span class="r">🔖</span></div>
+<div class="fp-cap"><b>riyaratrading</b> Priya Cement — since 1986. Strength and longevity. Nagarjuna Cement — 40 years of trust across South... <span class="more">more</span></div>
+<div class="fp-time">Apr 29 2026</div></div>
+<div class="month-div"><span>♦</span> MAY</div>
+<div class="card fp">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b>riyaratrading</b><span>#13 · May 3 · 📑 Carousel</span></div></div>
+<div class="fp-img" style="background:#1A3A5C;color:#8CF">
+<span class="snum">1/5</span>
+<h3>TATA · VSP · SAIL — India&#x27;s Infrastructure Steel. Through Riyara.</h3>
+<div class="fsub">TATA / VSP / SAIL</div>
+
+<div class="rbadge"><div class="rdot">♦</div><span>Riyara Trading</span></div>
 </div>
-<div class="post-title">One call. Every major brand. Every grade. The single-window advantage.</div>
-<div class="post-copy">As an authorised distributor for all 7 major cement manufacturers in Tamil Nadu, Riyara offers a single window.
+<div class="fp-acts">♡ 💬 ⤴ <span class="r">🔖</span></div>
+<div class="fp-cap"><b>riyaratrading</b> When an engineer writes TATA Fe500, they&#x27;re choosing consistency.  Riyara distributes TATA, VSP, and... <span class="more">more</span></div>
+<div class="fp-time">May 3 2026</div></div>
+<div class="card fp">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b>riyaratrading</b><span>#14 · May 6 · 📑 Carousel</span></div></div>
+<div class="fp-img" style="background:#AB0304;color:#fff">
+<span class="snum">1/5</span>
+<h3>Blue Metal. M-Sand. River Sand. Boulders. GSB. The complete range.</h3>
+<div class="fsub">Riyara</div>
 
-The brands do the manufacturing. We do the coordination.
-
-#RiyaraTrading #SingleWindow #CementDistribution #TamilNadu</div>
-<div class="post-design"><b>Design:</b> Crimson #AB0304 base. Junction graphic — brands flow THROUGH Riyara.</div>
+<div class="rbadge"><div class="rdot">♦</div><span>Riyara Trading</span></div>
 </div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#9</span>
-<span class="post-date">Apr 18</span>
-<span class="post-type" style="background:#FDDADA;color:#AB0304">USP Showcase</span>
-<span class="post-brand" style="background:#FDDADA;color:#510000">Riyara</span>
-<span class="post-format">carousel</span>
-<span class="post-grid">Row 3</span>
-<span class="usp-tag" style="background:#FF8F00">CONSISTENT PRICING</span>
+<div class="fp-acts">♡ 💬 ⤴ <span class="r">🔖</span></div>
+<div class="fp-cap"><b>riyaratrading</b> Each serves a different purpose. Swipe to learn.  Own crushing network in Chennai.  For aggregate or... <span class="more">more</span></div>
+<div class="fp-time">May 6 2026</div></div>
+<div class="card fp">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b>riyaratrading</b><span>#15 · May 10 · 🎬 Reel</span></div></div>
+<div class="reel" style="background:linear-gradient(180deg,#1a1a2e,#AB0304)">
+<div class="play"></div>
+<div style="text-align:center;margin-bottom:20px">
+<div style="font-size:13px;font-weight:700;line-height:1.35">5 AM. The fleet moves.</div>
+<div style="font-size:8px;opacity:.5;margin-top:4px">Riyara</div>
+</div></div>
+<div class="fp-cap"><b>riyaratrading</b> Before the city wakes up, Riyara&#x27;s trucks are carrying the brands you trust.  #RiyaraTrading #FleetL... <span class="more">more</span></div>
+<div class="fp-time">May 10 2026</div></div>
+<div class="card fp">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b>riyaratrading</b><span>#16 · May 14 · 📑 Carousel</span></div></div>
+<div class="fp-img" style="background:#1A1A1A;color:#FFF21A">
+<span class="snum">1/5</span>
+<h3>UltraTech + 6 Other Brands. One Call Handles All. The Single-Window Advantage.</h3>
+<div class="fsub">UltraTech Cement</div>
+<div style="margin-top:6px;font-size:7px;background:rgba(0,0,0,.3);display:inline-block;padding:2px 6px;border-radius:3px">SINGLE WINDOW</div>
+<div class="rbadge"><div class="rdot">♦</div><span>Riyara Trading</span></div>
 </div>
-<div class="post-title">No surprise price changes mid-order. That&#x27;s the Riyara commitment.</div>
-<div class="post-copy">Transparent pricing. Volume brackets communicated upfront. No mid-order surprises.
-
-Consistent pricing is a feature, not a favour.
-
-#RiyaraTrading #ConsistentPricing #TamilNadu</div>
-<div class="post-design"><b>Design:</b> Grey #6B6B6B base. Clean pricing visual. Professional, no-nonsense.</div>
+<div class="fp-acts">♡ 💬 ⤴ <span class="r">🔖</span></div>
+<div class="fp-cap"><b>riyaratrading</b> India&#x27;s largest — 152 million tonnes per annum capacity.  Through Riyara, you don&#x27;t just get UltraTe... <span class="more">more</span></div>
+<div class="fp-time">May 14 2026</div></div>
+<div class="card fp">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b>riyaratrading</b><span>#17 · May 17 · 📑 Carousel</span></div></div>
+<div class="fp-img" style="background:#143D8D;color:#62BB47">
+<span class="snum">1/5</span>
+<h3>Three Generations of Chettinad. Riyara&#x27;s Fleet Delivers Without Interruption.</h3>
+<div class="fsub">Chettinad Cement</div>
+<div style="margin-top:6px;font-size:7px;background:rgba(0,0,0,.3);display:inline-block;padding:2px 6px;border-radius:3px">MULTI-STATE BACKUP</div>
+<div class="rbadge"><div class="rdot">♦</div><span>Riyara Trading</span></div>
 </div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#10</span>
-<span class="post-date">Apr 22</span>
-<span class="post-type" style="background:#E8EAF6;color:#0D1240">Brand Collab</span>
-<span class="post-brand" style="background:#E8EAF6;color:#1A237E">Maha Cement</span>
-<span class="post-format">carousel</span>
-<span class="post-grid">Row 4</span>
-<span class="usp-tag" style="background:#1A237E">MULTI-STATE DIRECT</span>
+<div class="fp-acts">♡ 💬 ⤴ <span class="r">🔖</span></div>
+<div class="fp-cap"><b>riyaratrading</b> 60 years of manufacturing excellence.  What Riyara adds: uninterrupted supply. We source from multip... <span class="more">more</span></div>
+<div class="fp-time">May 17 2026</div></div>
+<div class="card fp">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b>riyaratrading</b><span>#18 · May 21 · 📑 Carousel</span></div></div>
+<div class="fp-img" style="background:#8B1A1A;color:#fff">
+<span class="snum">1/5</span>
+<h3>Zuari + 6 Other Brands. Heidelberg Quality. Single-Window Convenience.</h3>
+<div class="fsub">Zuari Cement</div>
+<div style="margin-top:6px;font-size:7px;background:rgba(0,0,0,.3);display:inline-block;padding:2px 6px;border-radius:3px">SINGLE WINDOW</div>
+<div class="rbadge"><div class="rdot">♦</div><span>Riyara Trading</span></div>
 </div>
-<div class="post-title">Maha Cement HD+ — South India&#x27;s Trusted Brand, Direct to Tamil Nadu.</div>
-<div class="post-copy">Maha Cement from My Home Industries has earned strong loyalty across Telangana, AP, and Karnataka.
-
-Riyara sources Maha directly — no intermediaries, no sub-distributors. Plant to your project via our own fleet.
-
-Maha OPC 43 · Maha Special OPC 53 · Maha HD+
-All available across Tamil Nadu through Riyara.
-
-Riyara Trading — authorised distributor and dealer for Maha Cement across Tamil Nadu.
-
-#MahaCement #MahaDealer #MahaDistributor #MahaCementTamilNadu #MahaHDPlus #RiyaraTrading #TamilNadu</div>
-<div class="post-design"><b>Design:</b> Maha navy. Diamond frame. Route infographic: Hyderabad → Riyara fleet → TN sites. NO INTERMEDIARIES.</div>
+<div class="fp-acts">♡ 💬 ⤴ <span class="r">🔖</span></div>
+<div class="fp-cap"><b>riyaratrading</b> Heidelberg Materials operates in 50+ countries. Zuari is their flagship in India.  Through Riyara, y... <span class="more">more</span></div>
+<div class="fp-time">May 21 2026</div></div>
+<div class="card fp">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b>riyaratrading</b><span>#19 · May 24 · 📑 Carousel</span></div></div>
+<div class="fp-img" style="background:#AB0304;color:#fff">
+<span class="snum">1/5</span>
+<h3>Proper documentation. Every tonne. Every delivery.</h3>
+<div class="fsub">Riyara</div>
+<div style="margin-top:6px;font-size:7px;background:rgba(0,0,0,.3);display:inline-block;padding:2px 6px;border-radius:3px">DOCUMENTATION</div>
+<div class="rbadge"><div class="rdot">♦</div><span>Riyara Trading</span></div>
 </div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#11</span>
-<span class="post-date">Apr 26</span>
-<span class="post-type" style="background:#E3F2FD;color:#062350">Brand Collab</span>
-<span class="post-brand" style="background:#E3F2FD;color:#0D47A1">Sagar Cement</span>
-<span class="post-format">carousel</span>
-<span class="post-grid">Row 4</span>
-<span class="usp-tag" style="background:#0D47A1">V-SHAPED PREMIUM</span>
+<div class="fp-acts">♡ 💬 ⤴ <span class="r">🔖</span></div>
+<div class="fp-cap"><b>riyaratrading</b> GST invoices, weighbridge slips, delivery challans, mill test certificates — all in order, every tim... <span class="more">more</span></div>
+<div class="fp-time">May 24 2026</div></div>
+<div class="card fp">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b>riyaratrading</b><span>#20 · May 28 · 🎬 Reel</span></div></div>
+<div class="reel" style="background:linear-gradient(180deg,#1a1a2e,#AB0304)">
+<div class="play"></div>
+<div style="text-align:center;margin-bottom:20px">
+<div style="font-size:13px;font-weight:700;line-height:1.35">11 Years. Zero Supply Gaps. Since 2014.</div>
+<div style="font-size:8px;opacity:.5;margin-top:4px">Riyara</div>
+</div></div>
+<div class="fp-cap"><b>riyaratrading</b> Operating through monsoons, plant shutdowns, demand spikes, and everything in between.  Continuous s... <span class="more">more</span></div>
+<div class="fp-time">May 28 2026</div></div>
+<div class="card fp">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b>riyaratrading</b><span>#21 · May 31 · 📑 Carousel</span></div></div>
+<div class="fp-img" style="background:#AB0304;color:#fff">
+<span class="snum">1/5</span>
+<h3>One person manages your account. Knows your patterns.</h3>
+<div class="fsub">Riyara</div>
+<div style="margin-top:6px;font-size:7px;background:rgba(0,0,0,.3);display:inline-block;padding:2px 6px;border-radius:3px">DEDICATED ACCOUNT MGR</div>
+<div class="rbadge"><div class="rdot">♦</div><span>Riyara Trading</span></div>
 </div>
-<div class="post-title">Sagar Cement — 30 Years of Quality. V-Shaped Tankers for Faster Delivery.</div>
-<div class="post-copy">Sagar Cements — trusted for over 30 years.
-
-Riyara delivers Sagar in specialised V-shaped tanker trucks — designed for faster discharge and more complete unloading. Less waiting at site. More efficient delivery cycles.
-
-All Sagar grades across Tamil Nadu.
-
-Riyara Trading — authorised distributor and dealer for Sagar Cement across Tamil Nadu.
-
-#SagarCement #SagarDealer #SagarDistributor #SagarCementTamilNadu #RiyaraTrading #TamilNadu</div>
-<div class="post-design"><b>Design:</b> Sagar blue+orange. Diamond frame. 3-panel: plant → V-tanker → fast discharge. V-SHAPE is the visual differentiator.</div>
+<div class="fp-acts">♡ 💬 ⤴ <span class="r">🔖</span></div>
+<div class="fp-cap"><b>riyaratrading</b> Dedicated account manager. They know your order cycles, your preferred brands, your site schedules. ... <span class="more">more</span></div>
+<div class="fp-time">May 31 2026</div></div>
+<div class="month-div"><span>♦</span> JUNE</div>
+<div class="card fp">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b>riyaratrading</b><span>#22 · Jun 3 · 📑 Carousel</span></div></div>
+<div class="fp-img" style="background:#006838;color:#F7941D">
+<span class="snum">1/5</span>
+<h3>Nagarjuna Cement — 40 Years of Trust. Pan-TN Coverage by Riyara.</h3>
+<div class="fsub">Nagarjuna Cement</div>
+<div style="margin-top:6px;font-size:7px;background:rgba(0,0,0,.3);display:inline-block;padding:2px 6px;border-radius:3px">PAN-TN REACH</div>
+<div class="rbadge"><div class="rdot">♦</div><span>Riyara Trading</span></div>
 </div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#12</span>
-<span class="post-date">Apr 29</span>
-<span class="post-type" style="background:#FFF3E0;color:#4A0E0E">Brand Collab</span>
-<span class="post-brand" style="background:#FFF3E0;color:#BF360C">Priya + Nagarjuna</span>
-<span class="post-format">carousel</span>
-<span class="post-grid">Row 4</span>
-<span class="usp-tag" style="background:#0D47A1">SINGLE WINDOW</span>
+<div class="fp-acts">♡ 💬 ⤴ <span class="r">🔖</span></div>
+<div class="fp-cap"><b>riyaratrading</b> Popularly known as &#x27;Monagadu Cement.&#x27; 40 years of trust.  Riyara&#x27;s statewide network ensures Nagarju... <span class="more">more</span></div>
+<div class="fp-time">Jun 3 2026</div></div>
+<div class="card fp">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b>riyaratrading</b><span>#23 · Jun 7 · 📑 Carousel</span></div></div>
+<div class="fp-img" style="background:#1A237E;color:#C62828">
+<span class="snum">1/5</span>
+<h3>Maha Cement HD+ — Premium Cement. Sealed V-Shaped Tanker Delivery.</h3>
+<div class="fsub">Maha Cement</div>
+<div style="margin-top:6px;font-size:7px;background:rgba(0,0,0,.3);display:inline-block;padding:2px 6px;border-radius:3px">V-SHAPED PREMIUM</div>
+<div class="rbadge"><div class="rdot">♦</div><span>Riyara Trading</span></div>
 </div>
-<div class="post-title">Priya Cement × Nagarjuna Cement — Two South Indian Icons. One Distributor.</div>
-<div class="post-copy">Priya Cement — since 1986. Strength and longevity.
-Nagarjuna Cement — 40 years of trust across South India.
-
-Both available through one call to Riyara. Fewer vendors. Less coordination. Same reliable delivery.
-
-Riyara Trading — authorised distributor for both across Tamil Nadu.
-
-#PriyaCement #NagarjunaCement #PriyaDealer #NagarjunaDealer #RiyaraTrading #TamilNadu</div>
-<div class="post-design"><b>Design:</b> Split design — half Priya red, half Nagarjuna green. Diamond frame. Two heritage lines meeting at Riyara.</div>
+<div class="fp-acts">♡ 💬 ⤴ <span class="r">🔖</span></div>
+<div class="fp-cap"><b>riyaratrading</b> Maha HD+ represents premium quality — engineered for high-performance construction.  Premium cement ... <span class="more">more</span></div>
+<div class="fp-time">Jun 7 2026</div></div>
+<div class="card fp">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b>riyaratrading</b><span>#24 · Jun 10 · 📑 Carousel</span></div></div>
+<div class="fp-img" style="background:#0D47A1;color:#FF8F00">
+<span class="snum">1/5</span>
+<h3>Sagar Cement — Multi-State Sourcing Keeps It Available. Always.</h3>
+<div class="fsub">Sagar Cement</div>
+<div style="margin-top:6px;font-size:7px;background:rgba(0,0,0,.3);display:inline-block;padding:2px 6px;border-radius:3px">MULTI-STATE BACKUP</div>
+<div class="rbadge"><div class="rdot">♦</div><span>Riyara Trading</span></div>
 </div>
-<div class="month-badge" style="background:#1A3A5C">MAY</div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#13</span>
-<span class="post-date">May 3</span>
-<span class="post-type" style="background:#E3F2FD;color:#002F5C">Brand Collab</span>
-<span class="post-brand" style="background:#E3F2FD;color:#1A3A5C">TATA / VSP / SAIL</span>
-<span class="post-format">carousel</span>
-<span class="post-grid">Row 5</span>
+<div class="fp-acts">♡ 💬 ⤴ <span class="r">🔖</span></div>
+<div class="fp-cap"><b>riyaratrading</b> Three decades of excellence.  Riyara sources Sagar from multiple plants across states. When one is o... <span class="more">more</span></div>
+<div class="fp-time">Jun 10 2026</div></div>
+<div class="card fp">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b>riyaratrading</b><span>#25 · Jun 14 · 🎬 Reel</span></div></div>
+<div class="reel" style="background:linear-gradient(180deg,#1a1a2e,#AB0304)">
+<div class="play"></div>
+<div style="text-align:center;margin-bottom:20px">
+<div style="font-size:13px;font-weight:700;line-height:1.35">Pneumatic cement unloading. No bags. No hands. Just air.</div>
+<div style="font-size:8px;opacity:.5;margin-top:4px">Riyara</div>
+</div></div>
+<div class="fp-cap"><b>riyaratrading</b> Compressed air does all the work. Sealed from plant to silo. Zero exposure to moisture or dust.  Thi... <span class="more">more</span></div>
+<div class="fp-time">Jun 14 2026</div></div>
+<div class="card fp">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b>riyaratrading</b><span>#26 · Jun 19 · 📑 Carousel</span></div></div>
+<div class="fp-img" style="background:#AB0304;color:#fff">
+<span class="snum">1/5</span>
+<h3>TMT bar sizes: 8mm to 32mm — which goes where?</h3>
+<div class="fsub">Riyara</div>
+
+<div class="rbadge"><div class="rdot">♦</div><span>Riyara Trading</span></div>
 </div>
-<div class="post-title">TATA · VSP · SAIL — India&#x27;s Infrastructure Steel. Through Riyara.</div>
-<div class="post-copy">When an engineer writes TATA Fe500, they&#x27;re choosing consistency.
-
-Riyara distributes TATA, VSP, and SAIL TMT bars in Tamil Nadu. All grades. All sizes. Mill test certificates.
-
-For steel orders, reach out to Riyara Trading.
-
-#TATASteel #VSP #SAIL #TMTBars #RiyaraTrading #TamilNadu</div>
-<div class="post-design"><b>Design:</b> Steel blue #1A3A5C. Three brand logos as heroes. Riyara as the connecting channel.</div>
-</div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#14</span>
-<span class="post-date">May 6</span>
-<span class="post-type" style="background:#FDDADA;color:#AB0304">Range Showcase</span>
-<span class="post-brand" style="background:#FDDADA;color:#510000">Riyara</span>
-<span class="post-format">carousel</span>
-<span class="post-grid">Row 5</span>
-</div>
-<div class="post-title">Blue Metal. M-Sand. River Sand. Boulders. GSB. The complete range.</div>
-<div class="post-copy">Each serves a different purpose. Swipe to learn.
-
-Own crushing network in Chennai.
-
-For aggregate orders, reach out to Riyara Trading.
-
-#Aggregates #BlueMetal #MSand #RiyaraTrading #TamilNadu</div>
-<div class="post-design"><b>Design:</b> Warm sand #8B7355. Texture-first — real material photos. Muted green accent.</div>
-</div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#15</span>
-<span class="post-date">May 10</span>
-<span class="post-type" style="background:#FDDADA;color:#AB0304">USP Showcase</span>
-<span class="post-brand" style="background:#FDDADA;color:#510000">Riyara</span>
-<span class="post-format">reel</span>
-<span class="post-grid">Row 5</span>
-<span class="usp-tag" style="background:#AB0304">OWN FLEET</span>
-</div>
-<div class="post-title">5 AM. The fleet moves.</div>
-<div class="post-copy">Before the city wakes up, Riyara&#x27;s trucks are carrying the brands you trust.
-
-#RiyaraTrading #FleetLife #ReliableDistribution #TamilNadu</div>
-<div class="post-design"><b>Design:</b> CINEMATIC. Crimson #510000. Mood-driven. Early morning fleet footage. Logo at end only.</div>
-</div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#16</span>
-<span class="post-date">May 14</span>
-<span class="post-type" style="background:#F5F5F5;color:#000000">Brand Collab R2</span>
-<span class="post-brand" style="background:#F5F5F5;color:#1A1A1A">UltraTech Cement</span>
-<span class="post-format">carousel</span>
-<span class="post-grid">Row 6</span>
-<span class="usp-tag" style="background:#0D47A1">SINGLE WINDOW</span>
-</div>
-<div class="post-title">UltraTech + 6 Other Brands. One Call Handles All. The Single-Window Advantage.</div>
-<div class="post-copy">India&#x27;s largest — 152 million tonnes per annum capacity.
-
-Through Riyara, you don&#x27;t just get UltraTech. You get access to 7 major brands through one distributor. UltraTech for the foundation and Chettinad for the superstructure? One call. One fleet.
-
-All UltraTech grades across Tamil Nadu.
-
-#UltraTechCement #UltraTechDistributor #RiyaraTrading #TamilNadu</div>
-<div class="post-design"><b>Design:</b> UltraTech black+yellow as hero. 6 other brand logos visible but secondary. SINGLE WINDOW message. Same diamond frame, NEW content.</div>
-</div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#17</span>
-<span class="post-date">May 17</span>
-<span class="post-type" style="background:#E8EFF8;color:#0A1F47">Brand Collab R2</span>
-<span class="post-brand" style="background:#E8EFF8;color:#143D8D">Chettinad Cement</span>
-<span class="post-format">carousel</span>
-<span class="post-grid">Row 6</span>
-<span class="usp-tag" style="background:#0D47A1">MULTI-STATE BACKUP</span>
-</div>
-<div class="post-title">Three Generations of Chettinad. Riyara&#x27;s Fleet Delivers Without Interruption.</div>
-<div class="post-copy">60 years of manufacturing excellence.
-
-What Riyara adds: uninterrupted supply. We source from multiple plants across states. If one faces maintenance or monsoon delays, your Chettinad supply doesn&#x27;t stop — we&#x27;ve already activated an alternate source.
-
-60 years of Chettinad quality. 11 years of disruption-proof delivery.
-
-#ChettinadCement #ChettinadDistributor #RiyaraTrading #TamilNadu</div>
-<div class="post-design"><b>Design:</b> Chettinad heritage on top. Below: disruption-proof supply visual — when one route dims, another activates. Same diamond frame, NEW USP.</div>
-</div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#18</span>
-<span class="post-date">May 21</span>
-<span class="post-type" style="background:#F5E6E6;color:#4A0E0E">Brand Collab R2</span>
-<span class="post-brand" style="background:#F5E6E6;color:#8B1A1A">Zuari Cement</span>
-<span class="post-format">carousel</span>
-<span class="post-grid">Row 6</span>
-<span class="usp-tag" style="background:#0D47A1">SINGLE WINDOW</span>
-</div>
-<div class="post-title">Zuari + 6 Other Brands. Heidelberg Quality. Single-Window Convenience.</div>
-<div class="post-copy">Heidelberg Materials operates in 50+ countries. Zuari is their flagship in India.
-
-Through Riyara, you don&#x27;t just get Zuari. You get access to 7 major brands through one distributor. Need Zuari for one project and UltraTech for another? One call.
-
-All Zuari grades across Tamil Nadu.
-
-#ZuariCement #ZuariDistributor #HeidelbergMaterials #RiyaraTrading #TamilNadu</div>
-<div class="post-design"><b>Design:</b> German heritage aesthetic. Zuari featured, 6 other logos visible. Same diamond frame, NEW USP.</div>
-</div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#19</span>
-<span class="post-date">May 24</span>
-<span class="post-type" style="background:#FDDADA;color:#AB0304">USP Showcase</span>
-<span class="post-brand" style="background:#FDDADA;color:#510000">Riyara</span>
-<span class="post-format">carousel</span>
-<span class="post-grid">Row 7</span>
-<span class="usp-tag" style="background:#3D3D3D">DOCUMENTATION</span>
-</div>
-<div class="post-title">Proper documentation. Every tonne. Every delivery.</div>
-<div class="post-copy">GST invoices, weighbridge slips, delivery challans, mill test certificates — all in order, every time.
-
-Because paperwork isn&#x27;t optional when you&#x27;re building something that matters.
-
-#RiyaraTrading #Documentation #ReliableDistribution #TamilNadu</div>
-<div class="post-design"><b>Design:</b> Grey #3D3D3D. Document icons stack. Professional, no-nonsense. Echoes Row 3 colour pattern.</div>
-</div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#20</span>
-<span class="post-date">May 28</span>
-<span class="post-type" style="background:#FDDADA;color:#AB0304">USP Showcase</span>
-<span class="post-brand" style="background:#FDDADA;color:#510000">Riyara</span>
-<span class="post-format">reel</span>
-<span class="post-grid">Row 7</span>
-<span class="usp-tag" style="background:#006838">11 YEARS ZERO GAPS</span>
-</div>
-<div class="post-title">11 Years. Zero Supply Gaps. Since 2014.</div>
-<div class="post-copy">Operating through monsoons, plant shutdowns, demand spikes, and everything in between.
-
-Continuous supply isn&#x27;t luck. It&#x27;s a system.
-
-#RiyaraTrading #Since2014 #ZeroGaps #TamilNadu</div>
-<div class="post-design"><b>Design:</b> Crimson #AB0304. Year-by-year timeline 2014→2025. Echoes Row 3 centre.</div>
-</div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#21</span>
-<span class="post-date">May 31</span>
-<span class="post-type" style="background:#FDDADA;color:#AB0304">USP Showcase</span>
-<span class="post-brand" style="background:#FDDADA;color:#510000">Riyara</span>
-<span class="post-format">carousel</span>
-<span class="post-grid">Row 7</span>
-<span class="usp-tag" style="background:#6B6B6B">DEDICATED ACCOUNT MGR</span>
-</div>
-<div class="post-title">One person manages your account. Knows your patterns.</div>
-<div class="post-copy">Dedicated account manager. They know your order cycles, your preferred brands, your site schedules.
-
-Not a call centre. A relationship.
-
-#RiyaraTrading #DedicatedService #TamilNadu</div>
-<div class="post-design"><b>Design:</b> Grey #6B6B6B. Contact card visual. Personal touch. Echoes Row 3 right column.</div>
-</div>
-<div class="month-badge" style="background:#006838">JUNE</div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#22</span>
-<span class="post-date">Jun 3</span>
-<span class="post-type" style="background:#E8F5E9;color:#003D1F">Brand Collab R2</span>
-<span class="post-brand" style="background:#E8F5E9;color:#006838">Nagarjuna Cement</span>
-<span class="post-format">carousel</span>
-<span class="post-grid">Row 8</span>
-<span class="usp-tag" style="background:#006838">PAN-TN REACH</span>
-</div>
-<div class="post-title">Nagarjuna Cement — 40 Years of Trust. Pan-TN Coverage by Riyara.</div>
-<div class="post-copy">Popularly known as &#x27;Monagadu Cement.&#x27; 40 years of trust.
-
-Riyara&#x27;s statewide network ensures Nagarjuna is available wherever your project is — not just in traditional strongholds.
-
-Own fleet. Pan-TN coverage. All grades.
-
-Riyara Trading — authorised distributor for Nagarjuna Cement across Tamil Nadu.
-
-#NagarjunaCement #NagarjunaDistributor #NCLIndustries #RiyaraTrading #TamilNadu</div>
-<div class="post-design"><b>Design:</b> Nagarjuna green + TN coverage map. Riyara fleet routes across state. Monagadu Cement trust badge.</div>
-</div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#23</span>
-<span class="post-date">Jun 7</span>
-<span class="post-type" style="background:#E8EAF6;color:#0D1240">Brand Collab R2</span>
-<span class="post-brand" style="background:#E8EAF6;color:#1A237E">Maha Cement</span>
-<span class="post-format">carousel</span>
-<span class="post-grid">Row 8</span>
-<span class="usp-tag" style="background:#0D47A1">V-SHAPED PREMIUM</span>
-</div>
-<div class="post-title">Maha Cement HD+ — Premium Cement. Sealed V-Shaped Tanker Delivery.</div>
-<div class="post-copy">Maha HD+ represents premium quality — engineered for high-performance construction.
-
-Premium cement deserves precision delivery. Riyara delivers in sealed V-shaped tanker trucks that discharge faster and preserve quality. No third-party trucks. Plant to silo, sealed and controlled.
-
-Riyara Trading — authorised distributor for Maha Cement across Tamil Nadu.
-
-#MahaCement #MahaHDPlus #MahaDistributor #RiyaraTrading #TamilNadu</div>
-<div class="post-design"><b>Design:</b> Maha navy. V-tanker as delivery vehicle. HD+ product prominent WITH V-tanker. Premium + premium.</div>
-</div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#24</span>
-<span class="post-date">Jun 10</span>
-<span class="post-type" style="background:#E3F2FD;color:#062350">Brand Collab R2</span>
-<span class="post-brand" style="background:#E3F2FD;color:#0D47A1">Sagar Cement</span>
-<span class="post-format">carousel</span>
-<span class="post-grid">Row 8</span>
-<span class="usp-tag" style="background:#0D47A1">MULTI-STATE BACKUP</span>
-</div>
-<div class="post-title">Sagar Cement — Multi-State Sourcing Keeps It Available. Always.</div>
-<div class="post-copy">Three decades of excellence.
-
-Riyara sources Sagar from multiple plants across states. When one is on maintenance, supply activates from another. Your project doesn&#x27;t wait.
-
-All grades. Own fleet across Tamil Nadu.
-
-Riyara Trading — authorised distributor for Sagar Cement across Tamil Nadu.
-
-#SagarCement #SagarDistributor #RiyaraTrading #TamilNadu</div>
-<div class="post-design"><b>Design:</b> Sagar blue+orange. Multi-state sourcing map with backup routes. ALWAYS AVAILABLE message.</div>
-</div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#25</span>
-<span class="post-date">Jun 14</span>
-<span class="post-type" style="background:#FDDADA;color:#AB0304">Education</span>
-<span class="post-brand" style="background:#FDDADA;color:#510000">Riyara</span>
-<span class="post-format">reel</span>
-<span class="post-grid">Row 9</span>
-</div>
-<div class="post-title">Pneumatic cement unloading. No bags. No hands. Just air.</div>
-<div class="post-copy">Compressed air does all the work. Sealed from plant to silo. Zero exposure to moisture or dust.
-
-This is how quality is preserved at scale.
-
-#Pneumatic #CementUnloading #RiyaraTrading #TamilNadu</div>
-<div class="post-design"><b>Design:</b> SLOW-MO PROCESS. Industrial beauty. Show pneumatic discharge.</div>
-</div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#26</span>
-<span class="post-date">Jun 19</span>
-<span class="post-type" style="background:#FDDADA;color:#AB0304">Education</span>
-<span class="post-brand" style="background:#FDDADA;color:#510000">Riyara</span>
-<span class="post-format">carousel</span>
-<span class="post-grid">Row 9</span>
-</div>
-<div class="post-title">TMT bar sizes: 8mm to 32mm — which goes where?</div>
-<div class="post-copy">8-10mm: Slabs. 12-16mm: Beams. 20-25mm: Heavy. 32mm: Foundations.
-
-All from TATA, VSP, SAIL. Distributed by Riyara.
-
-For steel orders, reach out to Riyara Trading.
-
-#TMTBars #SteelSizes #RiyaraTrading #TamilNadu</div>
-<div class="post-design"><b>Design:</b> Size comparison visual. Credits manufacturers. Steel blue palette.</div>
-</div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#27</span>
-<span class="post-date">Jun 24</span>
-<span class="post-type" style="background:#FDDADA;color:#AB0304">Brand Showcase</span>
-<span class="post-brand" style="background:#FDDADA;color:#510000">Riyara</span>
-<span class="post-format">reel</span>
-<span class="post-grid">Row 9</span>
-</div>
-<div class="post-title">Carrying the brands you trust, to the projects that need them.</div>
-<div class="post-copy">Every Riyara truck on the road is carrying a trusted brand to a waiting project.
-
-Cement · Steel · Aggregates · One distribution channel since 2014.
-
-#RiyaraTrading #ReliableDistribution #TamilNadu</div>
-<div class="post-design"><b>Design:</b> PURE CINEMA. Fleet footage. Brands above, Riyara at base. Logo at end only.</div>
-</div>
+<div class="fp-acts">♡ 💬 ⤴ <span class="r">🔖</span></div>
+<div class="fp-cap"><b>riyaratrading</b> 8-10mm: Slabs. 12-16mm: Beams. 20-25mm: Heavy. 32mm: Foundations.  All from TATA, VSP, SAIL. Distrib... <span class="more">more</span></div>
+<div class="fp-time">Jun 19 2026</div></div>
+<div class="card fp">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b>riyaratrading</b><span>#27 · Jun 24 · 🎬 Reel</span></div></div>
+<div class="reel" style="background:linear-gradient(180deg,#1a1a2e,#AB0304)">
+<div class="play"></div>
+<div style="text-align:center;margin-bottom:20px">
+<div style="font-size:13px;font-weight:700;line-height:1.35">Carrying the brands you trust, to the projects that need them.</div>
+<div style="font-size:8px;opacity:.5;margin-top:4px">Riyara</div>
+</div></div>
+<div class="fp-cap"><b>riyaratrading</b> Every Riyara truck on the road is carrying a trusted brand to a waiting project.  Cement · Steel · A... <span class="more">more</span></div>
+<div class="fp-time">Jun 24 2026</div></div>
 </div>
 <div id="p-li" class="panel">
-<div class="section-note">Company page. Brands = heroes, Riyara = reliable channel. No hard-sell CTAs. Repeat brand collabs with varying USPs. No "bulk/loose cement".</div>
-<div class="month-badge" style="background:#510000">APRIL</div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#1</span>
-<span class="post-date">Apr 1</span>
-<span class="post-type" style="background:#FDDADA;color:#AB0304">Grand Opening</span>
-<span class="post-brand" style="background:#FDDADA;color:#510000">Riyara</span>
+<div class="stitle">♦ LinkedIn Company Page + Posts</div>
+<div class="profile-frame">
+<div class="pf-bar"><span>LinkedIn</span><span style="color:#0A66C2">🔍 🏠 👥 💼 🔔</span></div>
+<div class="li-banner" style="background:linear-gradient(135deg,#510000,#AB0304,#640607)">
+<div><div style="font-size:7px;letter-spacing:2px;opacity:.4">AUTHORISED DISTRIBUTOR & DEALER</div>
+<div style="font-size:10px;margin-top:3px">Cement · Steel · Aggregates</div></div></div>
+<div class="li-prof">
+<div class="li-av-wrap"><div class="li-av" style="background:#AB0304">♦</div></div>
+<div class="li-info"><h3>Riyara Trading</h3>
+<p>Authorised Distributor — All Major Brands Across Tamil Nadu</p>
+<p style="color:#AB0304;font-style:italic;font-size:8px">"Earn Trust with Business" · Since 2014</p>
+<p style="font-size:8px;color:#666;margin-top:4px">Building Materials · Madurai, Tamil Nadu · riyara.com</p>
+</div></div></div>
+<div class="month-div"><span>♦</span> APRIL</div>
+<div class="card li-post">
+<div class="li-post-head">
+<div class="fp-av" style="background:#AB0304;color:#fff;width:24px;height:24px;font-size:9px">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#1 · Apr 1 · Grand Opening</span></div></div>
+<div class="li-post-body">Zuari · Maha · Sagar · Priya · Nagarjuna · Chettinad · UltraTech.  Seven of South India&#x27;s most trusted manufacturers. All grades — OPC 43, O...</div>
+<div class="li-post-img" style="background:#AB0304;color:#fff">
+<h3 style="font-size:11px;font-weight:700;line-height:1.35">Every major cement brand in Tamil Nadu. One authorised distributor. Now on LinkedIn.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Riyara</div>
 </div>
-<div class="post-title">Every major cement brand in Tamil Nadu. One authorised distributor. Now on LinkedIn.</div>
-<div class="post-copy">Zuari · Maha · Sagar · Priya · Nagarjuna · Chettinad · UltraTech.
-
-Seven of South India&#x27;s most trusted manufacturers. All grades — OPC 43, OPC 53, PPC, Slag.
-
-Riyara Trading has been distributing these brands across Tamil Nadu since 2014 — with our own fleet of 20+ V-shaped tanker trucks.
-
-Sealed delivery. Plant to project. Quality preserved.
-
-Follow along.
-
-#RiyaraTrading #NowOnLinkedIn #CementDistributor #TamilNadu</div>
-<div class="post-design"><b>Design:</b> Grand opening 10-slide carousel. Slide 1=Riyara. Slides 2-8=one brand per slide. Slide 9=Fleet. Slide 10=Follow along.</div>
+<div class="li-post-actions">👍 Like &nbsp;&nbsp; 💬 Comment &nbsp;&nbsp; ↗ Repost</div>
 </div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#2</span>
-<span class="post-date">Apr 4</span>
-<span class="post-type" style="background:#E8EFF8;color:#0A1F47">Brand Collab</span>
-<span class="post-brand" style="background:#E8EFF8;color:#143D8D">Chettinad Cement</span>
-<span class="usp-tag" style="background:#1A237E">ALL GRADES ALWAYS</span>
+<div class="card li-post">
+<div class="li-post-head">
+<div class="fp-av" style="background:#AB0304;color:#fff;width:24px;height:24px;font-size:9px">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#2 · Apr 4 · Brand Collab · <span style="color:#AB0304">ALL GRADES ALWAYS</span></span></div></div>
+<div class="li-post-body">Since 1962. Three generations of manufacturing leadership.  Riyara doesn&#x27;t just carry Chettinad. We stock every Chettinad grade — OPC 43, OP...</div>
+<div class="li-post-img" style="background:#143D8D;color:#62BB47">
+<h3 style="font-size:11px;font-weight:700;line-height:1.35">Chettinad Cement — 60 Years of Trust. Every Grade Always Available Through Riyara.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Chettinad Cement</div>
 </div>
-<div class="post-title">Chettinad Cement — 60 Years of Trust. Every Grade Always Available Through Riyara.</div>
-<div class="post-copy">Since 1962. Three generations of manufacturing leadership.
-
-Riyara doesn&#x27;t just carry Chettinad. We stock every Chettinad grade — OPC 43, OPC 53, PPC. Not just the popular ones. All of them. Always.
-
-Delivered via our own fleet across Tamil Nadu.
-
-#ChettinadCement #ChettinadDealer #ChettinadDistributor #RiyaraTrading #TamilNadu</div>
-<div class="post-design"><b>Design:</b> Heritage timeline. Chettinad green+blue palette. Grade availability grid — all grades ticked.</div>
+<div class="li-post-actions">👍 Like &nbsp;&nbsp; 💬 Comment &nbsp;&nbsp; ↗ Repost</div>
 </div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#3</span>
-<span class="post-date">Apr 7</span>
-<span class="post-type" style="background:#F5E6E6;color:#4A0E0E">Brand Collab</span>
-<span class="post-brand" style="background:#F5E6E6;color:#8B1A1A">Zuari Cement</span>
-<span class="usp-tag" style="background:#4A0E0E">SEALED DELIVERY</span>
+<div class="card li-post">
+<div class="li-post-head">
+<div class="fp-av" style="background:#AB0304;color:#fff;width:24px;height:24px;font-size:9px">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#3 · Apr 7 · Brand Collab · <span style="color:#AB0304">SEALED DELIVERY</span></span></div></div>
+<div class="li-post-body">Part of Heidelberg Materials, Germany — world&#x27;s #2 cement company.  Riyara delivers Zuari in sealed V-shaped tanker trucks — cement moves fr...</div>
+<div class="li-post-img" style="background:#8B1A1A;color:#fff">
+<h3 style="font-size:11px;font-weight:700;line-height:1.35">Zuari Cement — German Precision. Sealed Delivery by Riyara&#x27;s Own Fleet.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Zuari Cement</div>
 </div>
-<div class="post-title">Zuari Cement — German Precision. Sealed Delivery by Riyara&#x27;s Own Fleet.</div>
-<div class="post-copy">Part of Heidelberg Materials, Germany — world&#x27;s #2 cement company.
-
-Riyara delivers Zuari in sealed V-shaped tanker trucks — cement moves from plant to silo without exposure to moisture, dust, or transit damage.
-
-Own fleet. Sealed delivery. Quality preserved.
-
-#ZuariCement #ZuariDealer #ZuariDistributor #HeidelbergMaterials #RiyaraTrading #TamilNadu</div>
-<div class="post-design"><b>Design:</b> German engineering aesthetic. V-tanker cross-section — sealed cement inside. Zuari maroon + Heidelberg badge.</div>
+<div class="li-post-actions">👍 Like &nbsp;&nbsp; 💬 Comment &nbsp;&nbsp; ↗ Repost</div>
 </div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#4</span>
-<span class="post-date">Apr 10</span>
-<span class="post-type" style="background:#FDDADA;color:#AB0304">USP Showcase</span>
-<span class="post-brand" style="background:#FDDADA;color:#510000">Riyara</span>
-<span class="usp-tag" style="background:#0D47A1">SINGLE WINDOW</span>
+<div class="card li-post">
+<div class="li-post-head">
+<div class="fp-av" style="background:#AB0304;color:#fff;width:24px;height:24px;font-size:9px">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#4 · Apr 10 · USP Showcase · <span style="color:#AB0304">SINGLE WINDOW</span></span></div></div>
+<div class="li-post-body">As an authorised distributor for all 7 major cement manufacturers in Tamil Nadu, Riyara offers a single window.  The brands do the manufactu...</div>
+<div class="li-post-img" style="background:#AB0304;color:#fff">
+<h3 style="font-size:11px;font-weight:700;line-height:1.35">One call. Every major brand. Every grade. The single-window advantage.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Riyara</div>
 </div>
-<div class="post-title">One call. Every major brand. Every grade. The single-window advantage.</div>
-<div class="post-copy">As an authorised distributor for all 7 major cement manufacturers in Tamil Nadu, Riyara offers a single window.
-
-The brands do the manufacturing. We do the coordination.
-
-#RiyaraTrading #SingleWindow #CementDistribution #TamilNadu</div>
-<div class="post-design"><b>Design:</b> JUNCTION graphic. Brands flow THROUGH Riyara.</div>
+<div class="li-post-actions">👍 Like &nbsp;&nbsp; 💬 Comment &nbsp;&nbsp; ↗ Repost</div>
 </div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#5</span>
-<span class="post-date">Apr 14</span>
-<span class="post-type" style="background:#E8EAF6;color:#0D1240">Brand Collab</span>
-<span class="post-brand" style="background:#E8EAF6;color:#1A237E">Maha Cement</span>
-<span class="usp-tag" style="background:#1A237E">MULTI-STATE DIRECT</span>
+<div class="card li-post">
+<div class="li-post-head">
+<div class="fp-av" style="background:#AB0304;color:#fff;width:24px;height:24px;font-size:9px">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#5 · Apr 14 · Brand Collab · <span style="color:#AB0304">MULTI-STATE DIRECT</span></span></div></div>
+<div class="li-post-body">Maha Cement from My Home Industries. Strong loyalty across Telangana, AP, and Karnataka.  Riyara sources Maha directly — no intermediaries, ...</div>
+<div class="li-post-img" style="background:#1A237E;color:#C62828">
+<h3 style="font-size:11px;font-weight:700;line-height:1.35">Maha Cement HD+ — South India&#x27;s Trusted Brand, Delivered Direct to Tamil Nadu.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Maha Cement</div>
 </div>
-<div class="post-title">Maha Cement HD+ — South India&#x27;s Trusted Brand, Delivered Direct to Tamil Nadu.</div>
-<div class="post-copy">Maha Cement from My Home Industries. Strong loyalty across Telangana, AP, and Karnataka.
-
-Riyara sources Maha directly — no intermediaries, no sub-distributors. Plant to your project via our own fleet.
-
-Maha OPC 43 · Maha Special OPC 53 · Maha HD+. All available across Tamil Nadu.
-
-#MahaCement #MahaDealer #MahaDistributor #MahaHDPlus #RiyaraTrading #TamilNadu</div>
-<div class="post-design"><b>Design:</b> Route infographic: Hyderabad → Riyara fleet → TN. NO INTERMEDIARIES. Maha navy.</div>
+<div class="li-post-actions">👍 Like &nbsp;&nbsp; 💬 Comment &nbsp;&nbsp; ↗ Repost</div>
 </div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#6</span>
-<span class="post-date">Apr 17</span>
-<span class="post-type" style="background:#FFEBEE;color:#7A1A1A">Brand Collab</span>
-<span class="post-brand" style="background:#FFEBEE;color:#D32F2F">Priya Cement</span>
-<span class="usp-tag" style="background:#0D47A1">SINGLE WINDOW</span>
+<div class="card li-post">
+<div class="li-post-head">
+<div class="fp-av" style="background:#AB0304;color:#fff;width:24px;height:24px;font-size:9px">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#6 · Apr 17 · Brand Collab · <span style="color:#AB0304">SINGLE WINDOW</span></span></div></div>
+<div class="li-post-body">Priya Cement — synonymous with strength since 1986.  Riyara distributes Priya along with 6 other major brands. Your project needs Priya for ...</div>
+<div class="li-post-img" style="background:#D32F2F;color:#FFC107">
+<h3 style="font-size:11px;font-weight:700;line-height:1.35">Priya Cement — Trusted Since 1986. Need Another Brand Too? Same Call.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Priya Cement</div>
 </div>
-<div class="post-title">Priya Cement — Trusted Since 1986. Need Another Brand Too? Same Call.</div>
-<div class="post-copy">Priya Cement — synonymous with strength since 1986.
-
-Riyara distributes Priya along with 6 other major brands. Your project needs Priya for one structure and Chettinad for another — one distributor, one call, one fleet.
-
-Fewer vendors. Less coordination. Same reliable delivery.
-
-#PriyaCement #PriyaDealer #PriyaDistributor #RiyaraTrading #TamilNadu</div>
-<div class="post-design"><b>Design:</b> Heritage red+gold. Since 1986. SINGLE WINDOW: Priya connected to 6 other logos via Riyara.</div>
+<div class="li-post-actions">👍 Like &nbsp;&nbsp; 💬 Comment &nbsp;&nbsp; ↗ Repost</div>
 </div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#7</span>
-<span class="post-date">Apr 21</span>
-<span class="post-type" style="background:#FDDADA;color:#AB0304">Range Showcase</span>
-<span class="post-brand" style="background:#FDDADA;color:#510000">Riyara</span>
+<div class="card li-post">
+<div class="li-post-head">
+<div class="fp-av" style="background:#AB0304;color:#fff;width:24px;height:24px;font-size:9px">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#7 · Apr 21 · Range Showcase</span></div></div>
+<div class="li-post-body">Zuari · Maha · Sagar · Priya · Nagarjuna · Chettinad · UltraTech.  OPC 43 · OPC 53 · PPC · Slag. All grades. Always in stock. Own fleet of 2...</div>
+<div class="li-post-img" style="background:#AB0304;color:#fff">
+<h3 style="font-size:11px;font-weight:700;line-height:1.35">7 cement brands. All grades. One authorised distributor across Tamil Nadu.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Riyara</div>
 </div>
-<div class="post-title">7 cement brands. All grades. One authorised distributor across Tamil Nadu.</div>
-<div class="post-copy">Zuari · Maha · Sagar · Priya · Nagarjuna · Chettinad · UltraTech.
-
-OPC 43 · OPC 53 · PPC · Slag. All grades. Always in stock.
-Own fleet of 20+ V-shaped tanker trucks. Sealed delivery.
-
-#RiyaraTrading #CementDistributor #AllGrades #TamilNadu</div>
-<div class="post-design"><b>Design:</b> 7-brand lineup visual. Each brand in its colour. Riyara as foundation bar.</div>
+<div class="li-post-actions">👍 Like &nbsp;&nbsp; 💬 Comment &nbsp;&nbsp; ↗ Repost</div>
 </div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#8</span>
-<span class="post-date">Apr 24</span>
-<span class="post-type" style="background:#F5F5F5;color:#000000">Brand Collab</span>
-<span class="post-brand" style="background:#F5F5F5;color:#1A1A1A">UltraTech Cement</span>
-<span class="usp-tag" style="background:#0D47A1">SINGLE WINDOW</span>
+<div class="card li-post">
+<div class="li-post-head">
+<div class="fp-av" style="background:#AB0304;color:#fff;width:24px;height:24px;font-size:9px">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#8 · Apr 24 · Brand Collab · <span style="color:#AB0304">SINGLE WINDOW</span></span></div></div>
+<div class="li-post-body">India&#x27;s largest — Aditya Birla Group.  Riyara carries UltraTech alongside 6 other major brands. One distributor for all your cement needs. U...</div>
+<div class="li-post-img" style="background:#1A1A1A;color:#FFF21A">
+<h3 style="font-size:11px;font-weight:700;line-height:1.35">UltraTech Cement — 152 Million Tonnes Capacity. One Call to Get It in Tamil Nadu.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">UltraTech Cement</div>
 </div>
-<div class="post-title">UltraTech Cement — 152 Million Tonnes Capacity. One Call to Get It in Tamil Nadu.</div>
-<div class="post-copy">India&#x27;s largest — Aditya Birla Group.
-
-Riyara carries UltraTech alongside 6 other major brands. One distributor for all your cement needs. UltraTech OPC 53 for the foundation and Chettinad PPC for the superstructure? One call. One fleet.
-
-All UltraTech grades across Tamil Nadu.
-
-#UltraTechCement #UltraTechDealer #UltraTechDistributor #AdityaBirlaGroup #RiyaraTrading #TamilNadu</div>
-<div class="post-design"><b>Design:</b> UltraTech black+yellow hero. SINGLE WINDOW: highlighted brand + 6 other logos secondary.</div>
+<div class="li-post-actions">👍 Like &nbsp;&nbsp; 💬 Comment &nbsp;&nbsp; ↗ Repost</div>
 </div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#9</span>
-<span class="post-date">Apr 28</span>
-<span class="post-type" style="background:#E8F5E9;color:#003D1F">Brand Collab</span>
-<span class="post-brand" style="background:#E8F5E9;color:#006838">Nagarjuna Cement</span>
-<span class="usp-tag" style="background:#006838">PAN-TN REACH</span>
+<div class="card li-post">
+<div class="li-post-head">
+<div class="fp-av" style="background:#AB0304;color:#fff;width:24px;height:24px;font-size:9px">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#9 · Apr 28 · Brand Collab · <span style="color:#AB0304">PAN-TN REACH</span></span></div></div>
+<div class="li-post-body">NCL Industries&#x27; Nagarjuna Cement — &#x27;Monagadu Cement.&#x27; 40 years of trust.  Riyara makes Nagarjuna available across ALL of Tamil Nadu — not ju...</div>
+<div class="li-post-img" style="background:#006838;color:#F7941D">
+<h3 style="font-size:11px;font-weight:700;line-height:1.35">Nagarjuna Cement — 40 Years of South Indian Trust. Pan-TN by Riyara.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Nagarjuna Cement</div>
 </div>
-<div class="post-title">Nagarjuna Cement — 40 Years of South Indian Trust. Pan-TN by Riyara.</div>
-<div class="post-copy">NCL Industries&#x27; Nagarjuna Cement — &#x27;Monagadu Cement.&#x27; 40 years of trust.
-
-Riyara makes Nagarjuna available across ALL of Tamil Nadu — not just traditional strongholds. Own fleet. Pan-TN delivery.
-
-#NagarjunaCement #NagarjunaDealer #NagarjunaDistributor #NCLIndustries #RiyaraTrading #TamilNadu</div>
-<div class="post-design"><b>Design:</b> Nagarjuna green. TN map with Riyara fleet routes. REACH is the USP visual.</div>
+<div class="li-post-actions">👍 Like &nbsp;&nbsp; 💬 Comment &nbsp;&nbsp; ↗ Repost</div>
 </div>
-<div class="month-badge" style="background:#1A3A5C">MAY</div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#10</span>
-<span class="post-date">May 1</span>
-<span class="post-type" style="background:#E3F2FD;color:#062350">Brand Collab</span>
-<span class="post-brand" style="background:#E3F2FD;color:#0D47A1">Sagar Cement</span>
-<span class="usp-tag" style="background:#0D47A1">MULTI-STATE BACKUP</span>
+<div class="month-div"><span>♦</span> MAY</div>
+<div class="card li-post">
+<div class="li-post-head">
+<div class="fp-av" style="background:#AB0304;color:#fff;width:24px;height:24px;font-size:9px">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#10 · May 1 · Brand Collab · <span style="color:#AB0304">MULTI-STATE BACKUP</span></span></div></div>
+<div class="li-post-body">Three decades of excellence.  Riyara sources Sagar from multiple plants across states. When one is on maintenance, we&#x27;ve already activated s...</div>
+<div class="li-post-img" style="background:#0D47A1;color:#FF8F00">
+<h3 style="font-size:11px;font-weight:700;line-height:1.35">Sagar Cement — 30+ Years of Trust. Multi-State Sourcing Keeps It Available Always.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Sagar Cement</div>
 </div>
-<div class="post-title">Sagar Cement — 30+ Years of Trust. Multi-State Sourcing Keeps It Available Always.</div>
-<div class="post-copy">Three decades of excellence.
-
-Riyara sources Sagar from multiple plants across states. When one is on maintenance, we&#x27;ve already activated supply from another. Your project doesn&#x27;t wait.
-
-All grades. Delivered by our own fleet across Tamil Nadu.
-
-#SagarCement #SagarDealer #SagarDistributor #RiyaraTrading #TamilNadu</div>
-<div class="post-design"><b>Design:</b> Sagar blue+orange. Multi-state sourcing map with backup routes. ALWAYS AVAILABLE.</div>
+<div class="li-post-actions">👍 Like &nbsp;&nbsp; 💬 Comment &nbsp;&nbsp; ↗ Repost</div>
 </div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#11</span>
-<span class="post-date">May 5</span>
-<span class="post-type" style="background:#E3F2FD;color:#002F5C">Brand Collab</span>
-<span class="post-brand" style="background:#E3F2FD;color:#005EB8">TATA Steel</span>
+<div class="card li-post">
+<div class="li-post-head">
+<div class="fp-av" style="background:#AB0304;color:#fff;width:24px;height:24px;font-size:9px">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#11 · May 5 · Brand Collab</span></div></div>
+<div class="li-post-body">When an engineer writes TATA Fe500, they&#x27;re choosing consistency.  Riyara distributes TATA TMT bars in TN. All grades. All sizes. Mill test ...</div>
+<div class="li-post-img" style="background:#005EB8;color:#fff">
+<h3 style="font-size:11px;font-weight:700;line-height:1.35">TATA Steel — The Name Engineers Specify, Distributed by Riyara.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">TATA Steel</div>
 </div>
-<div class="post-title">TATA Steel — The Name Engineers Specify, Distributed by Riyara.</div>
-<div class="post-copy">When an engineer writes TATA Fe500, they&#x27;re choosing consistency.
-
-Riyara distributes TATA TMT bars in TN. All grades. All sizes. Mill test certificates.
-
-#TATASteel #TMTBars #RiyaraTrading</div>
-<div class="post-design"><b>Design:</b> TATA is the hero. Riyara is the channel.</div>
+<div class="li-post-actions">👍 Like &nbsp;&nbsp; 💬 Comment &nbsp;&nbsp; ↗ Repost</div>
 </div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#12</span>
-<span class="post-date">May 8</span>
-<span class="post-type" style="background:#FDDADA;color:#AB0304">USP Showcase</span>
-<span class="post-brand" style="background:#FDDADA;color:#510000">Riyara</span>
-<span class="usp-tag" style="background:#0D47A1">MULTI-STATE BACKUP</span>
+<div class="card li-post">
+<div class="li-post-head">
+<div class="fp-av" style="background:#AB0304;color:#fff;width:24px;height:24px;font-size:9px">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#12 · May 8 · USP Showcase · <span style="color:#AB0304">MULTI-STATE BACKUP</span></span></div></div>
+<div class="li-post-body">When one state is disrupted, supply continues from another. Your project is protected by geographic diversification.  This isn&#x27;t about us be...</div>
+<div class="li-post-img" style="background:#AB0304;color:#fff">
+<h3 style="font-size:11px;font-weight:700;line-height:1.35">Why multi-state sourcing matters for your project.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Riyara</div>
 </div>
-<div class="post-title">Why multi-state sourcing matters for your project.</div>
-<div class="post-copy">When one state is disrupted, supply continues from another. Your project is protected by geographic diversification.
-
-This isn&#x27;t about us being bigger. It&#x27;s about your project being safer.
-
-#MultiState #ReliableDistribution #RiyaraTrading #TamilNadu</div>
-<div class="post-design"><b>Design:</b> MAP. Resilience, not dominance.</div>
+<div class="li-post-actions">👍 Like &nbsp;&nbsp; 💬 Comment &nbsp;&nbsp; ↗ Repost</div>
 </div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#13</span>
-<span class="post-date">May 12</span>
-<span class="post-type" style="background:#E8EAF6;color:#0D1240">Brand Collab R2</span>
-<span class="post-brand" style="background:#E8EAF6;color:#1A237E">Maha Cement</span>
-<span class="usp-tag" style="background:#0D47A1">V-SHAPED PREMIUM</span>
+<div class="card li-post">
+<div class="li-post-head">
+<div class="fp-av" style="background:#AB0304;color:#fff;width:24px;height:24px;font-size:9px">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#13 · May 12 · Brand Collab R2 · <span style="color:#AB0304">V-SHAPED PREMIUM</span></span></div></div>
+<div class="li-post-body">Maha HD+ — engineered for high-performance construction.  Premium cement deserves precision delivery. Riyara delivers in sealed V-shaped tan...</div>
+<div class="li-post-img" style="background:#1A237E;color:#C62828">
+<h3 style="font-size:11px;font-weight:700;line-height:1.35">Maha Cement HD+ — Premium Line. Delivered by Riyara&#x27;s Own V-Shaped Tankers.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Maha Cement</div>
 </div>
-<div class="post-title">Maha Cement HD+ — Premium Line. Delivered by Riyara&#x27;s Own V-Shaped Tankers.</div>
-<div class="post-copy">Maha HD+ — engineered for high-performance construction.
-
-Premium cement deserves precision delivery. Riyara delivers in sealed V-shaped tanker trucks that discharge faster and preserve quality. No third-party trucks. Plant to silo, sealed and controlled.
-
-#MahaCement #MahaHDPlus #MahaDistributor #RiyaraTrading #TamilNadu</div>
-<div class="post-design"><b>Design:</b> Maha navy. V-tanker as delivery vehicle. HD+ product WITH V-tanker. Premium + premium.</div>
+<div class="li-post-actions">👍 Like &nbsp;&nbsp; 💬 Comment &nbsp;&nbsp; ↗ Repost</div>
 </div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#14</span>
-<span class="post-date">May 15</span>
-<span class="post-type" style="background:#E8EFF8;color:#0A1F47">Brand Collab R2</span>
-<span class="post-brand" style="background:#E8EFF8;color:#143D8D">Chettinad Cement</span>
-<span class="usp-tag" style="background:#0D47A1">MULTI-STATE BACKUP</span>
+<div class="card li-post">
+<div class="li-post-head">
+<div class="fp-av" style="background:#AB0304;color:#fff;width:24px;height:24px;font-size:9px">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#14 · May 15 · Brand Collab R2 · <span style="color:#AB0304">MULTI-STATE BACKUP</span></span></div></div>
+<div class="li-post-body">60 years of Chettinad manufacturing excellence.  Riyara adds uninterrupted supply. Multi-plant sourcing across states. If one faces maintena...</div>
+<div class="li-post-img" style="background:#143D8D;color:#62BB47">
+<h3 style="font-size:11px;font-weight:700;line-height:1.35">Chettinad Cement — Disruption-Proof Supply. 60 Years Meets 11 Years.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Chettinad Cement</div>
 </div>
-<div class="post-title">Chettinad Cement — Disruption-Proof Supply. 60 Years Meets 11 Years.</div>
-<div class="post-copy">60 years of Chettinad manufacturing excellence.
-
-Riyara adds uninterrupted supply. Multi-plant sourcing across states. If one faces maintenance or monsoon delays, supply activates from another.
-
-60 years of quality. 11 years of disruption-proof delivery.
-
-#ChettinadCement #ChettinadDistributor #RiyaraTrading #TamilNadu</div>
-<div class="post-design"><b>Design:</b> Heritage 1962 on top. Disruption-proof supply visual below. Same brand, NEW USP.</div>
+<div class="li-post-actions">👍 Like &nbsp;&nbsp; 💬 Comment &nbsp;&nbsp; ↗ Repost</div>
 </div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#15</span>
-<span class="post-date">May 19</span>
-<span class="post-type" style="background:#FDDADA;color:#AB0304">Range Showcase</span>
-<span class="post-brand" style="background:#FDDADA;color:#510000">Riyara</span>
+<div class="card li-post">
+<div class="li-post-head">
+<div class="fp-av" style="background:#AB0304;color:#fff;width:24px;height:24px;font-size:9px">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#15 · May 19 · Range Showcase</span></div></div>
+<div class="li-post-body">Blue Metal (6-40mm), M-Sand, River Sand, Boulders, GSB.  Own crushing network in Chennai.  For aggregate orders, reach out to Riyara Trading...</div>
+<div class="li-post-img" style="background:#AB0304;color:#fff">
+<h3 style="font-size:11px;font-weight:700;line-height:1.35">Construction Aggregates — The Complete Range.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Riyara</div>
 </div>
-<div class="post-title">Construction Aggregates — The Complete Range.</div>
-<div class="post-copy">Blue Metal (6-40mm), M-Sand, River Sand, Boulders, GSB.
-
-Own crushing network in Chennai.
-
-For aggregate orders, reach out to Riyara Trading.
-
-#Aggregates #BlueMetal #MSand #RiyaraTrading #TamilNadu</div>
-<div class="post-design"><b>Design:</b> TEXTURES. Real material photos.</div>
+<div class="li-post-actions">👍 Like &nbsp;&nbsp; 💬 Comment &nbsp;&nbsp; ↗ Repost</div>
 </div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#16</span>
-<span class="post-date">May 22</span>
-<span class="post-type" style="background:#E3F2FD;color:#0A3260">Brand Collab</span>
-<span class="post-brand" style="background:#E3F2FD;color:#1565C0">VSP + SAIL</span>
+<div class="card li-post">
+<div class="li-post-head">
+<div class="fp-av" style="background:#AB0304;color:#fff;width:24px;height:24px;font-size:9px">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#16 · May 22 · Brand Collab</span></div></div>
+<div class="li-post-body">Vizag Steel and SAIL — the brands behind India&#x27;s bridges and highways.  Riyara distributes both in TN. All grades. All sizes.  #VSP #SAIL #T...</div>
+<div class="li-post-img" style="background:#1565C0;color:#fff">
+<h3 style="font-size:11px;font-weight:700;line-height:1.35">VSP + SAIL — India&#x27;s Infrastructure Steel, Through Riyara.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">VSP + SAIL</div>
 </div>
-<div class="post-title">VSP + SAIL — India&#x27;s Infrastructure Steel, Through Riyara.</div>
-<div class="post-copy">Vizag Steel and SAIL — the brands behind India&#x27;s bridges and highways.
-
-Riyara distributes both in TN. All grades. All sizes.
-
-#VSP #SAIL #TMTBars #RiyaraTrading</div>
-<div class="post-design"><b>Design:</b> Two brands as heroes. Riyara connecting bar.</div>
+<div class="li-post-actions">👍 Like &nbsp;&nbsp; 💬 Comment &nbsp;&nbsp; ↗ Repost</div>
 </div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#17</span>
-<span class="post-date">May 26</span>
-<span class="post-type" style="background:#F5F5F5;color:#000000">Brand Collab R2</span>
-<span class="post-brand" style="background:#F5F5F5;color:#1A1A1A">UltraTech Cement</span>
-<span class="usp-tag" style="background:#AB0304">OWN FLEET</span>
+<div class="card li-post">
+<div class="li-post-head">
+<div class="fp-av" style="background:#AB0304;color:#fff;width:24px;height:24px;font-size:9px">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#17 · May 26 · Brand Collab R2 · <span style="color:#AB0304">OWN FLEET</span></span></div></div>
+<div class="li-post-body">UltraTech from Aditya Birla Group — India&#x27;s largest.  But capacity at the plant doesn&#x27;t help if delivery depends on someone else&#x27;s trucks. R...</div>
+<div class="li-post-img" style="background:#1A1A1A;color:#FFF21A">
+<h3 style="font-size:11px;font-weight:700;line-height:1.35">UltraTech + Riyara&#x27;s Own Fleet. India&#x27;s No. 1 Cement, Delivered on Our Schedule.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">UltraTech Cement</div>
 </div>
-<div class="post-title">UltraTech + Riyara&#x27;s Own Fleet. India&#x27;s No. 1 Cement, Delivered on Our Schedule.</div>
-<div class="post-copy">UltraTech from Aditya Birla Group — India&#x27;s largest.
-
-But capacity at the plant doesn&#x27;t help if delivery depends on someone else&#x27;s trucks. Riyara delivers UltraTech with our own fleet of 20+ V-shaped tankers. Your delivery runs on our schedule, not a third party&#x27;s.
-
-All UltraTech grades across Tamil Nadu.
-
-#UltraTechCement #SingleWindow #RiyaraTrading #TamilNadu</div>
-<div class="post-design"><b>Design:</b> UltraTech hero + fleet visual. Same brand, NEW USP: Own Fleet delivery assurance.</div>
+<div class="li-post-actions">👍 Like &nbsp;&nbsp; 💬 Comment &nbsp;&nbsp; ↗ Repost</div>
 </div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#18</span>
-<span class="post-date">May 29</span>
-<span class="post-type" style="background:#F5E6E6;color:#4A0E0E">Brand Collab R2</span>
-<span class="post-brand" style="background:#F5E6E6;color:#8B1A1A">Zuari Cement</span>
-<span class="usp-tag" style="background:#0D47A1">SINGLE WINDOW</span>
+<div class="card li-post">
+<div class="li-post-head">
+<div class="fp-av" style="background:#AB0304;color:#fff;width:24px;height:24px;font-size:9px">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#18 · May 29 · Brand Collab R2 · <span style="color:#AB0304">SINGLE WINDOW</span></span></div></div>
+<div class="li-post-body">Heidelberg Materials in 50+ countries. Zuari is their India flagship.  Through Riyara: Zuari + 6 other brands. One call. One fleet.  #ZuariC...</div>
+<div class="li-post-img" style="background:#8B1A1A;color:#fff">
+<h3 style="font-size:11px;font-weight:700;line-height:1.35">Zuari Cement — Heidelberg Quality, Single-Window Convenience.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Zuari Cement</div>
 </div>
-<div class="post-title">Zuari Cement — Heidelberg Quality, Single-Window Convenience.</div>
-<div class="post-copy">Heidelberg Materials in 50+ countries. Zuari is their India flagship.
-
-Through Riyara: Zuari + 6 other brands. One call. One fleet.
-
-#ZuariCement #HeidelbergMaterials #SingleWindow #RiyaraTrading #TamilNadu</div>
-<div class="post-design"><b>Design:</b> German heritage + SINGLE WINDOW concept. Same brand, NEW USP.</div>
+<div class="li-post-actions">👍 Like &nbsp;&nbsp; 💬 Comment &nbsp;&nbsp; ↗ Repost</div>
 </div>
-<div class="month-badge" style="background:#006838">JUNE</div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#19</span>
-<span class="post-date">Jun 2</span>
-<span class="post-type" style="background:#FDDADA;color:#AB0304">Education</span>
-<span class="post-brand" style="background:#FDDADA;color:#510000">Riyara</span>
-<span class="usp-tag" style="background:#4A0E0E">SEALED DELIVERY</span>
+<div class="month-div"><span>♦</span> JUNE</div>
+<div class="card li-post">
+<div class="li-post-head">
+<div class="fp-av" style="background:#AB0304;color:#fff;width:24px;height:24px;font-size:9px">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#19 · Jun 2 · Education · <span style="color:#AB0304">SEALED DELIVERY</span></span></div></div>
+<div class="li-post-body">For high-volume projects, sealed tanker delivery is the practical choice: → Zero packaging waste → Pneumatic loading/unloading → Sealed from...</div>
+<div class="li-post-img" style="background:#AB0304;color:#fff">
+<h3 style="font-size:11px;font-weight:700;line-height:1.35">Sealed tanker delivery vs traditional methods: what changes at scale.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Riyara</div>
 </div>
-<div class="post-title">Sealed tanker delivery vs traditional methods: what changes at scale.</div>
-<div class="post-copy">For high-volume projects, sealed tanker delivery is the practical choice:
-→ Zero packaging waste
-→ Pneumatic loading/unloading
-→ Sealed from plant to silo — no moisture exposure
-
-Riyara&#x27;s own fleet of 20+ V-shaped tankers delivers from all major brands across TN.
-
-#SealedDelivery #Construction #RiyaraTrading #TamilNadu</div>
-<div class="post-design"><b>Design:</b> COMPARISON format. Sealed tanker vs traditional. Riyara fleet at the end.</div>
+<div class="li-post-actions">👍 Like &nbsp;&nbsp; 💬 Comment &nbsp;&nbsp; ↗ Repost</div>
 </div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#20</span>
-<span class="post-date">Jun 5</span>
-<span class="post-type" style="background:#FDDADA;color:#AB0304">Education</span>
-<span class="post-brand" style="background:#FDDADA;color:#510000">Riyara</span>
+<div class="card li-post">
+<div class="li-post-head">
+<div class="fp-av" style="background:#AB0304;color:#fff;width:24px;height:24px;font-size:9px">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#20 · Jun 5 · Education</span></div></div>
+<div class="li-post-body">1. Client order 2. Source matching 3. Plant slot 4. Loading 5. Weighbridge 6. GPS transit 7. Site check 8. Pneumatic unloading  Riyara manag...</div>
+<div class="li-post-img" style="background:#AB0304;color:#fff">
+<h3 style="font-size:11px;font-weight:700;line-height:1.35">Behind every delivery: 8 steps you don&#x27;t see.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Riyara</div>
 </div>
-<div class="post-title">Behind every delivery: 8 steps you don&#x27;t see.</div>
-<div class="post-copy">1. Client order 2. Source matching 3. Plant slot 4. Loading 5. Weighbridge 6. GPS transit 7. Site check 8. Pneumatic unloading
-
-Riyara manages all 8. Hundreds of times a month.
-
-#SupplyChain #RiyaraTrading #TamilNadu</div>
-<div class="post-design"><b>Design:</b> NUMBERED PROCESS. One step per slide.</div>
+<div class="li-post-actions">👍 Like &nbsp;&nbsp; 💬 Comment &nbsp;&nbsp; ↗ Repost</div>
 </div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#21</span>
-<span class="post-date">Jun 9</span>
-<span class="post-type" style="background:#FFEBEE;color:#7A1A1A">Brand Collab R2</span>
-<span class="post-brand" style="background:#FFEBEE;color:#D32F2F">Priya Cement</span>
-<span class="usp-tag" style="background:#1A237E">ALL GRADES ALWAYS</span>
+<div class="card li-post">
+<div class="li-post-head">
+<div class="fp-av" style="background:#AB0304;color:#fff;width:24px;height:24px;font-size:9px">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#21 · Jun 9 · Brand Collab R2 · <span style="color:#AB0304">ALL GRADES ALWAYS</span></span></div></div>
+<div class="li-post-body">Three decades of strength.  Riyara stocks every Priya grade — OPC 43, OPC 53, PPC. When your project needs a specific Priya grade at short n...</div>
+<div class="li-post-img" style="background:#D32F2F;color:#FFC107">
+<h3 style="font-size:11px;font-weight:700;line-height:1.35">Priya Cement — Every Grade Stocked. Not Just the Popular Ones.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Priya Cement</div>
 </div>
-<div class="post-title">Priya Cement — Every Grade Stocked. Not Just the Popular Ones.</div>
-<div class="post-copy">Three decades of strength.
-
-Riyara stocks every Priya grade — OPC 43, OPC 53, PPC. When your project needs a specific Priya grade at short notice, it&#x27;s already in our system.
-
-Because &#x27;out of stock&#x27; isn&#x27;t something your project can afford to hear.
-
-All Priya grades across Tamil Nadu.
-
-#PriyaCement #PriyaDistributor #AllGrades #RiyaraTrading #TamilNadu</div>
-<div class="post-design"><b>Design:</b> Heritage red+gold. Same brand, NEW USP: All Grades Always available.</div>
+<div class="li-post-actions">👍 Like &nbsp;&nbsp; 💬 Comment &nbsp;&nbsp; ↗ Repost</div>
 </div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#22</span>
-<span class="post-date">Jun 12</span>
-<span class="post-type" style="background:#E3F2FD;color:#001E52">Brand Collab</span>
-<span class="post-brand" style="background:#E3F2FD;color:#003DA5">SAIL</span>
+<div class="card li-post">
+<div class="li-post-head">
+<div class="fp-av" style="background:#AB0304;color:#fff;width:24px;height:24px;font-size:9px">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#22 · Jun 12 · Brand Collab</span></div></div>
+<div class="li-post-body">SAIL has been the backbone of Indian infrastructure for decades.  Riyara distributes SAIL TMT bars in TN. Fe415-Fe550. 8-32mm.  #SAIL #Infra...</div>
+<div class="li-post-img" style="background:#003DA5;color:#fff">
+<h3 style="font-size:11px;font-weight:700;line-height:1.35">SAIL — India&#x27;s Infrastructure Steel, Distributed by Riyara.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">SAIL</div>
 </div>
-<div class="post-title">SAIL — India&#x27;s Infrastructure Steel, Distributed by Riyara.</div>
-<div class="post-copy">SAIL has been the backbone of Indian infrastructure for decades.
-
-Riyara distributes SAIL TMT bars in TN. Fe415-Fe550. 8-32mm.
-
-#SAIL #Infrastructure #RiyaraTrading</div>
-<div class="post-design"><b>Design:</b> SAIL is the institution. Riyara is the channel.</div>
+<div class="li-post-actions">👍 Like &nbsp;&nbsp; 💬 Comment &nbsp;&nbsp; ↗ Repost</div>
 </div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#23</span>
-<span class="post-date">Jun 16</span>
-<span class="post-type" style="background:#FDDADA;color:#AB0304">Education</span>
-<span class="post-brand" style="background:#FDDADA;color:#510000">Riyara</span>
+<div class="card li-post">
+<div class="li-post-head">
+<div class="fp-av" style="background:#AB0304;color:#fff;width:24px;height:24px;font-size:9px">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#23 · Jun 16 · Education</span></div></div>
+<div class="li-post-body">Fe415: Residential. Fe500: Balanced. Fe550: Heavy infrastructure.  All from TATA, VSP, SAIL. Distributed by Riyara in TN.  #TMTBars #SteelGr...</div>
+<div class="li-post-img" style="background:#AB0304;color:#fff">
+<h3 style="font-size:11px;font-weight:700;line-height:1.35">TMT bar grades: Fe415 vs Fe500 vs Fe550.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Riyara</div>
 </div>
-<div class="post-title">TMT bar grades: Fe415 vs Fe500 vs Fe550.</div>
-<div class="post-copy">Fe415: Residential. Fe500: Balanced. Fe550: Heavy infrastructure.
-
-All from TATA, VSP, SAIL. Distributed by Riyara in TN.
-
-#TMTBars #SteelGrades #RiyaraTrading #TamilNadu</div>
-<div class="post-design"><b>Design:</b> GRADE CARDS. Credits manufacturers.</div>
+<div class="li-post-actions">👍 Like &nbsp;&nbsp; 💬 Comment &nbsp;&nbsp; ↗ Repost</div>
 </div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#24</span>
-<span class="post-date">Jun 19</span>
-<span class="post-type" style="background:#E3F2FD;color:#062350">Brand Collab R2</span>
-<span class="post-brand" style="background:#E3F2FD;color:#0D47A1">Sagar Cement</span>
-<span class="usp-tag" style="background:#0D47A1">V-SHAPED PREMIUM</span>
+<div class="card li-post">
+<div class="li-post-head">
+<div class="fp-av" style="background:#AB0304;color:#fff;width:24px;height:24px;font-size:9px">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#24 · Jun 19 · Brand Collab R2 · <span style="color:#AB0304">V-SHAPED PREMIUM</span></span></div></div>
+<div class="li-post-body">Riyara delivers Sagar in V-shaped tankers — faster discharge, more complete unloading. Less waiting at site.  All Sagar grades across Tamil ...</div>
+<div class="li-post-img" style="background:#0D47A1;color:#FF8F00">
+<h3 style="font-size:11px;font-weight:700;line-height:1.35">Sagar Cement — Own Fleet Delivery. V-Shaped Tankers for Faster Turnaround.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Sagar Cement</div>
 </div>
-<div class="post-title">Sagar Cement — Own Fleet Delivery. V-Shaped Tankers for Faster Turnaround.</div>
-<div class="post-copy">Riyara delivers Sagar in V-shaped tankers — faster discharge, more complete unloading. Less waiting at site.
-
-All Sagar grades across Tamil Nadu.
-
-#SagarCement #SagarDistributor #RiyaraTrading #TamilNadu</div>
-<div class="post-design"><b>Design:</b> Sagar blue+orange. V-tanker visual. Same brand, NEW USP: V-shaped tanker.</div>
+<div class="li-post-actions">👍 Like &nbsp;&nbsp; 💬 Comment &nbsp;&nbsp; ↗ Repost</div>
 </div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#25</span>
-<span class="post-date">Jun 22</span>
-<span class="post-type" style="background:#E8F5E9;color:#003D1F">Brand Collab R2</span>
-<span class="post-brand" style="background:#E8F5E9;color:#006838">Nagarjuna Cement</span>
-<span class="usp-tag" style="background:#0D47A1">MULTI-STATE BACKUP</span>
+<div class="card li-post">
+<div class="li-post-head">
+<div class="fp-av" style="background:#AB0304;color:#fff;width:24px;height:24px;font-size:9px">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#25 · Jun 22 · Brand Collab R2 · <span style="color:#AB0304">MULTI-STATE BACKUP</span></span></div></div>
+<div class="li-post-body">Riyara sources Nagarjuna from multiple plants. When one faces maintenance, supply activates from another.  All grades. Pan-TN. Own fleet.  #...</div>
+<div class="li-post-img" style="background:#006838;color:#F7941D">
+<h3 style="font-size:11px;font-weight:700;line-height:1.35">Nagarjuna Cement — Multi-State Sourcing. Your Nagarjuna Supply Doesn&#x27;t Stop.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Nagarjuna Cement</div>
 </div>
-<div class="post-title">Nagarjuna Cement — Multi-State Sourcing. Your Nagarjuna Supply Doesn&#x27;t Stop.</div>
-<div class="post-copy">Riyara sources Nagarjuna from multiple plants. When one faces maintenance, supply activates from another.
-
-All grades. Pan-TN. Own fleet.
-
-#NagarjunaCement #NagarjunaDistributor #RiyaraTrading #TamilNadu</div>
-<div class="post-design"><b>Design:</b> Nagarjuna green. Backup route map. Same brand, NEW USP: resilience.</div>
+<div class="li-post-actions">👍 Like &nbsp;&nbsp; 💬 Comment &nbsp;&nbsp; ↗ Repost</div>
 </div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#26</span>
-<span class="post-date">Jun 25</span>
-<span class="post-type" style="background:#FDDADA;color:#AB0304">Brand Showcase</span>
-<span class="post-brand" style="background:#FDDADA;color:#510000">Riyara</span>
+<div class="card li-post">
+<div class="li-post-head">
+<div class="fp-av" style="background:#AB0304;color:#fff;width:24px;height:24px;font-size:9px">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#26 · Jun 25 · Brand Showcase</span></div></div>
+<div class="li-post-body">CEMENT: Zuari · Maha HD+ · Sagar · Priya · Nagarjuna · Chettinad · UltraTech STEEL: TATA · VSP · SAIL. Fe415-Fe550. 8-32mm. AGGREGATES: Full...</div>
+<div class="li-post-img" style="background:#AB0304;color:#fff">
+<h3 style="font-size:11px;font-weight:700;line-height:1.35">Every brand you trust. One reliable distribution channel.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Riyara</div>
 </div>
-<div class="post-title">Every brand you trust. One reliable distribution channel.</div>
-<div class="post-copy">CEMENT: Zuari · Maha HD+ · Sagar · Priya · Nagarjuna · Chettinad · UltraTech
-STEEL: TATA · VSP · SAIL. Fe415-Fe550. 8-32mm.
-AGGREGATES: Full range.
-
-Earn Trust with Business. Since 2014.
-
-#RiyaraTrading #ReliableDistribution #TamilNadu</div>
-<div class="post-design"><b>Design:</b> Brands on TOP. Riyara at BASE.</div>
+<div class="li-post-actions">👍 Like &nbsp;&nbsp; 💬 Comment &nbsp;&nbsp; ↗ Repost</div>
 </div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#27</span>
-<span class="post-date">Jun 26</span>
-<span class="post-type" style="background:#FDDADA;color:#AB0304">Education</span>
-<span class="post-brand" style="background:#FDDADA;color:#510000">Riyara</span>
-<span class="usp-tag" style="background:#4A0E0E">SEALED DELIVERY</span>
+<div class="card li-post">
+<div class="li-post-head">
+<div class="fp-av" style="background:#AB0304;color:#fff;width:24px;height:24px;font-size:9px">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#27 · Jun 26 · Education · <span style="color:#AB0304">SEALED DELIVERY</span></span></div></div>
+<div class="li-post-body">At 500+ tonnes/month: packaging eliminated, wastage drops, speed increases.  Sealed from plant to silo. Pneumatic discharge. Zero handling l...</div>
+<div class="li-post-img" style="background:#AB0304;color:#fff">
+<h3 style="font-size:11px;font-weight:700;line-height:1.35">The economics of sealed tanker delivery at scale.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Riyara</div>
 </div>
-<div class="post-title">The economics of sealed tanker delivery at scale.</div>
-<div class="post-copy">At 500+ tonnes/month: packaging eliminated, wastage drops, speed increases.
-
-Sealed from plant to silo. Pneumatic discharge. Zero handling loss.
-
-Riyara delivers from all major brands through our own fleet.
-
-#SealedDelivery #CostEfficiency #RiyaraTrading #TamilNadu</div>
-<div class="post-design"><b>Design:</b> DATA CARDS. Economics comparison.</div>
+<div class="li-post-actions">👍 Like &nbsp;&nbsp; 💬 Comment &nbsp;&nbsp; ↗ Repost</div>
 </div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#28</span>
-<span class="post-date">Jun 27</span>
-<span class="post-type" style="background:#FDDADA;color:#AB0304">USP Showcase</span>
-<span class="post-brand" style="background:#FDDADA;color:#510000">Riyara</span>
-<span class="usp-tag" style="background:#4A0E0E">AUTHORISED NOT GREY</span>
+<div class="card li-post">
+<div class="li-post-head">
+<div class="fp-av" style="background:#AB0304;color:#fff;width:24px;height:24px;font-size:9px">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#28 · Jun 27 · USP Showcase · <span style="color:#AB0304">AUTHORISED NOT GREY</span></span></div></div>
+<div class="li-post-body">Every tonne Riyara delivers is sourced directly from the manufacturer. Full traceability. Full documentation.  Authorised sourcing isn&#x27;t a m...</div>
+<div class="li-post-img" style="background:#AB0304;color:#fff">
+<h3 style="font-size:11px;font-weight:700;line-height:1.35">Authorised. Not grey market. Every tonne traceable.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Riyara</div>
 </div>
-<div class="post-title">Authorised. Not grey market. Every tonne traceable.</div>
-<div class="post-copy">Every tonne Riyara delivers is sourced directly from the manufacturer. Full traceability. Full documentation.
-
-Authorised sourcing isn&#x27;t a marketing claim. It&#x27;s how we operate.
-
-#RiyaraTrading #AuthorisedDistributor #TamilNadu</div>
-<div class="post-design"><b>Design:</b> Clean, documentary style. Traceability chain visual.</div>
+<div class="li-post-actions">👍 Like &nbsp;&nbsp; 💬 Comment &nbsp;&nbsp; ↗ Repost</div>
 </div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#29</span>
-<span class="post-date">Jun 28</span>
-<span class="post-type" style="background:#FDDADA;color:#AB0304">Education</span>
-<span class="post-brand" style="background:#FDDADA;color:#510000">Riyara</span>
+<div class="card li-post">
+<div class="li-post-head">
+<div class="fp-av" style="background:#AB0304;color:#fff;width:24px;height:24px;font-size:9px">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#29 · Jun 28 · Education</span></div></div>
+<div class="li-post-body">OPC 43: Everyday. OPC 53: High-strength. PPC: Durability. Slag: Specialist.  No grade is better. Each serves a purpose. All four manufacture...</div>
+<div class="li-post-img" style="background:#AB0304;color:#fff">
+<h3 style="font-size:11px;font-weight:700;line-height:1.35">OPC 43, OPC 53, PPC, Slag — a practical guide.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Riyara</div>
 </div>
-<div class="post-title">OPC 43, OPC 53, PPC, Slag — a practical guide.</div>
-<div class="post-copy">OPC 43: Everyday. OPC 53: High-strength. PPC: Durability. Slag: Specialist.
-
-No grade is better. Each serves a purpose. All four manufactured by the brands we distribute.
-
-#CementGrades #Construction #RiyaraTrading</div>
-<div class="post-design"><b>Design:</b> GRADE CARDS. Credits manufacturers.</div>
+<div class="li-post-actions">👍 Like &nbsp;&nbsp; 💬 Comment &nbsp;&nbsp; ↗ Repost</div>
 </div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#30</span>
-<span class="post-date">Jun 30</span>
-<span class="post-type" style="background:#FDDADA;color:#AB0304">Brand Showcase</span>
-<span class="post-brand" style="background:#FDDADA;color:#510000">Riyara</span>
+<div class="card li-post">
+<div class="li-post-head">
+<div class="fp-av" style="background:#AB0304;color:#fff;width:24px;height:24px;font-size:9px">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#30 · Jun 30 · Brand Showcase</span></div></div>
+<div class="li-post-body">Three months of sharing the brands, the fleet, and the logistics behind reliable distribution.  Cement · Steel · Aggregates · One channel si...</div>
+<div class="li-post-img" style="background:#AB0304;color:#fff">
+<h3 style="font-size:11px;font-weight:700;line-height:1.35">Q2 in review. The brands we&#x27;re proud to distribute.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Riyara</div>
 </div>
-<div class="post-title">Q2 in review. The brands we&#x27;re proud to distribute.</div>
-<div class="post-copy">Three months of sharing the brands, the fleet, and the logistics behind reliable distribution.
-
-Cement · Steel · Aggregates · One channel since 2014.
-
-Q3 starts now. Monsoon is here. And so are we.
-
-#RiyaraTrading #ReliableDistribution #TamilNadu</div>
-<div class="post-design"><b>Design:</b> Quarter recap. Clean, confident. Brands above. Riyara at base.</div>
+<div class="li-post-actions">👍 Like &nbsp;&nbsp; 💬 Comment &nbsp;&nbsp; ↗ Repost</div>
 </div>
 </div>
 <div id="p-sr" class="panel">
-<div class="section-note">Text-only founder posts. Tone: global operator sharing insights. No images. No "bulk/loose cement" — reframe as sealed/tanker/fleet-direct.</div>
-<div class="month-badge" style="background:#510000">APRIL</div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#1</span>
-<span class="post-date">Apr 3</span>
-<span class="post-type" style="background:#E3F2FD;color:#0D47A1">Founder Introduction</span>
-</div>
-<div class="post-title">What does a cement distributor actually do?</div>
-<div class="post-copy">Cement manufacturers make excellent products. That&#x27;s their expertise.
+<div class="stitle">♦ Saravanan Personal LinkedIn</div>
+<div class="profile-frame">
+<div class="pf-bar"><span>LinkedIn</span><span style="color:#0A66C2">🔍 🏠 👥 💼 🔔</span></div>
+<div class="li-banner" style="background:linear-gradient(135deg,#1a1a2e,#333)">
+<div style="font-size:9px;opacity:.5">Building Materials · Distribution · Logistics</div></div>
+<div class="li-prof">
+<div class="li-av-wrap"><div class="li-av" style="background:#333;font-size:12px">S</div></div>
+<div class="li-info"><h3>Saravanan</h3>
+<p>Founder, Riyara Trading · Cement & Building Materials Distribution</p>
+<p style="font-size:8px;color:#666;margin-top:2px">Tamil Nadu, India · 500+ connections</p>
+</div></div></div>
+<div class="note"><b>Format:</b> All text-only posts. No images. Founder's voice — global operator sharing industry insights. No "bulk/loose cement" language.</div>
+<div class="month-div"><span>♦</span> APRIL</div>
+<div class="card li-post">
+<div class="li-post-head">
+<div class="fp-av" style="background:#333;color:#fff;width:24px;height:24px;font-size:9px">S</div>
+<div class="fp-info"><b style="font-size:10px">Saravanan</b><span>#1 · Apr 3 · Founder Introduction</span></div></div>
+<div style="padding:4px 10px 2px;font-size:11px;font-weight:600;color:#fff">What does a cement distributor actually do?</div>
+<div class="sr-post"><div class="text">Cement manufacturers make excellent products. That&#x27;s their expertise.
 
 Our expertise is different. We make sure that product reaches your project site — right brand, right grade, right quantity, right time.
 
@@ -1113,79 +926,69 @@ Manufacturers create the product. We ensure it reaches you without interruption.
 
 That&#x27;s Riyara. Since 2014.
 
-#CementDistribution #Logistics #TamilNadu</div>
-<div class="post-design"><b>Tone:</b> Pure text. Humble, explanatory.</div>
-</div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#2</span>
-<span class="post-date">Apr 9</span>
-<span class="post-type" style="background:#E3F2FD;color:#0D47A1">Business Insight</span>
-</div>
-<div class="post-title">Reliability isn&#x27;t a promise. It&#x27;s a system.</div>
-<div class="post-copy">Own fleet of 20+ trucks — no third-party dependency.
+#CementDistribution #Logistics #TamilNadu</div></div>
+<div class="sr-tone">Tone: Pure text. Humble, explanatory.</div>
+<div class="li-post-actions">👍 Like &nbsp;&nbsp; 💬 Comment &nbsp;&nbsp; ↗ Repost</div></div>
+<div class="card li-post">
+<div class="li-post-head">
+<div class="fp-av" style="background:#333;color:#fff;width:24px;height:24px;font-size:9px">S</div>
+<div class="fp-info"><b style="font-size:10px">Saravanan</b><span>#2 · Apr 9 · Business Insight</span></div></div>
+<div style="padding:4px 10px 2px;font-size:11px;font-weight:600;color:#fff">Reliability isn&#x27;t a promise. It&#x27;s a system.</div>
+<div class="sr-post"><div class="text">Own fleet of 20+ trucks — no third-party dependency.
 Sourcing across 4 states — backup always ready.
 Every major brand available — alternatives if one plant is down.
 
 Reliability is what happens when you&#x27;ve been through enough disruptions to prepare for the next one.
 
-#Distribution #Reliability #SupplyChain</div>
-<div class="post-design"><b>Tone:</b> Pure text.</div>
-</div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#3</span>
-<span class="post-date">Apr 14</span>
-<span class="post-type" style="background:#E3F2FD;color:#0D47A1">Business Insight</span>
-</div>
-<div class="post-title">The one question every project manager should ask their material supplier.</div>
-<div class="post-copy">What happens when there&#x27;s a disruption?
+#Distribution #Reliability #SupplyChain</div></div>
+<div class="sr-tone">Tone: Pure text.</div>
+<div class="li-post-actions">👍 Like &nbsp;&nbsp; 💬 Comment &nbsp;&nbsp; ↗ Repost</div></div>
+<div class="card li-post">
+<div class="li-post-head">
+<div class="fp-av" style="background:#333;color:#fff;width:24px;height:24px;font-size:9px">S</div>
+<div class="fp-info"><b style="font-size:10px">Saravanan</b><span>#3 · Apr 14 · Business Insight</span></div></div>
+<div style="padding:4px 10px 2px;font-size:11px;font-weight:600;color:#fff">The one question every project manager should ask their material supplier.</div>
+<div class="sr-post"><div class="text">What happens when there&#x27;s a disruption?
 
 At Riyara: we source across 4 states, carry all major brands, operate our own fleet.
 
 The best time to ask this question is before the disruption happens.
 
-#SupplyChain #Reliability #ProjectManagement</div>
-<div class="post-design"><b>Tone:</b> Pure text.</div>
-</div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#4</span>
-<span class="post-date">Apr 21</span>
-<span class="post-type" style="background:#E3F2FD;color:#0D47A1">Business Insight</span>
-</div>
-<div class="post-title">Why we carry all 7 brands instead of pushing one.</div>
-<div class="post-copy">Every manufacturer makes an excellent product.
+#SupplyChain #Reliability #ProjectManagement</div></div>
+<div class="sr-tone">Tone: Pure text.</div>
+<div class="li-post-actions">👍 Like &nbsp;&nbsp; 💬 Comment &nbsp;&nbsp; ↗ Repost</div></div>
+<div class="card li-post">
+<div class="li-post-head">
+<div class="fp-av" style="background:#333;color:#fff;width:24px;height:24px;font-size:9px">S</div>
+<div class="fp-info"><b style="font-size:10px">Saravanan</b><span>#4 · Apr 21 · Business Insight</span></div></div>
+<div style="padding:4px 10px 2px;font-size:11px;font-weight:600;color:#fff">Why we carry all 7 brands instead of pushing one.</div>
+<div class="sr-post"><div class="text">Every manufacturer makes an excellent product.
 
 We carry all 7 so the client gets what their project needs — not what we have in stock.
 
 Which brand? That&#x27;s the engineer&#x27;s call, not ours.
 
-#Distribution #ClientFirst #CementIndustry</div>
-<div class="post-design"><b>Tone:</b> Pure text. Defers to engineer.</div>
-</div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#5</span>
-<span class="post-date">Apr 28</span>
-<span class="post-type" style="background:#E3F2FD;color:#0D47A1">Business Insight</span>
-</div>
-<div class="post-title">Why sealed tanker delivery changed everything for us.</div>
-<div class="post-copy">When we invested in V-shaped tanker trucks, the difference was immediate. Cement that travels sealed from plant to silo arrives exactly as the manufacturer intended — no moisture exposure, no transit degradation.
+#Distribution #ClientFirst #CementIndustry</div></div>
+<div class="sr-tone">Tone: Pure text. Defers to engineer.</div>
+<div class="li-post-actions">👍 Like &nbsp;&nbsp; 💬 Comment &nbsp;&nbsp; ↗ Repost</div></div>
+<div class="card li-post">
+<div class="li-post-head">
+<div class="fp-av" style="background:#333;color:#fff;width:24px;height:24px;font-size:9px">S</div>
+<div class="fp-info"><b style="font-size:10px">Saravanan</b><span>#5 · Apr 28 · Business Insight</span></div></div>
+<div style="padding:4px 10px 2px;font-size:11px;font-weight:600;color:#fff">Why sealed tanker delivery changed everything for us.</div>
+<div class="sr-post"><div class="text">When we invested in V-shaped tanker trucks, the difference was immediate. Cement that travels sealed from plant to silo arrives exactly as the manufacturer intended — no moisture exposure, no transit degradation.
 
 It&#x27;s not just about efficiency. It&#x27;s about preserving the quality that manufacturers work so hard to create.
 
-#SealedDelivery #QualityPreserved #Distribution</div>
-<div class="post-design"><b>Tone:</b> Pure text. Subtle — no &quot;bulk&quot; or &quot;loose&quot; language. Frames tanker delivery as quality preservation.</div>
-</div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#6</span>
-<span class="post-date">Apr 30</span>
-<span class="post-type" style="background:#E3F2FD;color:#0D47A1">Month Reflection</span>
-</div>
-<div class="post-title">A month of introductions.</div>
-<div class="post-copy">We shared the brands we distribute: Zuari, Maha, Sagar, Priya, Nagarjuna, Chettinad, UltraTech.
+#SealedDelivery #QualityPreserved #Distribution</div></div>
+<div class="sr-tone">Tone: Pure text. Subtle — no &quot;bulk&quot; or &quot;loose&quot; language. Frames tanker delivery as quality preservation.</div>
+<div class="li-post-actions">👍 Like &nbsp;&nbsp; 💬 Comment &nbsp;&nbsp; ↗ Repost</div></div>
+<div class="card li-post">
+<div class="li-post-head">
+<div class="fp-av" style="background:#333;color:#fff;width:24px;height:24px;font-size:9px">S</div>
+<div class="fp-info"><b style="font-size:10px">Saravanan</b><span>#6 · Apr 30 · Month Reflection</span></div></div>
+<div style="padding:4px 10px 2px;font-size:11px;font-weight:600;color:#fff">A month of introductions.</div>
+<div class="sr-post"><div class="text">We shared the brands we distribute: Zuari, Maha, Sagar, Priya, Nagarjuna, Chettinad, UltraTech.
 
 We shared our fleet: 20+ owned bulkers and V-shaped tankers.
 
@@ -1193,303 +996,492 @@ We shared what we do: ensure these brands reach your project without interruptio
 
 More in May.
 
-#RiyaraTrading #BuildingMaterials #TamilNadu</div>
-<div class="post-design"><b>Tone:</b> Pure text. Grateful, humble.</div>
-</div>
-<div class="month-badge" style="background:#1A3A5C">MAY</div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#7</span>
-<span class="post-date">May 5</span>
-<span class="post-type" style="background:#E3F2FD;color:#0D47A1">Business Insight</span>
-</div>
-<div class="post-title">Why we built our own fleet.</div>
-<div class="post-copy">Third-party trucks have their own priorities. When demand spikes, everyone competes for the same vehicles.
+#RiyaraTrading #BuildingMaterials #TamilNadu</div></div>
+<div class="sr-tone">Tone: Pure text. Grateful, humble.</div>
+<div class="li-post-actions">👍 Like &nbsp;&nbsp; 💬 Comment &nbsp;&nbsp; ↗ Repost</div></div>
+<div class="month-div"><span>♦</span> MAY</div>
+<div class="card li-post">
+<div class="li-post-head">
+<div class="fp-av" style="background:#333;color:#fff;width:24px;height:24px;font-size:9px">S</div>
+<div class="fp-info"><b style="font-size:10px">Saravanan</b><span>#7 · May 5 · Business Insight</span></div></div>
+<div style="padding:4px 10px 2px;font-size:11px;font-weight:600;color:#fff">Why we built our own fleet.</div>
+<div class="sr-post"><div class="text">Third-party trucks have their own priorities. When demand spikes, everyone competes for the same vehicles.
 
 So we invested in 20+ of our own bulkers. Our trucks. Our accountability.
 
-#OwnFleet #Logistics #ReliableDistribution</div>
-<div class="post-design"><b>Tone:</b> Pure text. Origin story.</div>
-</div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#8</span>
-<span class="post-date">May 10</span>
-<span class="post-type" style="background:#E3F2FD;color:#0D47A1">Business Insight</span>
-</div>
-<div class="post-title">Cement distribution and steel distribution are completely different.</div>
-<div class="post-copy">In cement, the challenge is logistics. In steel, the challenge is inventory.
+#OwnFleet #Logistics #ReliableDistribution</div></div>
+<div class="sr-tone">Tone: Pure text. Origin story.</div>
+<div class="li-post-actions">👍 Like &nbsp;&nbsp; 💬 Comment &nbsp;&nbsp; ↗ Repost</div></div>
+<div class="card li-post">
+<div class="li-post-head">
+<div class="fp-av" style="background:#333;color:#fff;width:24px;height:24px;font-size:9px">S</div>
+<div class="fp-info"><b style="font-size:10px">Saravanan</b><span>#8 · May 10 · Business Insight</span></div></div>
+<div style="padding:4px 10px 2px;font-size:11px;font-weight:600;color:#fff">Cement distribution and steel distribution are completely different.</div>
+<div class="sr-post"><div class="text">In cement, the challenge is logistics. In steel, the challenge is inventory.
 
 We distribute steel from TATA, VSP, SAIL. All sizes. All grades.
 
 For steel orders, reach out to Riyara Trading.
 
-#Steel #Distribution #TMTBars</div>
-<div class="post-design"><b>Tone:</b> Pure text.</div>
-</div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#9</span>
-<span class="post-date">May 15</span>
-<span class="post-type" style="background:#E3F2FD;color:#0D47A1">Business Insight</span>
-</div>
-<div class="post-title">How V-shaped tankers changed our delivery game.</div>
-<div class="post-copy">Standard cylindrical tankers retain material in corners. V-shaped design means faster discharge, more complete unloading.
+#Steel #Distribution #TMTBars</div></div>
+<div class="sr-tone">Tone: Pure text.</div>
+<div class="li-post-actions">👍 Like &nbsp;&nbsp; 💬 Comment &nbsp;&nbsp; ↗ Repost</div></div>
+<div class="card li-post">
+<div class="li-post-head">
+<div class="fp-av" style="background:#333;color:#fff;width:24px;height:24px;font-size:9px">S</div>
+<div class="fp-info"><b style="font-size:10px">Saravanan</b><span>#9 · May 15 · Business Insight</span></div></div>
+<div style="padding:4px 10px 2px;font-size:11px;font-weight:600;color:#fff">How V-shaped tankers changed our delivery game.</div>
+<div class="sr-post"><div class="text">Standard cylindrical tankers retain material in corners. V-shaped design means faster discharge, more complete unloading.
 
 Every improvement in our logistics is an improvement in your project timeline.
 
-#VShapedTanker #Innovation #Distribution</div>
-<div class="post-design"><b>Tone:</b> Pure text. Subtle USP — no &quot;bulk&quot; language.</div>
-</div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#10</span>
-<span class="post-date">May 19</span>
-<span class="post-type" style="background:#E3F2FD;color:#0D47A1">Business Insight</span>
-</div>
-<div class="post-title">How we ended up in the aggregates business.</div>
-<div class="post-copy">Our cement clients kept asking. So we built our own crushing network.
+#VShapedTanker #Innovation #Distribution</div></div>
+<div class="sr-tone">Tone: Pure text. Subtle USP — no &quot;bulk&quot; language.</div>
+<div class="li-post-actions">👍 Like &nbsp;&nbsp; 💬 Comment &nbsp;&nbsp; ↗ Repost</div></div>
+<div class="card li-post">
+<div class="li-post-head">
+<div class="fp-av" style="background:#333;color:#fff;width:24px;height:24px;font-size:9px">S</div>
+<div class="fp-info"><b style="font-size:10px">Saravanan</b><span>#10 · May 19 · Business Insight</span></div></div>
+<div style="padding:4px 10px 2px;font-size:11px;font-weight:600;color:#fff">How we ended up in the aggregates business.</div>
+<div class="sr-post"><div class="text">Our cement clients kept asking. So we built our own crushing network.
 
 For aggregate orders, reach out to Riyara Trading.
 
-#Aggregates #CustomerFirst</div>
-<div class="post-design"><b>Tone:</b> Pure text.</div>
-</div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#11</span>
-<span class="post-date">May 24</span>
-<span class="post-type" style="background:#E3F2FD;color:#0D47A1">Business Insight</span>
-</div>
-<div class="post-title">Our job in one sentence.</div>
-<div class="post-copy">We make sure the cement brands you trust reach your project without interruption.
+#Aggregates #CustomerFirst</div></div>
+<div class="sr-tone">Tone: Pure text.</div>
+<div class="li-post-actions">👍 Like &nbsp;&nbsp; 💬 Comment &nbsp;&nbsp; ↗ Repost</div></div>
+<div class="card li-post">
+<div class="li-post-head">
+<div class="fp-av" style="background:#333;color:#fff;width:24px;height:24px;font-size:9px">S</div>
+<div class="fp-info"><b style="font-size:10px">Saravanan</b><span>#11 · May 24 · Business Insight</span></div></div>
+<div style="padding:4px 10px 2px;font-size:11px;font-weight:600;color:#fff">Our job in one sentence.</div>
+<div class="sr-post"><div class="text">We make sure the cement brands you trust reach your project without interruption.
 
 The brands do the hard work of manufacturing. We do the hard work of logistics.
 
 Two different expertise areas. Both essential.
 
-#Distribution #ReliableChannel</div>
-<div class="post-design"><b>Tone:</b> Brevity IS the design.</div>
-</div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#12</span>
-<span class="post-date">May 30</span>
-<span class="post-type" style="background:#E3F2FD;color:#0D47A1">Month Reflection</span>
-</div>
-<div class="post-title">What reliable distribution actually means.</div>
-<div class="post-copy">The brands we distribute are excellent. Our job is simpler but equally important: make sure those products reach your project without interruption.
+#Distribution #ReliableChannel</div></div>
+<div class="sr-tone">Tone: Brevity IS the design.</div>
+<div class="li-post-actions">👍 Like &nbsp;&nbsp; 💬 Comment &nbsp;&nbsp; ↗ Repost</div></div>
+<div class="card li-post">
+<div class="li-post-head">
+<div class="fp-av" style="background:#333;color:#fff;width:24px;height:24px;font-size:9px">S</div>
+<div class="fp-info"><b style="font-size:10px">Saravanan</b><span>#12 · May 30 · Month Reflection</span></div></div>
+<div style="padding:4px 10px 2px;font-size:11px;font-weight:600;color:#fff">What reliable distribution actually means.</div>
+<div class="sr-post"><div class="text">The brands we distribute are excellent. Our job is simpler but equally important: make sure those products reach your project without interruption.
 
 Own fleet. Multi-state sourcing. Single-window access.
 
 That&#x27;s reliable distribution.
 
-#RiyaraTrading #ReliableDistribution</div>
-<div class="post-design"><b>Tone:</b> Pure text.</div>
-</div>
-<div class="month-badge" style="background:#006838">JUNE</div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#13</span>
-<span class="post-date">Jun 4</span>
-<span class="post-type" style="background:#E3F2FD;color:#0D47A1">Education</span>
-</div>
-<div class="post-title">OPC 43, OPC 53, PPC, Slag — a practical guide.</div>
-<div class="post-copy">OPC 43: Everyday. OPC 53: High-strength. PPC: Durability. Slag: Specialist.
+#RiyaraTrading #ReliableDistribution</div></div>
+<div class="sr-tone">Tone: Pure text.</div>
+<div class="li-post-actions">👍 Like &nbsp;&nbsp; 💬 Comment &nbsp;&nbsp; ↗ Repost</div></div>
+<div class="month-div"><span>♦</span> JUNE</div>
+<div class="card li-post">
+<div class="li-post-head">
+<div class="fp-av" style="background:#333;color:#fff;width:24px;height:24px;font-size:9px">S</div>
+<div class="fp-info"><b style="font-size:10px">Saravanan</b><span>#13 · Jun 4 · Education</span></div></div>
+<div style="padding:4px 10px 2px;font-size:11px;font-weight:600;color:#fff">OPC 43, OPC 53, PPC, Slag — a practical guide.</div>
+<div class="sr-post"><div class="text">OPC 43: Everyday. OPC 53: High-strength. PPC: Durability. Slag: Specialist.
 
 No grade is better. Each serves a purpose.
 
 All four manufactured by the brands we distribute.
 
-#CementGrades #Construction</div>
-<div class="post-design"><b>Tone:</b> Pure text. Credits manufacturers.</div>
-</div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#14</span>
-<span class="post-date">Jun 12</span>
-<span class="post-type" style="background:#E3F2FD;color:#0D47A1">Education</span>
-</div>
-<div class="post-title">Cement has a shelf life. Most people don&#x27;t know this.</div>
-<div class="post-copy">0-3 months: Full strength. 3-6: Slight reduction. 6+: Retest.
+#CementGrades #Construction</div></div>
+<div class="sr-tone">Tone: Pure text. Credits manufacturers.</div>
+<div class="li-post-actions">👍 Like &nbsp;&nbsp; 💬 Comment &nbsp;&nbsp; ↗ Repost</div></div>
+<div class="card li-post">
+<div class="li-post-head">
+<div class="fp-av" style="background:#333;color:#fff;width:24px;height:24px;font-size:9px">S</div>
+<div class="fp-info"><b style="font-size:10px">Saravanan</b><span>#14 · Jun 12 · Education</span></div></div>
+<div style="padding:4px 10px 2px;font-size:11px;font-weight:600;color:#fff">Cement has a shelf life. Most people don&#x27;t know this.</div>
+<div class="sr-post"><div class="text">0-3 months: Full strength. 3-6: Slight reduction. 6+: Retest.
 
 The manufacturers produce quality cement. Our job is to deliver it at its best.
 
-#CementQuality #ShelfLife</div>
-<div class="post-design"><b>Tone:</b> Pure text.</div>
-</div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#15</span>
-<span class="post-date">Jun 22</span>
-<span class="post-type" style="background:#E3F2FD;color:#0D47A1">Quarter Reflection</span>
-</div>
-<div class="post-title">3 months. What we learned.</div>
-<div class="post-copy">1. People search for brands, not distributors. Showing up alongside them made Riyara visible.
+#CementQuality #ShelfLife</div></div>
+<div class="sr-tone">Tone: Pure text.</div>
+<div class="li-post-actions">👍 Like &nbsp;&nbsp; 💬 Comment &nbsp;&nbsp; ↗ Repost</div></div>
+<div class="card li-post">
+<div class="li-post-head">
+<div class="fp-av" style="background:#333;color:#fff;width:24px;height:24px;font-size:9px">S</div>
+<div class="fp-info"><b style="font-size:10px">Saravanan</b><span>#15 · Jun 22 · Quarter Reflection</span></div></div>
+<div style="padding:4px 10px 2px;font-size:11px;font-weight:600;color:#fff">3 months. What we learned.</div>
+<div class="sr-post"><div class="text">1. People search for brands, not distributors. Showing up alongside them made Riyara visible.
 2. Fleet content resonated most.
 3. Celebrating the brands instead of competing with them built credibility.
 4. Reliable distribution is a story worth telling.
 
-#RiyaraTrading #ReliableDistribution</div>
-<div class="post-design"><b>Tone:</b> Point 3 proves the positioning works.</div>
-</div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#16</span>
-<span class="post-date">Jun 30</span>
-<span class="post-type" style="background:#E3F2FD;color:#0D47A1">Quarter Reflection</span>
-</div>
-<div class="post-title">The invisible work continues.</div>
-<div class="post-copy">The manufacturers create excellent products. We make sure they reach you without interruption.
+#RiyaraTrading #ReliableDistribution</div></div>
+<div class="sr-tone">Tone: Point 3 proves the positioning works.</div>
+<div class="li-post-actions">👍 Like &nbsp;&nbsp; 💬 Comment &nbsp;&nbsp; ↗ Repost</div></div>
+<div class="card li-post">
+<div class="li-post-head">
+<div class="fp-av" style="background:#333;color:#fff;width:24px;height:24px;font-size:9px">S</div>
+<div class="fp-info"><b style="font-size:10px">Saravanan</b><span>#16 · Jun 30 · Quarter Reflection</span></div></div>
+<div style="padding:4px 10px 2px;font-size:11px;font-weight:600;color:#fff">The invisible work continues.</div>
+<div class="sr-post"><div class="text">The manufacturers create excellent products. We make sure they reach you without interruption.
 
 That&#x27;s reliable distribution. That&#x27;s Riyara.
 
 Q3 starts now. Monsoon is here. And so are we.
 
-#RiyaraTrading #ReliableDistribution #TamilNadu</div>
-<div class="post-design"><b>Tone:</b> The final line IS the positioning statement.</div>
+#RiyaraTrading #ReliableDistribution #TamilNadu</div></div>
+<div class="sr-tone">Tone: The final line IS the positioning statement.</div>
+<div class="li-post-actions">👍 Like &nbsp;&nbsp; 💬 Comment &nbsp;&nbsp; ↗ Repost</div></div>
 </div>
+<div id="p-fb" class="panel">
+<div class="stitle">♦ Facebook Page + Posts</div>
+<div class="profile-frame" style="border-color:#1877F2">
+<div class="pf-bar"><span style="color:#1877F2;font-weight:700">facebook</span><span style="color:#666">🔍 💬</span></div>
+<div style="height:60px;background:linear-gradient(135deg,#510000,#AB0304);display:flex;align-items:center;justify-content:center">
+<span style="font-size:24px">♦</span></div>
+<div style="padding:10px 14px">
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+<div style="width:40px;height:40px;border-radius:50%;background:#AB0304;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:#fff;border:2px solid #000;margin-top:-20px">♦</div>
+<div><div style="font-size:13px;font-weight:700">Riyara Trading</div>
+<div style="font-size:9px;color:#888">Building Materials · Madurai</div></div></div>
+<div style="font-size:10px;color:#999;margin-bottom:8px">Authorised Distributor — Cement · Steel · Aggregates. 7 brands across Tamil Nadu. Since 2014.</div>
+<div style="display:flex;gap:5px"><button style="flex:1;background:#1877F2;color:#fff;border:none;padding:6px;border-radius:6px;font-size:10px;font-weight:600">💬 Message</button>
+<button style="flex:1;background:#333;color:#fff;border:none;padding:6px;border-radius:6px;font-size:10px;font-weight:600">👍 Like</button></div>
+</div></div>
+<div class="note"><b>Note:</b> Facebook posts mirror Instagram content. Carousels become album posts. Reels cross-post directly. Same 27 posts, adapted format.</div>
+<div class="month-div"><span>♦</span> APRIL</div>
+<div class="card">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#1 · Apr 1 (AM) · 🖼 Photo</span></div></div>
+<div style="padding:0 10px 6px;font-size:10px;color:#ccc">Zuari · Maha · Sagar · Priya · Nagarjuna · Chettinad · UltraTech.  All seven. All grades. Delivered ...</div>
+<div class="fp-img" style="background:#AB0304;color:#fff;aspect-ratio:1.2">
+<h3 style="font-size:11px">Every major cement brand in Tamil Nadu. One authorised distributor.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Riyara</div>
+</div></div>
+<div class="card">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#2 · Apr 1 (PM) · 🖼 Photo</span></div></div>
+<div style="padding:0 10px 6px;font-size:10px;color:#ccc">Seven of South India&#x27;s most trusted cement manufacturers. All grades — OPC 43, OPC 53, PPC, Slag. Ow...</div>
+<div class="fp-img" style="background:#AB0304;color:#fff;aspect-ratio:1.2">
+<h3 style="font-size:11px">RIYARA — Authorised Distributor &amp; Dealer. Since 2014.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Riyara</div>
+</div></div>
+<div class="card">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#3 · Apr 1 (EVE) · 🖼 Photo</span></div></div>
+<div style="padding:0 10px 6px;font-size:10px;color:#ccc">Zuari. Maha. Sagar. Priya. Nagarjuna. Chettinad. UltraTech.  Seven cement brands. All grades — OPC 4...</div>
+<div class="fp-img" style="background:#AB0304;color:#fff;aspect-ratio:1.2">
+<h3 style="font-size:11px">RIYARA — 7 Brands. All Grades. Earn Trust with Business.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Riyara</div>
+</div></div>
+<div class="card">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#4 · Apr 2 · 📷 Album</span></div></div>
+<div style="padding:0 10px 6px;font-size:10px;color:#ccc">UltraTech Cement from the Aditya Birla Group — India&#x27;s largest cement manufacturer.  Riyara delivers...</div>
+<div class="fp-img" style="background:#1A1A1A;color:#FFF21A;aspect-ratio:1.2">
+<h3 style="font-size:11px">UltraTech Cement — India&#x27;s No. 1. Delivered by Riyara&#x27;s Own Fleet.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">UltraTech Cement</div>
+</div></div>
+<div class="card">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#5 · Apr 5 · 📷 Album</span></div></div>
+<div style="padding:0 10px 6px;font-size:10px;color:#ccc">Since 1962. Three generations of manufacturing leadership.  Riyara stocks every Chettinad grade — OP...</div>
+<div class="fp-img" style="background:#143D8D;color:#62BB47;aspect-ratio:1.2">
+<h3 style="font-size:11px">Chettinad Cement — 60 Years of Trust. Every Grade Always Available.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Chettinad Cement</div>
+</div></div>
+<div class="card">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#6 · Apr 8 · 📷 Album</span></div></div>
+<div style="padding:0 10px 6px;font-size:10px;color:#ccc">Zuari Cement is part of Heidelberg Materials, Germany — world&#x27;s #2 cement company.  Global manufactu...</div>
+<div class="fp-img" style="background:#8B1A1A;color:#fff;aspect-ratio:1.2">
+<h3 style="font-size:11px">Zuari Cement — German Precision. Sealed Delivery by Riyara.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Zuari Cement</div>
+</div></div>
+<div class="card">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#7 · Apr 11 · 📷 Album</span></div></div>
+<div style="padding:0 10px 6px;font-size:10px;color:#ccc">Construction doesn&#x27;t stop for weekends. Neither does Riyara.  Own fleet of 20+ trucks. We dispatch w...</div>
+<div class="fp-img" style="background:#AB0304;color:#fff;aspect-ratio:1.2">
+<h3 style="font-size:11px">Emergency delivery. Weekends. Holidays. The fleet moves when you need it.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Riyara</div>
+</div></div>
+<div class="card">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#8 · Apr 14 · 🎬 Reel</span></div></div>
+<div style="padding:0 10px 6px;font-size:10px;color:#ccc">As an authorised distributor for all 7 major cement manufacturers in Tamil Nadu, Riyara offers a sin...</div>
+<div class="fp-img" style="background:#AB0304;color:#fff;aspect-ratio:1.2">
+<h3 style="font-size:11px">One call. Every major brand. Every grade. The single-window advantage.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Riyara</div>
+</div></div>
+<div class="card">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#9 · Apr 18 · 📷 Album</span></div></div>
+<div style="padding:0 10px 6px;font-size:10px;color:#ccc">Transparent pricing. Volume brackets communicated upfront. No mid-order surprises.  Consistent prici...</div>
+<div class="fp-img" style="background:#AB0304;color:#fff;aspect-ratio:1.2">
+<h3 style="font-size:11px">No surprise price changes mid-order. That&#x27;s the Riyara commitment.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Riyara</div>
+</div></div>
+<div class="card">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#10 · Apr 22 · 📷 Album</span></div></div>
+<div style="padding:0 10px 6px;font-size:10px;color:#ccc">Maha Cement from My Home Industries has earned strong loyalty across Telangana, AP, and Karnataka.  ...</div>
+<div class="fp-img" style="background:#1A237E;color:#C62828;aspect-ratio:1.2">
+<h3 style="font-size:11px">Maha Cement HD+ — South India&#x27;s Trusted Brand, Direct to Tamil Nadu.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Maha Cement</div>
+</div></div>
+<div class="card">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#11 · Apr 26 · 📷 Album</span></div></div>
+<div style="padding:0 10px 6px;font-size:10px;color:#ccc">Sagar Cements — trusted for over 30 years.  Riyara delivers Sagar in specialised V-shaped tanker tru...</div>
+<div class="fp-img" style="background:#0D47A1;color:#FF8F00;aspect-ratio:1.2">
+<h3 style="font-size:11px">Sagar Cement — 30 Years of Quality. V-Shaped Tankers for Faster Delivery.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Sagar Cement</div>
+</div></div>
+<div class="card">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#12 · Apr 29 · 📷 Album</span></div></div>
+<div style="padding:0 10px 6px;font-size:10px;color:#ccc">Priya Cement — since 1986. Strength and longevity. Nagarjuna Cement — 40 years of trust across South...</div>
+<div class="fp-img" style="background:#BF360C;color:#fff;aspect-ratio:1.2">
+<h3 style="font-size:11px">Priya Cement × Nagarjuna Cement — Two South Indian Icons. One Distributor.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Priya + Nagarjuna</div>
+</div></div>
+<div class="month-div"><span>♦</span> MAY</div>
+<div class="card">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#13 · May 3 · 📷 Album</span></div></div>
+<div style="padding:0 10px 6px;font-size:10px;color:#ccc">When an engineer writes TATA Fe500, they&#x27;re choosing consistency.  Riyara distributes TATA, VSP, and...</div>
+<div class="fp-img" style="background:#1A3A5C;color:#8CF;aspect-ratio:1.2">
+<h3 style="font-size:11px">TATA · VSP · SAIL — India&#x27;s Infrastructure Steel. Through Riyara.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">TATA / VSP / SAIL</div>
+</div></div>
+<div class="card">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#14 · May 6 · 📷 Album</span></div></div>
+<div style="padding:0 10px 6px;font-size:10px;color:#ccc">Each serves a different purpose. Swipe to learn.  Own crushing network in Chennai.  For aggregate or...</div>
+<div class="fp-img" style="background:#AB0304;color:#fff;aspect-ratio:1.2">
+<h3 style="font-size:11px">Blue Metal. M-Sand. River Sand. Boulders. GSB. The complete range.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Riyara</div>
+</div></div>
+<div class="card">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#15 · May 10 · 🎬 Reel</span></div></div>
+<div style="padding:0 10px 6px;font-size:10px;color:#ccc">Before the city wakes up, Riyara&#x27;s trucks are carrying the brands you trust.  #RiyaraTrading #FleetL...</div>
+<div class="fp-img" style="background:#AB0304;color:#fff;aspect-ratio:1.2">
+<h3 style="font-size:11px">5 AM. The fleet moves.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Riyara</div>
+</div></div>
+<div class="card">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#16 · May 14 · 📷 Album</span></div></div>
+<div style="padding:0 10px 6px;font-size:10px;color:#ccc">India&#x27;s largest — 152 million tonnes per annum capacity.  Through Riyara, you don&#x27;t just get UltraTe...</div>
+<div class="fp-img" style="background:#1A1A1A;color:#FFF21A;aspect-ratio:1.2">
+<h3 style="font-size:11px">UltraTech + 6 Other Brands. One Call Handles All. The Single-Window Advantage.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">UltraTech Cement</div>
+</div></div>
+<div class="card">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#17 · May 17 · 📷 Album</span></div></div>
+<div style="padding:0 10px 6px;font-size:10px;color:#ccc">60 years of manufacturing excellence.  What Riyara adds: uninterrupted supply. We source from multip...</div>
+<div class="fp-img" style="background:#143D8D;color:#62BB47;aspect-ratio:1.2">
+<h3 style="font-size:11px">Three Generations of Chettinad. Riyara&#x27;s Fleet Delivers Without Interruption.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Chettinad Cement</div>
+</div></div>
+<div class="card">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#18 · May 21 · 📷 Album</span></div></div>
+<div style="padding:0 10px 6px;font-size:10px;color:#ccc">Heidelberg Materials operates in 50+ countries. Zuari is their flagship in India.  Through Riyara, y...</div>
+<div class="fp-img" style="background:#8B1A1A;color:#fff;aspect-ratio:1.2">
+<h3 style="font-size:11px">Zuari + 6 Other Brands. Heidelberg Quality. Single-Window Convenience.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Zuari Cement</div>
+</div></div>
+<div class="card">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#19 · May 24 · 📷 Album</span></div></div>
+<div style="padding:0 10px 6px;font-size:10px;color:#ccc">GST invoices, weighbridge slips, delivery challans, mill test certificates — all in order, every tim...</div>
+<div class="fp-img" style="background:#AB0304;color:#fff;aspect-ratio:1.2">
+<h3 style="font-size:11px">Proper documentation. Every tonne. Every delivery.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Riyara</div>
+</div></div>
+<div class="card">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#20 · May 28 · 🎬 Reel</span></div></div>
+<div style="padding:0 10px 6px;font-size:10px;color:#ccc">Operating through monsoons, plant shutdowns, demand spikes, and everything in between.  Continuous s...</div>
+<div class="fp-img" style="background:#AB0304;color:#fff;aspect-ratio:1.2">
+<h3 style="font-size:11px">11 Years. Zero Supply Gaps. Since 2014.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Riyara</div>
+</div></div>
+<div class="card">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#21 · May 31 · 📷 Album</span></div></div>
+<div style="padding:0 10px 6px;font-size:10px;color:#ccc">Dedicated account manager. They know your order cycles, your preferred brands, your site schedules. ...</div>
+<div class="fp-img" style="background:#AB0304;color:#fff;aspect-ratio:1.2">
+<h3 style="font-size:11px">One person manages your account. Knows your patterns.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Riyara</div>
+</div></div>
+<div class="month-div"><span>♦</span> JUNE</div>
+<div class="card">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#22 · Jun 3 · 📷 Album</span></div></div>
+<div style="padding:0 10px 6px;font-size:10px;color:#ccc">Popularly known as &#x27;Monagadu Cement.&#x27; 40 years of trust.  Riyara&#x27;s statewide network ensures Nagarju...</div>
+<div class="fp-img" style="background:#006838;color:#F7941D;aspect-ratio:1.2">
+<h3 style="font-size:11px">Nagarjuna Cement — 40 Years of Trust. Pan-TN Coverage by Riyara.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Nagarjuna Cement</div>
+</div></div>
+<div class="card">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#23 · Jun 7 · 📷 Album</span></div></div>
+<div style="padding:0 10px 6px;font-size:10px;color:#ccc">Maha HD+ represents premium quality — engineered for high-performance construction.  Premium cement ...</div>
+<div class="fp-img" style="background:#1A237E;color:#C62828;aspect-ratio:1.2">
+<h3 style="font-size:11px">Maha Cement HD+ — Premium Cement. Sealed V-Shaped Tanker Delivery.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Maha Cement</div>
+</div></div>
+<div class="card">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#24 · Jun 10 · 📷 Album</span></div></div>
+<div style="padding:0 10px 6px;font-size:10px;color:#ccc">Three decades of excellence.  Riyara sources Sagar from multiple plants across states. When one is o...</div>
+<div class="fp-img" style="background:#0D47A1;color:#FF8F00;aspect-ratio:1.2">
+<h3 style="font-size:11px">Sagar Cement — Multi-State Sourcing Keeps It Available. Always.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Sagar Cement</div>
+</div></div>
+<div class="card">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#25 · Jun 14 · 🎬 Reel</span></div></div>
+<div style="padding:0 10px 6px;font-size:10px;color:#ccc">Compressed air does all the work. Sealed from plant to silo. Zero exposure to moisture or dust.  Thi...</div>
+<div class="fp-img" style="background:#AB0304;color:#fff;aspect-ratio:1.2">
+<h3 style="font-size:11px">Pneumatic cement unloading. No bags. No hands. Just air.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Riyara</div>
+</div></div>
+<div class="card">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#26 · Jun 19 · 📷 Album</span></div></div>
+<div style="padding:0 10px 6px;font-size:10px;color:#ccc">8-10mm: Slabs. 12-16mm: Beams. 20-25mm: Heavy. 32mm: Foundations.  All from TATA, VSP, SAIL. Distrib...</div>
+<div class="fp-img" style="background:#AB0304;color:#fff;aspect-ratio:1.2">
+<h3 style="font-size:11px">TMT bar sizes: 8mm to 32mm — which goes where?</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Riyara</div>
+</div></div>
+<div class="card">
+<div class="fp-head"><div class="fp-av" style="background:#AB0304;color:#fff">♦</div>
+<div class="fp-info"><b style="font-size:10px">Riyara Trading</b><span>#27 · Jun 24 · 🎬 Reel</span></div></div>
+<div style="padding:0 10px 6px;font-size:10px;color:#ccc">Every Riyara truck on the road is carrying a trusted brand to a waiting project.  Cement · Steel · A...</div>
+<div class="fp-img" style="background:#AB0304;color:#fff;aspect-ratio:1.2">
+<h3 style="font-size:11px">Carrying the brands you trust, to the projects that need them.</h3>
+<div style="font-size:8px;opacity:.6;margin-top:4px">Riyara</div>
+</div></div>
 </div>
 <div id="p-gb" class="panel">
-<div class="section-note">Short copy. Brand-specific designs. SEO keywords in every post. No "bulk/loose cement" references.</div>
-<div class="month-badge" style="background:#510000">APRIL</div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#1</span>
-<span class="post-date">Apr 4</span>
-<span class="post-brand" style="background:#FDDADA;color:#510000">Riyara</span>
-</div>
-<div class="post-title">Authorised Distributor — All Major Cement Brands in Tamil Nadu</div>
-<div class="post-copy">Riyara Trading distributes Zuari, Maha, Sagar, Priya, Nagarjuna, Chettinad, and UltraTech cement in Tamil Nadu. Own fleet of 20+ trucks.
+<div class="stitle">♦ Google Business Profile Posts</div>
+<div class="profile-frame" style="border-color:#4285F4">
+<div class="pf-bar"><span style="color:#4285F4;font-weight:700">Google</span><span></span></div>
+<div style="padding:12px 14px">
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+<div style="width:44px;height:44px;border-radius:50%;background:#AB0304;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;color:#fff">♦</div>
+<div><div style="font-size:14px;font-weight:700">Riyara Trading</div>
+<div style="font-size:9px;color:#888">Building Materials Store · Madurai</div>
+<div style="font-size:9px;color:#888">★★★★★ · Open now</div></div></div>
+<div style="font-size:10px;color:#999">Authorised distributor for Zuari, Maha, Sagar, Priya, Nagarjuna, Chettinad, UltraTech cement. TATA, VSP, SAIL steel. Aggregates.</div>
+</div></div>
+<div class="note"><b>Format:</b> Short copy. Brand-specific designs. Brand logo LARGER than Riyara. SEO keywords in every post.</div>
+<div class="month-div"><span>♦</span> APRIL</div>
+<div class="card gbp-card">
+<div class="gbp-img" style="background:#AB0304;color:#fff">
+<div><div style="font-size:16px;font-weight:700;margin-bottom:4px">Riyara</div>
+<div style="font-size:9px;opacity:.7">Authorised Distributor — All Major Cement Brands in Tamil Nadu</div></div></div>
+<div class="gbp-title">#1 · Apr 4 · Riyara</div>
+<div class="gbp-copy">Riyara Trading distributes Zuari, Maha, Sagar, Priya, Nagarjuna, Chettinad, and UltraTech cement in Tamil Nadu. Own fleet of 20+ trucks.
 
 #CementDealer #CementDistributor #RiyaraTrading #TamilNadu</div>
-<div class="post-design"><b>Design:</b> Brand logos LARGER than Riyara.</div>
 </div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#2</span>
-<span class="post-date">Apr 11</span>
-<span class="post-brand" style="background:#E8EFF8;color:#143D8D">Chettinad Cement</span>
+<div class="card gbp-card">
+<div class="gbp-img" style="background:#143D8D;color:#62BB47">
+<div><div style="font-size:16px;font-weight:700;margin-bottom:4px">Chettinad Cement</div>
+<div style="font-size:9px;opacity:.7">Chettinad Cement in Tamil Nadu — Through Riyara Trading</div></div></div>
+<div class="gbp-title">#2 · Apr 11 · Chettinad Cement</div>
+<div class="gbp-copy">Chettinad Cement — all grades. Riyara Trading is an authorised distributor for Chettinad Cement across Tamil Nadu. Own fleet ensures reliable delivery.</div>
 </div>
-<div class="post-title">Chettinad Cement in Tamil Nadu — Through Riyara Trading</div>
-<div class="post-copy">Chettinad Cement — all grades. Riyara Trading is an authorised distributor for Chettinad Cement across Tamil Nadu. Own fleet ensures reliable delivery.</div>
-<div class="post-design"><b>Design:</b> Chettinad dominant.</div>
+<div class="card gbp-card">
+<div class="gbp-img" style="background:#8B1A1A;color:#fff">
+<div><div style="font-size:16px;font-weight:700;margin-bottom:4px">Zuari Cement</div>
+<div style="font-size:9px;opacity:.7">Zuari Cement (Heidelberg Materials) — Distributed by Riyara Trading</div></div></div>
+<div class="gbp-title">#3 · Apr 18 · Zuari Cement</div>
+<div class="gbp-copy">Zuari Cement — all grades. Riyara Trading is an authorised distributor for Zuari Cement across Tamil Nadu. Own fleet ensures sealed, reliable delivery.</div>
 </div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#3</span>
-<span class="post-date">Apr 18</span>
-<span class="post-brand" style="background:#F5E6E6;color:#8B1A1A">Zuari Cement</span>
+<div class="month-div"><span>♦</span> MAY</div>
+<div class="card gbp-card">
+<div class="gbp-img" style="background:#005EB8;color:#fff">
+<div><div style="font-size:16px;font-weight:700;margin-bottom:4px">TATA Steel</div>
+<div style="font-size:9px;opacity:.7">TATA · VSP · SAIL TMT Bars — Riyara Trading</div></div></div>
+<div class="gbp-title">#4 · May 2 · TATA Steel</div>
+<div class="gbp-copy">TATA, VSP, SAIL TMT bars. All grades. All sizes. For orders, reach out to Riyara Trading.</div>
 </div>
-<div class="post-title">Zuari Cement (Heidelberg Materials) — Distributed by Riyara Trading</div>
-<div class="post-copy">Zuari Cement — all grades. Riyara Trading is an authorised distributor for Zuari Cement across Tamil Nadu. Own fleet ensures sealed, reliable delivery.</div>
-<div class="post-design"><b>Design:</b> Zuari dominant.</div>
+<div class="card gbp-card">
+<div class="gbp-img" style="background:#1A1A1A;color:#FFF21A">
+<div><div style="font-size:16px;font-weight:700;margin-bottom:4px">UltraTech Cement</div>
+<div style="font-size:9px;opacity:.7">UltraTech Cement in Tamil Nadu — Through Riyara Trading</div></div></div>
+<div class="gbp-title">#5 · May 9 · UltraTech Cement</div>
+<div class="gbp-copy">UltraTech Cement — all grades. Riyara Trading is an authorised distributor for UltraTech Cement across Tamil Nadu. Own fleet ensures reliable delivery.</div>
 </div>
-<div class="month-badge" style="background:#1A3A5C">MAY</div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#4</span>
-<span class="post-date">May 2</span>
-<span class="post-brand" style="background:#E3F2FD;color:#005EB8">TATA Steel</span>
+<div class="card gbp-card">
+<div class="gbp-img" style="background:#AB0304;color:#fff">
+<div><div style="font-size:16px;font-weight:700;margin-bottom:4px">VSP</div>
+<div style="font-size:9px;opacity:.7">VSP + SAIL TMT Bars — Through Riyara Trading</div></div></div>
+<div class="gbp-title">#6 · May 16 · VSP</div>
+<div class="gbp-copy">VSP and SAIL TMT bars. All grades. All sizes. For orders, reach out to Riyara Trading.</div>
 </div>
-<div class="post-title">TATA · VSP · SAIL TMT Bars — Riyara Trading</div>
-<div class="post-copy">TATA, VSP, SAIL TMT bars. All grades. All sizes. For orders, reach out to Riyara Trading.</div>
-<div class="post-design"><b>Design:</b> Steel brands dominate.</div>
+<div class="card gbp-card">
+<div class="gbp-img" style="background:#1A237E;color:#C62828">
+<div><div style="font-size:16px;font-weight:700;margin-bottom:4px">Maha Cement</div>
+<div style="font-size:9px;opacity:.7">Maha Cement HD+ in TN — Through Riyara Trading</div></div></div>
+<div class="gbp-title">#7 · May 23 · Maha Cement</div>
+<div class="gbp-copy">Maha Cement — all grades. Riyara Trading is an authorised distributor for Maha Cement across Tamil Nadu. Own fleet ensures reliable delivery.</div>
 </div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#5</span>
-<span class="post-date">May 9</span>
-<span class="post-brand" style="background:#F5F5F5;color:#1A1A1A">UltraTech Cement</span>
-</div>
-<div class="post-title">UltraTech Cement in Tamil Nadu — Through Riyara Trading</div>
-<div class="post-copy">UltraTech Cement — all grades. Riyara Trading is an authorised distributor for UltraTech Cement across Tamil Nadu. Own fleet ensures reliable delivery.</div>
-<div class="post-design"><b>Design:</b> UltraTech dominant.</div>
-</div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#6</span>
-<span class="post-date">May 16</span>
-<span class="post-brand" style="background:#FDDADA;color:#510000">VSP</span>
-</div>
-<div class="post-title">VSP + SAIL TMT Bars — Through Riyara Trading</div>
-<div class="post-copy">VSP and SAIL TMT bars. All grades. All sizes. For orders, reach out to Riyara Trading.</div>
-<div class="post-design"><b>Design:</b> Steel brands dominate.</div>
-</div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#7</span>
-<span class="post-date">May 23</span>
-<span class="post-brand" style="background:#E8EAF6;color:#1A237E">Maha Cement</span>
-</div>
-<div class="post-title">Maha Cement HD+ in TN — Through Riyara Trading</div>
-<div class="post-copy">Maha Cement — all grades. Riyara Trading is an authorised distributor for Maha Cement across Tamil Nadu. Own fleet ensures reliable delivery.</div>
-<div class="post-design"><b>Design:</b> Maha dominant.</div>
-</div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#8</span>
-<span class="post-date">May 30</span>
-<span class="post-brand" style="background:#FDDADA;color:#510000">Riyara</span>
-</div>
-<div class="post-title">Aggregates — Riyara Trading Chennai</div>
-<div class="post-copy">Blue metal, M-Sand, river sand, boulders, GSB. For orders, reach out to Riyara Trading.
+<div class="card gbp-card">
+<div class="gbp-img" style="background:#AB0304;color:#fff">
+<div><div style="font-size:16px;font-weight:700;margin-bottom:4px">Riyara</div>
+<div style="font-size:9px;opacity:.7">Aggregates — Riyara Trading Chennai</div></div></div>
+<div class="gbp-title">#8 · May 30 · Riyara</div>
+<div class="gbp-copy">Blue metal, M-Sand, river sand, boulders, GSB. For orders, reach out to Riyara Trading.
 
 #Aggregates #BuildingMaterials #RiyaraTrading #TamilNadu</div>
-<div class="post-design"><b>Design:</b> Material textures.</div>
 </div>
-<div class="month-badge" style="background:#006838">JUNE</div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#9</span>
-<span class="post-date">Jun 6</span>
-<span class="post-brand" style="background:#E3F2FD;color:#0D47A1">Sagar Cement</span>
+<div class="month-div"><span>♦</span> JUNE</div>
+<div class="card gbp-card">
+<div class="gbp-img" style="background:#0D47A1;color:#FF8F00">
+<div><div style="font-size:16px;font-weight:700;margin-bottom:4px">Sagar Cement</div>
+<div style="font-size:9px;opacity:.7">Sagar Cement in TN — Through Riyara Trading</div></div></div>
+<div class="gbp-title">#9 · Jun 6 · Sagar Cement</div>
+<div class="gbp-copy">Sagar Cement — all grades. Riyara Trading is an authorised distributor for Sagar Cement across Tamil Nadu. Own fleet ensures reliable delivery.</div>
 </div>
-<div class="post-title">Sagar Cement in TN — Through Riyara Trading</div>
-<div class="post-copy">Sagar Cement — all grades. Riyara Trading is an authorised distributor for Sagar Cement across Tamil Nadu. Own fleet ensures reliable delivery.</div>
-<div class="post-design"><b>Design:</b> Sagar dominant.</div>
+<div class="card gbp-card">
+<div class="gbp-img" style="background:#D32F2F;color:#FFC107">
+<div><div style="font-size:16px;font-weight:700;margin-bottom:4px">Priya Cement</div>
+<div style="font-size:9px;opacity:.7">Priya Cement — Through Riyara Trading TN</div></div></div>
+<div class="gbp-title">#10 · Jun 13 · Priya Cement</div>
+<div class="gbp-copy">Priya Cement — all grades. Riyara Trading is an authorised distributor for Priya Cement across Tamil Nadu. Own fleet ensures reliable delivery.</div>
 </div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#10</span>
-<span class="post-date">Jun 13</span>
-<span class="post-brand" style="background:#FFEBEE;color:#D32F2F">Priya Cement</span>
-</div>
-<div class="post-title">Priya Cement — Through Riyara Trading TN</div>
-<div class="post-copy">Priya Cement — all grades. Riyara Trading is an authorised distributor for Priya Cement across Tamil Nadu. Own fleet ensures reliable delivery.</div>
-<div class="post-design"><b>Design:</b> Priya dominant.</div>
-</div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#11</span>
-<span class="post-date">Jun 20</span>
-<span class="post-brand" style="background:#FDDADA;color:#510000">Riyara</span>
-</div>
-<div class="post-title">Complete Building Materials — Riyara Trading Chennai</div>
-<div class="post-copy">Cement (7 brands). Steel (TATA, VSP, SAIL). Aggregates (full range). One distribution channel since 2014.
+<div class="card gbp-card">
+<div class="gbp-img" style="background:#AB0304;color:#fff">
+<div><div style="font-size:16px;font-weight:700;margin-bottom:4px">Riyara</div>
+<div style="font-size:9px;opacity:.7">Complete Building Materials — Riyara Trading Chennai</div></div></div>
+<div class="gbp-title">#11 · Jun 20 · Riyara</div>
+<div class="gbp-copy">Cement (7 brands). Steel (TATA, VSP, SAIL). Aggregates (full range). One distribution channel since 2014.
 
 #CementDealer #RiyaraTrading #TamilNadu</div>
-<div class="post-design"><b>Design:</b> Brands above. Riyara below.</div>
 </div>
-<div class="post-card">
-<div class="post-head">
-<span class="post-num">#12</span>
-<span class="post-date">Jun 27</span>
-<span class="post-brand" style="background:#E8F5E9;color:#006838">Nagarjuna Cement</span>
-</div>
-<div class="post-title">Nagarjuna Cement — Through Riyara Trading in TN</div>
-<div class="post-copy">Nagarjuna Cement — all grades. Riyara Trading is an authorised distributor for Nagarjuna Cement across Tamil Nadu. Own fleet ensures reliable delivery.</div>
-<div class="post-design"><b>Design:</b> Nagarjuna dominant.</div>
+<div class="card gbp-card">
+<div class="gbp-img" style="background:#006838;color:#F7941D">
+<div><div style="font-size:16px;font-weight:700;margin-bottom:4px">Nagarjuna Cement</div>
+<div style="font-size:9px;opacity:.7">Nagarjuna Cement — Through Riyara Trading in TN</div></div></div>
+<div class="gbp-title">#12 · Jun 27 · Nagarjuna Cement</div>
+<div class="gbp-copy">Nagarjuna Cement — all grades. Riyara Trading is an authorised distributor for Nagarjuna Cement across Tamil Nadu. Own fleet ensures reliable delivery.</div>
 </div>
 </div>
-
 <script>
-function sw(el, id) {
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
-  el.classList.add('active');
-  document.getElementById('p-' + id).classList.add('active');
-  window.scrollTo({top: 0, behavior: 'smooth'});
+function go(id,el){
+document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));
+document.querySelectorAll('.tab').forEach(t=>t.classList.remove('on'));
+document.getElementById('p-'+id).classList.add('on');
+el.classList.add('on');
+window.scrollTo({top:0,behavior:'smooth'});
 }
-</script>
-</div></body></html>
+</script></body></html>
